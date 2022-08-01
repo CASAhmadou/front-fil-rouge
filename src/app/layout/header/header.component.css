@@ -1,0 +1,16 @@
+.con{
+  height: 15vh;
+  background-image: url(../../../assets/images/bg.jpeg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: top;
+
+}
+.img-top{
+  width: 100vw;
+
+}
+.ko{
+  background-color: black;
+}
+

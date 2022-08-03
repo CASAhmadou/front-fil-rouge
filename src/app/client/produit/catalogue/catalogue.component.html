@@ -1,8 +1,21 @@
 
 
 
-<!-- <ng-container *ngIf="(post$|async) as posts"> -->
-  <!-- <cas-list [posts]="posts?."></cas-list> -->
+<div class="container">
+  <button class="nav-link" (click)="CatalogueFiltre('Burger')">Burger</button>
 
-<cas-list>mane</cas-list>
-<!-- </ng-container> -->
+  <h1 class="text-center">Burger à Commander</h1>
+
+      <div class="container d-flex justify-content-around flex-wrap">
+
+        <ng-container *ngIf="prod !=undefined">
+         
+
+           <cas-card *ngFor="let produit of prod" [catalogues]="produit"></cas-card>
+        
+        
+          </ng-container>
+
+      </div>
+
+</div>

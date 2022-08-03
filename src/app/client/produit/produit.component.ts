@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Catalogue } from '../shared/models/catalogue';
+import { Produit } from '../shared/models/produit';
+import { CatalogueService } from '../shared/service/catalogue.service';
 
 @Component({
   selector: 'cas-produit',
@@ -7,9 +11,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProduitComponent implements OnInit {
 
-  constructor() { }
+  catalogues$ : Observable<Catalogue> | null = null
+  prod: Produit[] | undefined = undefined
+
+  constructor(private serv:CatalogueService) { }
 
   ngOnInit(): void {
   }
+
+ 
+
 
 }

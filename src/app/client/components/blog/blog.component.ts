@@ -18,4 +18,13 @@ export class BlogComponent implements OnInit {
     this.router.navigateByUrl("produits/catalogue")
   }
 
+  // CatalogueFiltre(type:string){
+  //   // this.serv.getCatalogue().subscribe(data => {
+  //   //   if(type!=""){
+  //   //     this.prod = data.produits?.filter(produit => produit.type === type)
+  //   //   }else{
+  //   //     this.prod = data.produits
+  //   //   }
+  //   // })
+
 }

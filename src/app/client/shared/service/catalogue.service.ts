@@ -11,7 +11,7 @@ import { Detail } from '../models/detail';
 export class CatalogueService {
 
   private linkBackEnd: string = "http://127.0.0.1:8000/api/catalogues"
-  private apiDetail="http://127.0.0.1:8000:8000/api"
+  private apiDetail="http://127.0.0.1:8000/api/details"
 
   constructor(private http:HttpClient) { }
 
@@ -28,12 +28,40 @@ export class CatalogueService {
     )
   }
 
-  getProduit$(id:number,type:string):Observable<Detail>{
-    if(type=="burger"){
-      return this.http.get<Detail>(`${this.apiDetail}/burgers/${id}}`)
-    }
-    return this.http.get<Detail>(`${this.apiDetail}/menus/${id}}`)
+  getProduit$=(id:any)=>{
+    return this.http.get<any>(
+      `${this.apiDetail}/${id}`).pipe(
+          map(data=>{
+            return data
+          })
+      )
   }
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+  // getProduit$(id:number,type:string):Observable<Detail>{
+    
+  //   if(type=="burger"){
+  //     return this.http.get<Detail>(`${this.apiDetail}/burgers/${id}}`)
+  //   }
+  //   return this.http.get<Detail>(`${this.apiDetail}/menus/${id}}`)
+  // }
 
 }
 

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Produit } from '../../shared/models/produit';
 
 @Component({
   selector: 'cas-blog',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class BlogComponent implements OnInit {
 
-
+  @Input('type') produit : Produit|null = null; 
   constructor(private router:Router) { }
 
   ngOnInit(): void {
@@ -16,15 +17,7 @@ export class BlogComponent implements OnInit {
 
   produitOuvert(): void{
     this.router.navigateByUrl("produits/catalogue")
+    
   }
-
-  // CatalogueFiltre(type:string){
-  //   // this.serv.getCatalogue().subscribe(data => {
-  //   //   if(type!=""){
-  //   //     this.prod = data.produits?.filter(produit => produit.type === type)
-  //   //   }else{
-  //   //     this.prod = data.produits
-  //   //   }
-  //   // })
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Catalogue } from '../../shared/models/catalogue';
 import { Produit } from '../../shared/models/produit';
@@ -14,7 +15,7 @@ export class CatalogueComponent implements OnInit {
   catalogues$ : Observable<Catalogue> | null = null
   prod: Produit[] | undefined = undefined
 
-  constructor(private serv:CatalogueService) { }
+  constructor(private serv:CatalogueService, private route : ActivatedRoute) { }
 
   ngOnInit(): void {
     this.serv.getCatalogue().subscribe(data => {
@@ -23,7 +24,9 @@ export class CatalogueComponent implements OnInit {
   }
 
   CatalogueFiltre(type:string){
+    // alert("ok")
     this.serv.getCatalogue().subscribe(data => {
+      // console.log(data)
       if(type!=""){
         this.prod = data.produits?.filter(produit => produit.type === type)
       }else{
@@ -31,5 +34,4 @@ export class CatalogueComponent implements OnInit {
       }
     })
   }
-
 }

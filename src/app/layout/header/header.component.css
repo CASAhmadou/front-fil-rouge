@@ -8,9 +8,18 @@
 }
 .img-top{
   width: 100vw;
-
 }
+
 .ko{
   background-color: black;
 }
 
+.nav{
+  height: 5rem;
+  font-size: 1.5rem;
+}
+
+li a:hover{
+  border-radius: 5rem;
+  background-color: #F4782F;
+}

@@ -1,13 +1,10 @@
-<div class="card" style="width: 18rem">
+<div class="card">
 
-    <h5 class="">{{produit?.nom}}</h5>
+    <h5 class="text-center">{{produit?.nom}}</h5>
 
-    <a href="#" (click)="detailOuvert()" class="btn ">
+      <img src="data:image/png;base64,{{produit?.image}}" (click)="detailOuvert()" class="img-thumbnail rounded" style="max-width: 20rem; height:20rem">
 
-      <img src="data:image/png;base64,{{produit?.image}}" class="card-img-top" alt="...">
+      <p class="card-text text-center">{{produit?.prix}} f CFA</p>
 
-      <p class="card-text">{{produit?.prix}} f CFA</p>
-
-    </a>
 
   </div>

@@ -1,0 +1,199 @@
+<ng-container *ngIf="(detail$|async) !=null">
+  <div class="container">
+    <div class="d-flex justify-content-around ecrit">
+    <i class="prev fa-solid fa-circle-arrow-left" [routerLink]="['/produits/catalogue']" routerLinkActive="router-link-active" ></i>
+    <h3>Produits à Commander</h3>
+
+    <ng-container *ngIf="(detail$|async)?.menu?.type=='menu'">
+      <span class="prix badge">{{(detail$|async)?.menu?.prix}} f CFA</span>
+    </ng-container>
+
+    <ng-container *ngIf="(detail$|async)?.burger?.type=='burger'">
+      <span class="prix badge">{{(detail$|async)?.burger?.prix}} f CFA</span>
+    </ng-container>
+      </div>
+
+      <div class="container d-flex justify-content-around" >
+    
+      <div class="card" style="width: 18rem;">
+        <div class="qte d-flex justify-content-center">
+          <i class="fa-solid fa-plus"></i>
+          <input type="text" style="width: 2rem;">
+          <i class="fa-solid fa-minus"></i>
+        </div>
+        <div class="d-flex justify-content-center">
+          <ng-container *ngIf="(detail$|async)?.burger?.type=='burger'">
+            <img src="data:image/png;base64,{{(detail$|async)?.burger?.image}}" style="max-width: 10rem;" class="card-img-top" alt="...">
+          </ng-container>
+
+          <ng-container *ngIf="(detail$|async)?.menu?.type=='menu'">
+            <img src="data:image/png;base64,{{(detail$|async)?.menu?.image}}" style="max-width: 10rem;" class="card-img-top" alt="...">
+          </ng-container>
+        </div>
+
+        <div class="card-body">
+          <h5 class="card-title">description</h5>
+
+          <ng-container *ngIf="(detail$|async)?.burger?.type=='burger'">
+            <p class="card-text">{{(detail$|async)?.burger?.description}}</p>
+          </ng-container>
+
+          <ng-container *ngIf="(detail$|async)?.menu?.type=='menu'">
+            <p class="card-text">{{(detail$|async)?.menu?.description}}</p>
+          </ng-container>
+
+          <button type="button" [routerLink]="['/produits/catalogue']" routerLinkActive="router-link-active"  class="btn">Ajouter autres commandes</button> 
+        </div>
+      </div>
+
+        <div class="toast show" style="width:50%;" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast-header">
+            <strong class="me-auto text-center">COMPLEMENTS</strong>
+          <!-- <small>11 mins ago</small> -->
+          <!-- <button type="button" class="btn-close ms-2 mb-1" data-bs-dismiss="toast" aria-label="Close">
+            <span aria-hidden="true"></span>
+          </button> -->
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <div class="toast-body">
+              <span>Boisson</span>
+              <div class="card complement" style="width: 8rem;">
+                <div class="d-flex justify-content-center">
+                  <div>
+                    <i class="fa-solid fa-plus"></i>
+                    <input type="text" style="width: 2rem;">
+                    <i class="fa-solid fa-minus"></i>
+                  </div>
+                  <div class="card-body">
+                    <ng-container *ngIf="(detail$|async)?.menu?.type=='menu'">
+                      <img src="data:image/png;base64,{{(detail$|async)?.menu?.menuTailleBoissons?.tailleBoisson?.boissonTailleBoissons?.boisson?.image}}" class="card-img-top" alt="...">
+                    </ng-container>
+
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+
+                    <ng-container *ngIf="(detail$|async)?.menu?.type=='menu'">
+                      <span>{{(detail$|async)?.menu?.menuTailleBoissons?.tailleBoisson?.prix}}</span>
+                    </ng-container>
+
+                    <ng-container *ngIf="(detail$|async)?.burger?.type=='burger'">
+                      <span>{{(detail$|async)?.tailleBoissons?.prix}}</span>
+                    </ng-container>
+
+                  </div>
+                </div>
+              </div>
+              </div>
+              <button type="button" class="btn">autres Boissons</button>
+            </div>
+          </div>
+
+          <div class="card">
+          <div class="card-body">
+            <div class="toast-body">
+              <span>Portion Frites</span>
+              <div class="card complement" style="width: 8rem;">
+                <div class="d-flex justify-content-center">
+                  <div>
+                    <i class="fa-solid fa-plus"></i>
+                    <input type="text" style="width: 2rem;">
+                    <i class="fa-solid fa-minus"></i>
+                  </div>
+                  <div class="card-body">
+                    <img src="../../../../assets/images/ba.jpg" class="card-img-top" alt="...">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <span>250f</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="btn">autres Portion Frites</button>
+          </div>
+          </div>
+        </div>
+
+      <div class="card border-primary mb-3" style="max-width: 20rem;">
+        <div class="card-header">RECAPITULATION</div>
+        <div class="card-body">
+
+          <ng-container *ngIf="(detail$|async)?.menu?.type=='menu'">
+            <h4 class="card-title">{{(detail$|async)?.menu?.nom}}</h4>
+          </ng-container>
+
+          <ng-container *ngIf="(detail$|async)?.burger?.type=='burger'">
+            <h4 class="card-title">{{(detail$|async)?.burger?.nom}}</h4>
+          </ng-container>
+
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <button type="button" style="font-size:2rem;" class="btn">Voir Panier</button>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <div class="toast show" style="width:80%;" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+      <strong class="me-auto">COMPLEMENTS</strong>
+        </div>
+               <div class="card">
+      <div class="card-body">
+        <div class="toast-body">
+          <span>Boisson</span>
+          <div class="card complement" style="width: 8rem;">
+            <div class="d-flex justify-content-center">
+              <div>
+                <i class="fa-solid fa-plus"></i>
+                <input type="text" style="width: 2rem;">
+                <i class="fa-solid fa-minus"></i>
+              </div>
+              <div class="card-body">
+                <ng-container *ngIf="(detail$|async)">
+                  <img src="data:image/png;base64,{{(detail$|async)?.menu?.menuTailleBoissons?.tailleBoisson?.boissonTailleBoissons?.boisson}}" class="card-img-top" alt="...">
+                </ng-container>
+
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+
+                <ng-container *ngIf="(detail$|async)?.menu?.type=='menu'">
+                  <span>{{(detail$|async)?.menu?.menuTailleBoissons?.tailleBoisson?.prix}}</span>
+                </ng-container>
+
+                <ng-container *ngIf="(detail$|async)?.burger?.type=='burger'">
+                  <span>{{(detail$|async)?.tailleBoissons?.prix}}</span>
+                </ng-container>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="btn">autres Boissons</button>
+      </div>
+        </div>
+               <div class="card">
+      <div class="card-body">
+        <div class="toast-body">
+          <span>Portion Frites</span>
+          <div class="card complement" style="width: 8rem;">
+            <div class="d-flex justify-content-center">
+              <div>
+                <i class="fa-solid fa-plus"></i>
+                <input type="text" style="width: 2rem;">
+                <i class="fa-solid fa-minus"></i>
+              </div>
+              <div class="card-body">
+                <img src="../../../../assets/images/ba.jpg" class="card-img-top" alt="...">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <span>250f</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="btn">autres Portion Frites</button>
+      </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>

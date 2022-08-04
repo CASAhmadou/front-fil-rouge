@@ -9,6 +9,7 @@ import { ProduitComponent } from './produit.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ListComponent } from '../components/list/list.component';
 import { CardComponent } from '../components/card/card.component';
+import { DetailComponent } from './detail/detail.component';
 
 
 @NgModule({
@@ -18,7 +19,7 @@ import { CardComponent } from '../components/card/card.component';
     BlogComponent,
     ListComponent,
     CardComponent,
-
+    DetailComponent
   ],
   imports: [
     CommonModule,

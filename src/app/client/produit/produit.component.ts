@@ -12,12 +12,13 @@ import { CatalogueService } from '../shared/service/catalogue.service';
 export class ProduitComponent implements OnInit {
 
   catalogues$ : Observable<Catalogue> | null = null
-  prod: Produit[] | undefined = undefined
+  prod: Produit[] | undefined =  undefined
 
   constructor(private serv:CatalogueService) { }
 
   ngOnInit(): void {
   }
+
 
  
 

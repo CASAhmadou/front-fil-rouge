@@ -19,6 +19,16 @@
                 <li class="nav-item active">
                   <a class="nav-link" routerLink="/produits" href="#">ACCUEIL</a>
                 </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">COMMANDES</a>
+                  <div class="dropdown-menu">
+
+                    <a class="dropdown-item" routerLink="/produits/catalogue" [queryParams]="{type: 'burgers'}">BURGER</a>
+                    
+                    <a class="dropdown-item" routerLink="/produits/catalogue" [queryParams]="{type: 'menus'}">MENU</a>
+
+                  </div>
+                </li>
                 <li class="nav-item">
                   <a class="nav-link" routerLink="/connexion" href="#">SE CONNECTER</a>
                 </li>

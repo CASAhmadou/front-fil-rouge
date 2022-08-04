@@ -14,14 +14,23 @@ export class CatalogueComponent implements OnInit {
 
   catalogues$ : Observable<Catalogue> | null = null
   prod: Produit[] | undefined = undefined
+  type!:string
 
   constructor(private serv:CatalogueService, private route : ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.route.queryParams
+      .subscribe(params => {
+        this.type=params["type"]
+      }
+    );
     this.serv.getCatalogue().subscribe(data => {
-      this.prod =data.produits
+      this.prod = this.type=="menus"?data.menus:data.burgers
     })
   }
+
+    /* this.prod = this.type=="menus"?data.menus:data.burgers */
+    // this.prod=data.produits
 
   CatalogueFiltre(type:string){
     // alert("ok")

@@ -7,7 +7,7 @@
       <img src="../../../../assets/images/logo.png" alt="" width="100"  class="d-inline-block align-text-top">
     </div>
     
-  <div class="cnt-header ko">
+  <div class="cnt-header ko sticky-top">
 
 
       <ul class="nav justify-content-center">
@@ -21,10 +21,13 @@
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">COMMANDES</a>
+                  
                   <div class="dropdown-menu">
 
+                    <!-- <a class="dropdown-item" routerLink="/produits/catalogue">PRODUITS</a> -->
+
                     <a class="dropdown-item" routerLink="/produits/catalogue" [queryParams]="{type: 'burgers'}">BURGER</a>
-                    
+
                     <a class="dropdown-item" routerLink="/produits/catalogue" [queryParams]="{type: 'menus'}">MENU</a>
 
                   </div>

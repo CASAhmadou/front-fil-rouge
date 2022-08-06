@@ -1,25 +1,45 @@
 <ng-container *ngIf="(detail$|async) !=null">
   <div class="container">
+    <!-- somme à commander -->
     <div class="d-flex justify-content-around ecrit">
-    <i class="prev fa-solid fa-circle-arrow-left" [routerLink]="['/produits/catalogue']" routerLinkActive="router-link-active" ></i>
-    <h3>Produits à Commander</h3>
+      <i class="prev fa-solid fa-circle-arrow-left" [routerLink]="['/produits/catalogue']" routerLinkActive="router-link-active" ></i>
+      <h3>Produits à Commander</h3>
 
-    <ng-container *ngIf="(detail$|async)?.menu?.type=='menu'">
-      <span class="prix badge">{{(detail$|async)?.menu?.prix}} f CFA</span>
-    </ng-container>
+      <ng-container *ngIf="(detail$|async)?.menu?.type=='menu'">
+        <span class="prix badge">{{(detail$|async)?.menu?.prix}} f CFA</span>
+      </ng-container>
 
-    <ng-container *ngIf="(detail$|async)?.burger?.type=='burger'">
-      <span class="prix badge">{{(detail$|async)?.burger?.prix}} f CFA</span>
-    </ng-container>
-      </div>
+      <ng-container *ngIf="(detail$|async)?.burger?.type=='burger'">
+        <span class="prix badge">{{(detail$|async)?.burger?.prix}} f CFA</span>
+      </ng-container>
+    </div>
 
-      <div class="container d-flex justify-content-around" >
-    
+    <div class="container d-flex justify-content-around" >
+      <!-- produit à commander -->
       <div class="card" style="width: 18rem;">
         <div class="qte d-flex justify-content-center">
-          <i class="fa-solid fa-plus"></i>
-          <input type="text" style="width: 2rem;">
-          <i class="fa-solid fa-minus"></i>
+          <!-- a revoir -->
+          <div class="cart_counter">
+            <div class="d-flex mb-4" style="max-width: 300px">
+                <button class="btn btn-count "
+                  onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                  <i class="fas fa-minus"></i>
+                </button>
+        
+                <div class="form-outline">
+                  <input id="form1" style="width: 5rem;" min="0" name="quantity" value="1" type="number" class="form-control" />
+                </div>
+        
+                <button class="btn btn-count"
+                onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                <i class="fas fa-plus"></i>
+                </button>
+            </div>
+        </div>
+          <!-- a revoir -->
+          <!-- <i class="fa-solid fa-plus"></i>
+          <input type="text" >
+          <i class="fa-solid fa-minus"></i> -->
         </div>
         <div class="d-flex justify-content-center">
           <ng-container *ngIf="(detail$|async)?.burger?.type=='burger'">
@@ -46,7 +66,8 @@
         </div>
       </div>
 
-        <div class="toast show" style="width:50%;" role="alert" aria-live="assertive" aria-atomic="true">
+      <!-- quelques complements du produit -->
+      <div class="toast show" style="width:50%;" role="alert" aria-live="assertive" aria-atomic="true">
           <div class="toast-header">
             <strong class="me-auto text-center">COMPLEMENTS</strong>
           <!-- <small>11 mins ago</small> -->
@@ -55,41 +76,46 @@
           </button> -->
           </div>
           <div class="card">
+            <!-- complement boisson -->
             <div class="card-body">
               <div class="toast-body">
-              <span>Boisson</span>
-              <div class="card complement" style="width: 8rem;">
-                <div class="d-flex justify-content-center">
-                  <div>
-                    <i class="fa-solid fa-plus"></i>
-                    <input type="text" style="width: 2rem;">
-                    <i class="fa-solid fa-minus"></i>
-                  </div>
-                  <div class="card-body">
-                    <ng-container *ngIf="(detail$|async)?.menu?.type=='menu'">
-                      <img src="data:image/png;base64,{{(detail$|async)?.menu?.menuTailleBoissons?.tailleBoisson?.boissonTailleBoissons?.boisson}}" class="card-img-top" alt="...">
-                    </ng-container>
+                <span>Boisson</span>
+                <div class="card complement" style="width: 8rem;">
+                  <div class="d-flex justify-content-center">
+                    <div>
+                      <i class="fa-solid fa-plus"></i>
+                      <input type="text" style="width: 2rem;">
+                      <i class="fa-solid fa-minus"></i>
+                      </div>
+                      <div class="card-body">
+                      <ng-container *ngIf="(detail$|async)?.menu?.type=='menu'">
+                        <!-- <img src="data:image/png;base64,{{(detail$|async)?.menu?.menuTailleBoissons?.tailleBoissons?.boissonTailleBoissons?.boisson?.image}}" class="card-img-top" alt="..."> -->
+                      </ng-container>
 
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <ng-container *ngIf="(detail$|async)?.menu?.type=='burger'">
+                        <img src="data:image/png;base64,{{(detail$|async)?.burger}}" class="card-img-top" alt="...">
+                      </ng-container>
 
-                    <ng-container *ngIf="(detail$|async)?.menu?.type=='menu'">
-                      <span>{{(detail$|async)?.menu?.menuTailleBoissons?.tailleBoisson?.prix}}</span>
-                    </ng-container>
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
 
-                    <ng-container *ngIf="(detail$|async)?.burger?.type=='burger'">
-                      <span>{{(detail$|async)?.tailleBoissons?.prix}}</span>
-                    </ng-container>
+                      <ng-container *ngIf="(detail$|async)?.menu?.type=='menu'">
+                        <span>{{(detail$|async)?.menu?.menuTailleBoissons?.tailleBoisson?.prix}}</span>
+                      </ng-container>
 
+                      <ng-container *ngIf="(detail$|async)?.burger?.type=='burger'">
+                        <span>{{(detail$|async)?.tailleBoissons?.prix}}</span>
+                      </ng-container>
+
+                    </div>
                   </div>
                 </div>
-              </div>
               </div>
               <button type="button" class="btn">autres Boissons</button>
             </div>
           </div>
-
+          <!-- complement frites -->
           <div class="card">
-          <div class="card-body">
+            <div class="card-body">
             <div class="toast-body">
               <span>Portion Frites</span>
               <div class="card complement" style="width: 8rem;">
@@ -108,10 +134,10 @@
               </div>
             </div>
             <button type="button" class="btn">autres Portion Frites</button>
+            </div>
           </div>
-          </div>
-        </div>
-
+      </div>
+      <!-- detail commande -->
       <div class="card border-primary mb-3" style="max-width: 20rem;">
         <div class="card-header">RECAPITULATION</div>
         <div class="card-body">
@@ -128,51 +154,52 @@
         </div>
       </div>
     </div>
-
+    
     <div class="d-flex justify-content-center">
       <button type="button" style="font-size:2rem;" class="btn">Voir Panier</button>
     </div>
 
-    <div class="d-flex justify-content-center">
-      <div class="toast show" style="width:80%;" role="alert" aria-live="assertive" aria-atomic="true">
+    <!-- tous les complements -->
+    <!-- <div class="d-flex justify-content-center">
+      <div class="toast show" style="width:100%;" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="toast-header">
-      <strong class="me-auto">COMPLEMENTS</strong>
+          <strong class="me-auto">COMPLEMENTS</strong>
         </div>
-               <div class="card">
-      <div class="card-body">
-        <div class="toast-body">
-          <span>Boisson</span>
-          <div class="card complement" style="width: 8rem;">
-            <div class="d-flex justify-content-center">
-              <div>
-                <i class="fa-solid fa-plus"></i>
-                <input type="text" style="width: 2rem;">
-                <i class="fa-solid fa-minus"></i>
-              </div>
-              <div class="card-body">
-                <ng-container *ngIf="(detail$|async)">
-                  <img src="data:image/png;base64,{{(detail$|async)?.menu?.menuTailleBoissons?.tailleBoisson?.boissonTailleBoissons?.boisson}}" class="card-img-top" alt="...">
-                </ng-container>
+        <div class="card">
+          <div class="card-body">
+            <div class="toast-body">
+              <span>Boissons</span>
+              <div class="card complement" style="width: 8rem;">
+                <div class="d-flex justify-content-center">
+                  <div>
+                    <i class="fa-solid fa-plus"></i>
+                    <input type="text" style="width: 2rem;">
+                    <i class="fa-solid fa-minus"></i>
+                  </div>
+                  <div class="card-body">
+                      <ng-container *ngIf="(detail$|async)">
+                        <img src="data:image/png;base64,{{(detail$|async)?.tailleBoissons?.boisson?.image}}" class="card-img-top" alt="...">
+                      </ng-container>
+                    
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    
+                      <ng-container *ngIf="(detail$|async)?.menu?.type=='menu'">
+                        <span>{{(detail$|async)?.menu?.menuTailleBoissons?.tailleBoisson?.prix}}</span>
+                      </ng-container>
+                    
+                      <ng-container *ngIf="(detail$|async)?.burger?.type=='burger'">
+                        <span>{{(detail$|async)?.tailleBoissons?.prix}}</span>
+                      </ng-container>
 
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-
-                <ng-container *ngIf="(detail$|async)?.menu?.type=='menu'">
-                  <span>{{(detail$|async)?.menu?.menuTailleBoissons?.tailleBoisson?.prix}}</span>
-                </ng-container>
-
-                <ng-container *ngIf="(detail$|async)?.burger?.type=='burger'">
-                  <span>{{(detail$|async)?.tailleBoissons?.prix}}</span>
-                </ng-container>
-
+                  </div>
+                </div>
               </div>
             </div>
+            <button type="button" class="btn">autres Boissons</button>
           </div>
         </div>
-        <button type="button" class="btn">autres Boissons</button>
-      </div>
-        </div>
-               <div class="card">
-      <div class="card-body">
+        <div class="card">
+          <div class="card-body">
         <div class="toast-body">
           <span>Portion Frites</span>
           <div class="card complement" style="width: 8rem;">
@@ -191,9 +218,64 @@
           </div>
         </div>
         <button type="button" class="btn">autres Portion Frites</button>
-      </div>
+          </div>
         </div>
       </div>
-    </div>
+    </div> -->
+  
+<!-- a revoir -->
+<div class="middle">
+  <ng-container *ngIf="(detail$|async)?.menu?.type == 'menu'">
+      <h3 class="h3-middle">Composants</h3>
+  </ng-container>
+  <div class="middle-container">
+      <ng-container *ngIf="(detail$|async)?.menu?.type == 'menu'" >
+          <div class="middle-components comp-1">
+              <div class="component" *ngFor="let menuBurger of (detail$|async)?.menu?.menuBurgers">
+                  <cas-detail-menu [menuBurgers]="menuBurger"></cas-detail-menu>
+              </div>
+          </div>
+          <div class="middle-components comp-2">
+              <div class="component" *ngFor="let menuPortion of (detail$|async)?.menu?.menuPortionFrites">
+                  <cas-detail-menu [menuPortions]="menuPortion"></cas-detail-menu>
+              </div>
+          </div>
+      </ng-container>
+  </div>
+  
+</div>
+
+<ng-container *ngIf="(detail$|async)?.menu?.type=='menu'">
+  <h3>Choisissez les varietes disponibles</h3>
+  <div class="bottom">
+      <!-- <div class="bottom-components components" *ngFor="let tailleBoisson of (detail$|async)?.menu?.menuTailleBoissons">
+          <cas-choix-boisson [tailleBoissons]= "tailleBoisson"></cas-choix-boisson>
+      </div> -->
+  </div>
+</ng-container>
+<div class="bottom-2">
+  <h3>Choisissez des Accompagnements</h3>
+  <div class="bot-2">
+      <div class="bot bottom-left">
+          <h4>Accompagnements boissons</h4>
+              <div class="bottom-components">
+                  <!-- <div  *ngFor="let boisson of (detail$|async)?.tailleBoissons">
+                      <cas-choix-boisson [boissons]= "boisson"></cas-choix-boisson>
+                  </div> -->
+              </div>
+      </div>
+      <div class="bot bottom-right">
+              <h4>Accompagnements Frites</h4>
+                  <!-- <div class="bottom-components">
+                      <div *ngFor="let frite of (detail$|async)?.portionFrites">
+                          <cas-choix-boisson [frites]= "frite"></cas-choix-boisson>
+                      </div>
+                  </div> -->
+      </div>
+  </div>
+</div>
+
+
+
   </div>
 </ng-container>

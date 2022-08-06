@@ -10,6 +10,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ListComponent } from '../components/list/list.component';
 import { CardComponent } from '../components/card/card.component';
 import { DetailComponent } from './detail/detail.component';
+import { CardCountComponent } from './detail/card-count/card-count.component';
+import { CardDetailComponent } from './detail/card-detail/card-detail.component';
+import { ChoixBoissonComponent } from './detail/choix-boisson/choix-boisson.component';
+import { DetailMenuComponent } from './detail/detail-menu/detail-menu.component';
 
 
 @NgModule({
@@ -19,7 +23,11 @@ import { DetailComponent } from './detail/detail.component';
     BlogComponent,
     ListComponent,
     CardComponent,
-    DetailComponent
+    DetailComponent,
+    CardCountComponent,
+    CardDetailComponent,
+    ChoixBoissonComponent,
+    DetailMenuComponent
   ],
   imports: [
     CommonModule,

@@ -19,6 +19,7 @@ export class CatalogueComponent implements OnInit {
   constructor(private serv:CatalogueService, private route : ActivatedRoute) { }
 
   ngOnInit(): void {
+    
     this.route.queryParams
       .subscribe(params => {
         this.type=params["type"]
@@ -27,20 +28,11 @@ export class CatalogueComponent implements OnInit {
     this.serv.getCatalogue().subscribe(data => {
       this.prod = this.type=="menus"?data.menus:data.burgers
     })
-  }
 
-    /* this.prod = this.type=="menus"?data.menus:data.burgers */
-    // this.prod=data.produits
-
-  CatalogueFiltre(type:string){
-    // alert("ok")
-    this.serv.getCatalogue().subscribe(data => {
-      // console.log(data)
-      if(type!=""){
-        this.prod = data.produits?.filter(produit => produit.type === type)
-      }else{
-        this.prod = data.produits
-      }
-    })
+    // this.serv.getCatalogue().subscribe(data => {
+    //   if(this.type!=''){
+    //     this.prod = data.produits
+    //   }
+    // })
   }
 }

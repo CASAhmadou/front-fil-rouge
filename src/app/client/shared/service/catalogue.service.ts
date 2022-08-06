@@ -23,7 +23,8 @@ export class CatalogueService {
           menus: data['hydra:member'][1]['menus'],
         }
         data.produits=[...catalogues.menus,...catalogues.burgers]
-        return catalogues
+        // return catalogues
+        return data
       })
     )
   }

@@ -11,9 +11,17 @@ import { CatalogueService } from '../../shared/service/catalogue.service';
   styleUrls: ['./detail.component.css']
 })
 export class DetailComponent implements OnInit {
+  activeTab = 'search';
+
+  search(activeTab:any){
+    this.activeTab = activeTab;
+  }
+
+  result(activeTab:any){
+    this.activeTab = activeTab;
+  }
 
   detail$ : Observable<Detail> | null = null
-  // @Input()
 
   constructor(private serv:CatalogueService, private route : ActivatedRoute) { }
 

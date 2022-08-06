@@ -1,0 +1,13 @@
+.component-bottom{
+    margin-left: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.test{
+    display: flex;
+  }
+h4{
+    color: #C2B364;
+}

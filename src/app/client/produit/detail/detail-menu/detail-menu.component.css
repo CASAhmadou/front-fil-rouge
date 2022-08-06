@@ -1,0 +1,18 @@
+.component img{
+    height: 90px;
+    width: 100px;
+    border-radius: 50%;
+    margin-left: 5px;
+}
+.component p{
+    margin-left: 5px;
+    color: black;
+}
+
+.component{
+    display: flex;
+    flex-direction: column;
+}
+.bottom{
+    background-color: aqua;
+}

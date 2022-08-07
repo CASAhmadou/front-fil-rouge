@@ -5,8 +5,8 @@ export interface Detail{
     id?:number
     menu?:Menu
     burger?:Menu
-    portionFrites?:Produit
-    tailleBoissons?:TailleBoisson
+    portionFrites?:Produit[]
+    tailleBoissons?:TailleBoisson[]
 }
 export interface Menu{
     id?:number
@@ -17,12 +17,12 @@ export interface Menu{
     type?:string
     image?:Blob
     catalogue?:string
-    menuBurgers?:MenuBurger[]
+    menuBurgers?:MenuBurger
     menuPortionFrites?:MenuPortion[]
-    menuTailleBoissons?:MenuTailleBoisson
+    menuTailleBoissons?:MenuTailleBoisson[]
 }
 
-export interface MenuTailleBoisson{ 
+export interface MenuTailleBoisson{
     quantite?:number
     tailleBoisson?:TailleBoissonMenu
 }
@@ -36,7 +36,7 @@ export interface TailleBoissonMenu{
     id?:number
     prix?:number
     libelle?:string
-    boissonTailleBoissons?:BoissonTailleBoisson
+    boissonTailleBoissons?:BoissonTailleBoisson[]
 }
 export interface BoissonTailleBoisson{
     id?:number

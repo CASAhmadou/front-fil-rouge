@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CardCountComponent } from './card-count.component';
+import { ComplementComponent } from './complement.component';
 
-describe('CardCountComponent', () => {
-  let component: CardCountComponent;
-  let fixture: ComponentFixture<CardCountComponent>;
+describe('ComplementComponent', () => {
+  let component: ComplementComponent;
+  let fixture: ComponentFixture<ComplementComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CardCountComponent ]
+      declarations: [ ComplementComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CardCountComponent);
+    fixture = TestBed.createComponent(ComplementComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

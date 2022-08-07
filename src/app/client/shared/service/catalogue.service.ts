@@ -23,8 +23,8 @@ export class CatalogueService {
           menus: data['hydra:member'][1]['menus'],
         }
         data.produits=[...catalogues.menus,...catalogues.burgers]
-        // return catalogues
-        return data
+        return catalogues
+        // return data
       })
     )
   }
@@ -37,7 +37,6 @@ export class CatalogueService {
           })
       )
   }
-    
 
 
 
@@ -53,11 +52,12 @@ export class CatalogueService {
 
 
 
-  
+
+
 
 
   // getProduit$(id:number,type:string):Observable<Detail>{
-    
+
   //   if(type=="burger"){
   //     return this.http.get<Detail>(`${this.apiDetail}/burgers/${id}}`)
   //   }

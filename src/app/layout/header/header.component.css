@@ -6,6 +6,26 @@
   background-position: top;
 
 }
+.con::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 15vh;
+}
+.con *{
+  z-index: 1;
+}
+
+.con img{
+  width: 10%;
+  position: absolute;
+  left: 10rem;
+  top: .5rem;;
+}
+
 .img-top{
   width: 100vw;
 }
@@ -22,4 +42,10 @@
 li a:hover{
   border-radius: 5rem;
   background-color: #F4782F;
+}
+
+.panier{
+  color: white;
+  position: relative;
+  margin-right: 0;
 }

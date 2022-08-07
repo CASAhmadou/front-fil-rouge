@@ -10,10 +10,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ListComponent } from '../components/list/list.component';
 import { CardComponent } from '../components/card/card.component';
 import { DetailComponent } from './detail/detail.component';
-import { CardCountComponent } from './detail/card-count/card-count.component';
-import { CardDetailComponent } from './detail/card-detail/card-detail.component';
 import { ChoixBoissonComponent } from './detail/choix-boisson/choix-boisson.component';
 import { DetailMenuComponent } from './detail/detail-menu/detail-menu.component';
+import { CompterComponent } from './detail/compter/compter.component';
+import { ComplementComponent } from './detail/complement/complement.component';
 
 
 @NgModule({
@@ -24,8 +24,8 @@ import { DetailMenuComponent } from './detail/detail-menu/detail-menu.component'
     ListComponent,
     CardComponent,
     DetailComponent,
-    CardCountComponent,
-    CardDetailComponent,
+    CompterComponent,
+    ComplementComponent,
     ChoixBoissonComponent,
     DetailMenuComponent
   ],
@@ -33,6 +33,14 @@ import { DetailMenuComponent } from './detail/detail-menu/detail-menu.component'
     CommonModule,
     ProduitRoutingModule,
     RouterModule,
+  ],
+  exports:[
+    CompterComponent,
+    ComplementComponent,
+    ChoixBoissonComponent,
+    DetailComponent,
+    DetailMenuComponent
   ]
+
 })
 export class ProduitModule { }

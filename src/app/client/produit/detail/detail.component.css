@@ -2,12 +2,17 @@
     margin: 20px;
 }
 
+img:hover{
+  transform:scale(1.5);
+  box-shadow: 10px 15px 50px rgba(0, 0, 0, 0.09);
+}
+
 .prix{
     background-color: #F4782F;
     font-size: 2rem;
 }
 
-.btn:hover, i:hover{
+.btn:hover{
     cursor: pointer;
     border-radius: 5rem;
     background-color: #F4782F;
@@ -16,10 +21,6 @@
     font-size: 3rem;
 }
 
-.btn{
-    font-size: 2rem;
-    padding: 10px;
-}
 
 .complement{
     overflow: hidden;
@@ -33,3 +34,8 @@
     box-shadow: 10px 15px 50px rgba(0, 0, 0, 0.09);
 }
 
+.comp{
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}

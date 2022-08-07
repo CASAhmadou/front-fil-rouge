@@ -12,6 +12,7 @@ export class DetailMenuComponent implements OnInit {
   constructor() { }
   @Input('menuBurgers') menuBurgers : MenuBurger|null = null;
   @Input('menuPortions') menuPortions : MenuPortion|null = null;
+
   ngOnInit(): void {
   }
 

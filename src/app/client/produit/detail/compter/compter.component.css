@@ -1,0 +1,9 @@
+input{
+  width: 5rem;
+}
+
+.btn:hover{
+  cursor: pointer;
+  background-color: #F4782F;
+}
+

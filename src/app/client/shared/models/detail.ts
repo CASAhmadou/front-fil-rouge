@@ -1,6 +1,7 @@
 import { MenuBurger } from "./menuBurger"
 import { MenuPortion } from "./menuPortion"
 import { Produit } from "./produit"
+
 export interface Detail{
     id?:number
     menu?:Menu
@@ -8,6 +9,7 @@ export interface Detail{
     portionFrites?:Produit[]
     tailleBoissons?:TailleBoisson[]
 }
+
 export interface Menu{
     id?:number
     nom?:string
@@ -32,12 +34,14 @@ export interface TailleBoisson{
     boisson?:Produit
     prix?:number
 }
+
 export interface TailleBoissonMenu{
     id?:number
     prix?:number
     libelle?:string
     boissonTailleBoissons?:BoissonTailleBoisson[]
 }
+
 export interface BoissonTailleBoisson{
     id?:number
     stock?:string

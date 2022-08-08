@@ -41,6 +41,7 @@
             <p class="card-text">{{(detail$|async)?.menu?.description}}</p>
           </ng-container>
         </div>
+
         <button type="button" [routerLink]="['/produits/catalogue']" routerLinkActive="router-link-active"  class="btn">Ajouter autres commandes</button>
       </div>
 
@@ -108,7 +109,7 @@
           </div>
       </div>
       <!-- detail commande -->
-      <div class="card border-primary mb-3" style="max-width: 20rem;">
+      <div class="card" style="max-width:18rem; height: 25rem;">
         <div class="card-header">RECAPITULATION</div>
         <div class="card-body">
 
@@ -122,11 +123,13 @@
 
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         </div>
+        <!-- <button *ngIf="produit$ | async as product" [disabled] = disabled_attr (click)="addToCart(product)" class="btn">AJOUTER AU PANIER</button> -->
+        <button *ngIf="detail$|async as detail" [disabled] = disabled_attr (click)="AjoutPanier(detail)"  class="btn">Ajouter au Panier</button>
       </div>
     </div>
 
     <div class="d-flex justify-content-center">
-      <button type="button" style="font-size:2rem;" class="btn">Voir Panier</button>
+      <button type="button" style="font-size:2rem;" class="btn" (click)="panierOuvert()">Voir Panier</button>
     </div>
 
     <!-- tous les complements -->

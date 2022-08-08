@@ -1,12 +1,12 @@
 <div class="cart_counter mb-3">
   <div class="qte d-flex justify-content-center cart_counter">
-    <button class="btn btn-count "
+    <button class="btn btn-count" (click)="panier()"
       onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
       <i class="fas fa-minus"></i>
     </button>
 
     <div class="form-outline">
-      <input id="form1" min="" name="quantity" value="" type="number" class="form-control" />
+      <input id="form1" min="1" name="quantity" value="" type="number" class="form-control" />
     </div>
 
     <button class="btn btn-count"

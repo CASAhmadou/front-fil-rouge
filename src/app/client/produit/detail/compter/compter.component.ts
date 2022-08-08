@@ -15,4 +15,8 @@ export class CompterComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  i: number = 0
+  panier(): void{
+    alert("ok")
+  }
 }

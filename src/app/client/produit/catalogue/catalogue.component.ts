@@ -19,7 +19,6 @@ export class CatalogueComponent implements OnInit {
   constructor(private serv:CatalogueService, private route : ActivatedRoute) { }
 
   ngOnInit(): void {
-    
     this.route.queryParams
       .subscribe(params => {
         this.type=params["type"]

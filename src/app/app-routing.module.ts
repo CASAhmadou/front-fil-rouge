@@ -7,6 +7,7 @@ import { SecuriteComponent } from './securite/securite.component';
 
 const routes: Routes = [
   { path: 'produits', loadChildren: () => import(`./client/produit/produit.module`).then(m => m.ProduitModule)},
+  {path: 'commande', loadChildren: () => import(`./client/commande/commande.module`).then(m=>m.CommandeModule)},
   { path: 'accueil', component: ProduitComponent},
   { path: '', redirectTo: 'accueil', pathMatch:"full"},
   { path: 'connexion', component: SecuriteComponent},

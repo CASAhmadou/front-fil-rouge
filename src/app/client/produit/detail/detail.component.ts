@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Catalogue } from '../../shared/models/catalogue';
 import { Detail } from '../../shared/models/detail';
-import { BurgerCommande, MenuCommande } from '../../shared/models/panier';
+import { BurgerCommande, CommandeBoisson, CommandeFrite, CommandeMenuBoissonTaille, MenuCommande } from '../../shared/models/panier';
 import { CatalogueService } from '../../shared/service/catalogue.service';
 import { EventService } from '../../shared/service/event.service';
 import { PanierService } from '../../shared/service/panier.service';
@@ -13,39 +13,38 @@ import { PanierService } from '../../shared/service/panier.service';
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.css']
 })
+
 export class DetailComponent implements OnInit {
-  // activeTab = 'search';
-
-  // search(activeTab:any){
-  //   this.activeTab = activeTab;
-  // }
-
-  // result(activeTab:any){
-  //   this.activeTab = activeTab;
-  // }
 
   detail$ : Observable<Detail> | null = null
+  commandeMenuBoissonTailles : CommandeMenuBoissonTaille[] = []
 
   constructor(private serv:CatalogueService,private route : ActivatedRoute,
     private router:Router, private panier: PanierService, private event: EventService) { }
 
-  private type: any =""
-  private id: any = 0
-  qte = 0
-  bool = 0
-  disabled_attr = false
-  tab :any[] = []
-  quantite = 0
+    private type: any =""
+    private id: any = 0
+    qte = 0
+    vide = 0
+    disabled_attr = false
+    many : any[] = []
+    quantite = 0
 
   ngOnInit(): void {
-    this.id=this.route.snapshot.paramMap.get('id')
-    this.type=this.route.snapshot.paramMap.get(this.type)
-    this.detail$=this.serv.getProduit$(this.id)
 
     this.event.childEventListner().subscribe(qte =>{
       this.quantite += qte
+      // console.log(qte)
     })
+
+    this.id=this.route.snapshot.paramMap.get('id')
+    this.type=this.route.snapshot.paramMap.get('type')
+    this.detail$=this.serv.getProduit$(this.id)
   }
+
+  // desactiveButton(event: any) {
+  //   this.disabled_attr =  event
+  // }
 
   size:number = 1
   obj(event :any){
@@ -58,36 +57,54 @@ export class DetailComponent implements OnInit {
   }
 
   AjoutPanier(detail:Detail){
+
+    if(detail.burger){
+      let burger:BurgerCommande = {
+        quantite:this.size,
+        burger:detail.burger
+      }
+      this.panier.ajoutBurger(burger)
+      console.log(this.panier.behav.value)
+    }
+
     if (detail.menu){
       let menu:MenuCommande = {
         quantite:this.size,
-        menu:detail.menu
+        menu:{
+          id: Number(detail.menu.id),
+          nom: detail.menu.nom,
+          image: detail.menu.image,
+          type: detail.menu.type,
+          prix:detail.menu.prix,
+          commandeMenuBoissonTailles: this.commandeMenuBoissonTailles
+        }
       }
       this.panier.ajoutMenu(menu)
-      // console.log(this.panier.newCart.value)
+      console.log(this.panier.behav.value)
     }
-    //console.log(detail.burger)
-      // if(detail.burger){
-      //   let burger:BurgerCommande = {
-      //     quantite:this.size,
-      //     burger:detail.burger
-      //   }
-      //   this.cartServ.addBurger(burger)
-      //   console.log(this.cartServ.newCart.value)
-      // }
+
+
+    if(detail.tailleBoissons){
+        let boisson:CommandeBoisson = {
+          quantite: this.size,
+          boissonTailleBoisson: {}
+        }
+        this.panier.ajoutBoisson(boisson)
+        //this.toast.success({detail:"success",summary:"le burger bien a été enregistré dans le panier"})
+        console.log(this.panier.behav.value)
+      }
+
+      if(detail.portionFrites){
+        let frite:CommandeFrite = {
+          quantite: this.size,
+          portionFrite: detail
+        }
+        this.panier.ajoutBoisson(frite)
+        //this.toast.success({detail:"success",summary:"le burger bien a été enregistré dans le panier"})
+        console.log(this.panier.behav.value)
+      }
 
   }
-
-
-
-
-
-
-
-
-
-
-
 
   panierOuvert():void{
     this.router.navigateByUrl(`commande/panier`)
@@ -95,11 +112,31 @@ export class DetailComponent implements OnInit {
 
 
 
-  message = ""
-  message2 = ""
-  textBool = false
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  text = ""
+  text2 = ""
+  textvide = false
   parentControl(event :any){
-    if(this.tab.length==0)
+    if(this.many.length==0)
     {
         let object={
           idTaille:event.idTaille,
@@ -108,15 +145,23 @@ export class DetailComponent implements OnInit {
             {
               idBoisson:event.boissonTaille.idBoisson,
                size:this.size,
-               stock:event.boissonTaille.stock
+               stock:event.boissonTaille.stock,
+               idB: event.idB
             }
           ]
         }
-        this.tab.push(object);
+        let commande={
+          quantite: this.size,
+          boissonTailles: {
+            id:event.boissontTaille.idB
+          }
+        }
+        this.commandeMenuBoissonTailles.push(commande)
+        this.many.push(object);
     }
     else{
       var trouve=false
-      this.tab.map(
+      this.many.map(
         data=>{
           if(data.idTaille==event.idTaille){
             trouve=true
@@ -135,57 +180,57 @@ export class DetailComponent implements OnInit {
             }
           ]
         }
-        this.tab.push(object);
+        this.many.push(object);
       }
       else{
 
-        this.tab.map(
+        this.many.map(
           data=>{
             if(data.idTaille==event.idTaille){
-              let boissonsTab =
+              let boissonsmany =
               {
                 idBoisson:event.boissonTaille.idBoisson,
                 size:this.size,
                 stock:event.boissonTaille.stock
               }
-              let tabBoisson:any[] = data.boissons
-              let testBool = false
-              tabBoisson.map(
+              let manyBoisson:any[] = data.boissons
+              let testvide = false
+              manyBoisson.map(
                 (bois,index)=>{
                   if(bois.idBoisson == event.boissonTaille.idBoisson){
-                    testBool = true
-                    data.boissons[index] = boissonsTab
+                    testvide = true
+                    data.boissons[index] = boissonsmany
                   }
                 }
               )
-              if(testBool==false){
-                data.boissons.push(boissonsTab)
+              if(testvide==false){
+                data.boissons.push(boissonsmany)
               }
             }
           }
         )
       }
     }
-    //console.log(this.tab)
-    this.textAlert(this.tab)
+    //console.log(this.many)
+    this.textAlert(this.many)
   }
 
-  textAlert(tab :any[]):string{
-    let totalSize = 0
-      tab.forEach(element => {
-      let tabBoissons:any[] = element.boissons
-      tabBoissons.forEach(elem=>{
-        totalSize+=elem.size
-        if(totalSize > element.qte){
-          this.message = "vous avez depasser le nombre de boissons"
+  textAlert(many :any[]):string{
+    let totalsize = 0
+      many.forEach(element => {
+      let manyBoissons:any[] = element.boissons
+      manyBoissons.forEach(elem=>{
+        totalsize+=elem.size
+        if(totalsize > element.qte){
+          this.text = "vous avez depasser le nombre de boissons"
           this.disabled_attr = true
         }
         else if(elem.size > elem.stock){
-          this.message = "le stock est epuisé"
+          this.text = "le stock est epuisé"
           this.disabled_attr = true
         }
         else{
-          this.message = ""
+          this.text = ""
           this.disabled_attr = false
         }
       })
@@ -194,17 +239,17 @@ export class DetailComponent implements OnInit {
   }
 
   parentControl2(event : any){
-    if(this.tab.length==0){
+    if(this.many.length==0){
       let obj2={
         idBoisson:event.idBoisson,
         size:this.size,
         stock:event.stock
       }
-      this.tab.push(obj2)
+      this.many.push(obj2)
     }
     else{
       var trouve=false
-      this.tab.map(
+      this.many.map(
         data=>{
           if(data.idBoisson==event.idBoisson){
             trouve=true
@@ -217,43 +262,80 @@ export class DetailComponent implements OnInit {
           size:this.size,
           stock:event.stock
         }
-        this.tab.push(obj2)
+        this.many.push(obj2)
       }
       else{
-        this.tab.map(data=>{
+        this.many.map(data=>{
           data.size = event.size
         })
       }
     }
-    console.log(this.tab)
-    this.textAlert2(this.tab)
+    console.log(this.many)
+    this.textAlert2(this.many)
   }
 
-  textAlert2(tab:any[]){
-    tab.forEach(element=>{
+  textAlert2(many:any[]){
+    many.forEach(element=>{
       if(element.size > element.stock){
-          this.message2 = "stock epuisé"
+          this.text2 = "stock epuisé"
           this.disabled_attr = true
       }
       else{
-        this.message2=""
+        this.text2=""
         this.disabled_attr = false
       }
     })
   }
-
-
-
-
-
-
-
-
-
-
-
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

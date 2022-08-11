@@ -1,8 +1,8 @@
 <div class="card" style="width: 9rem;">
-  <ng-container *ngIf="boissonTailleBoissons">
+  <ng-container *ngIf="boissonTailleBoisson">
   <div class="img-input">
-      <div class="cart_counter"><cas-compter></cas-compter></div>
-      <img src="data:image/png;base64,{{boissonTailleBoissons.boisson?.image}}" alt="">
+      <div class="cart_counter"><cas-compter (sizeChange)="tailleControle($event)" [(size)]="fontSizePx" [boissonTailleBoissons]="boissonTailleBoisson"></cas-compter></div>
+      <img src="data:image/png;base64,{{boissonTailleBoisson.boisson?.image}}" alt="">
       <label class="container"><input type="checkbox" ><span class="checkmark"></span></label>
   </div>
 
@@ -10,7 +10,7 @@
 
 <ng-container *ngIf="boissons">
   <div class="img-input">
-      <div class="cart_counter"><cas-compter></cas-compter></div>
+      <div class="cart_counter"><cas-compter (sizeChange)="tailleControle($event)" [boisson]="boissons"></cas-compter></div>
       <img src="data:image/png;base64,{{boissons.boisson?.image}}" alt="">
       <label class="container"><input type="checkbox" ><span class="checkmark"></span></label>
   </div>
@@ -18,7 +18,7 @@
 
 <ng-container *ngIf="frites">
   <div class="img-input">
-      <div class="cart_counter"><cas-compter></cas-compter></div>
+      <div class="cart_counter"><cas-compter [frites]="frites"></cas-compter></div>
       <img src="data:image/png;base64,{{frites.image}}" alt="">
       <label class="container"><input type="checkbox"><span class="checkmark"></span></label>
   </div>

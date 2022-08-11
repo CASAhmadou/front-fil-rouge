@@ -14,6 +14,7 @@ import { ChoixBoissonComponent } from './detail/choix-boisson/choix-boisson.comp
 import { DetailMenuComponent } from './detail/detail-menu/detail-menu.component';
 import { CompterComponent } from './detail/compter/compter.component';
 import { ComplementComponent } from './detail/complement/complement.component';
+import { LayoutModule } from 'src/app/layout/layout.module';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { ComplementComponent } from './detail/complement/complement.component';
     CommonModule,
     ProduitRoutingModule,
     RouterModule,
+    LayoutModule
   ],
   exports:[
     CompterComponent,

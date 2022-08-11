@@ -10,17 +10,16 @@ export class HeaderComponent implements OnInit {
 
   constructor(private panier: PanierService) { }
 
-  number: number =0
-  totalPanier: number = 0
+  point: number=0
+  panierTotal:number=0
   ngOnInit(): void {
-    this.panier.newCart.subscribe(data=> {
-      if(data.commandeBurgers && data.commandeMenus
-        && data.commandeFrites && data.commandeBoissons){
-        this.number=data.commandeBurgers?.length + data.commandeMenus?.length
-         + data.commandeFrites?.length + data.commandeBoissons?.length
+    this.panier.behav.subscribe(data=> {
+      if(data.commandeMenus && data.commandeBurgers && data.commandeFrites && data.commandeBoissons){
+        this.panierTotal =data.commandeFrites.length + data.commandeBurgers.length
+        + data.commandeBoissons.length + data.commandeMenus.length
+        // console.log(this.panier)
       }
-      console.log(this.number)
-      this.number = this.totalPanier
+      this.point=this.panierTotal
     })
   }
 

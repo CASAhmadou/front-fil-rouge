@@ -2,7 +2,8 @@
   <h5> {{tailleBoissons.tailleBoisson?.libelle}}({{tailleBoissons.quantite}}) {{tailleBoissons.tailleBoisson?.prix}}f CFA l'unité</h5>
     <div class="test">
         <ng-container *ngFor="let boissonTailleBoisson of tailleBoissons.tailleBoisson?.boissonTailleBoissons">
-            <cas-complement [boissonTailleBoissons]="boissonTailleBoisson"></cas-complement>
+            <cas-complement
+             [boissonTailleBoisson]="boissonTailleBoisson"></cas-complement>
         </ng-container>
     </div>
 </div>

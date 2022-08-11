@@ -1,84 +1,59 @@
-<div class="container d-flex justify-content-around mt-5">
-  <div class="col-6 panier">
-    <!-- <i class="fa-solid fa-cart-shopping i">
-      <span class="position-absolute start-50 translate-middle badge rounded-pill"></span>
-    </i> -->
+<cas-header></cas-header>
+<cas-footer></cas-footer>
 
-    <section class="h-100 gradient-custom">
 
-      <div class="container py-5">
-        <div class="row d-flex justify-content-center my-4">
+<ng-container *ngIf="items.length == 0">
+  <h4>panier vide</h4>
+</ng-container>
 
-          <div class="">
-            <div class="card mb-4">
-              <div class="card-header py-3">
-                <h5 class="mb-0">RESUME DU PANIER</h5>
+
+<ng-container *ngIf="items.length != 0">
+  <div class="container d-flex justify-content-around align-items-center mt-5">
+    <div class="col-6 panier">
+
+      <div class="d-flex justify-content-around ecrit ">
+        <i class="prev fa-solid fa-circle-arrow-left" [routerLink]="['/produits/details/menu/{{id}}']" routerLinkActive="router-link-active" ></i>
+          <span class="prix badge">{{total}} CFA</span>
+      </div>
+
+      <section class="h-100 gradient-custom">
+
+        <div class="container py-5">
+          <div class="row d-flex justify-content-center my-4">
+
+            <div class="">
+              <div class="card mb-4">
+                <div class="card-header py-3">
+                  <h5 class="mb-0">CONTENUE DU PANIER</h5>
+                </div>
+                <div class="card-body form-group">
+                  <ul class="list-group list-group-flush" *ngFor="let item of items; let i=index">
+                    <cas-ligne [item]="item" [itemMenu]="item"></cas-ligne>
+                   </ul>
+                </div>
               </div>
-              <div class="card-body">
-                <ul class="list-group list-group-flush">
-                  <li
-                    class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
-                    PRODUITS
-                    <span>20 000 X0F  </span>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-
-
-                  </li>
-                  <li
-                    class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
-                    <div>
-                      <strong>TOTAL PAYEMENT</strong>
-                      <strong>
-                        <p class="mb-0">(TAV INCLUS)</p>
-                      </strong>
-                    </div>
-                    <span><strong>20 000 X0F</strong></span>
-                  </li>
-                </ul>
-             </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <a routerLink="/client/commande/livraison">
-      <button type="button" class="btn btn-pers btn-lg btn-block">
-        COMMANDER
-      </button>
-    </a>
-
-    <a routerLink="/client/commande">
-      <button type="button" class="btn btn-pers btn-lg btn-block">
-        ANNULER
-      </button>
-    </a>
-        <!-- <ng-container *ngIf="(detail$|async)?.menu?.type=='menu'">
-          <h4 class="card-title">{{(detail$|async)?.menu?.nom}}</h4>
-        </ng-container>
-
-        <ng-container *ngIf="(detail$|async)?.burger?.type=='burger'">
-          <h4 class="card-title">{{(detail$|async)?.burger?.nom}}</h4>
-        </ng-container> -->
-
-
-  </div>
-
-  <div class="toast show livraison col-6" aria-atomic="true">
-      <div class="form-group container">
-        <label class="col-form-label col-form-label-lg" for="inputLarge">Numéro Téléphone</label>
-        <input class="form-control form-control-lg" type="text" placeholder="77 777 77 77" id="inputLarge">
-      </div>
-    <div class="d-flex justify-content-around">
-    <div class="form-check">
-      <input class="form-check-input" type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
-      <label class="form-check-label" for="optionsRadios1">Livrable</label>
+      </section>
     </div>
-    <div class="form-check">
-      <input class="form-check-input" type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
-      <label class="form-check-label" for="optionsRadios1">Livrable</label>
+
+    <div class=" d-flex col-4 flex-wrap row" style="height: 30rem;">
+      <cas-livraison></cas-livraison>
+
+      <div class="d-flex justify-content-around mt-5">
+        <a routerLink="/produits">
+          <button type="button" class="btn btn-pers btn-lg btn-block">
+            ANNULER
+          </button>
+        </a>
+        <a routerLink="/commande">
+          <button type="button" class="btn btn-pers btn-lg btn-block">
+            COMMANDER
+          </button>
+        </a>
+      </div>
     </div>
-  </div>
-  </div>
 </div>
+
+</ng-container>

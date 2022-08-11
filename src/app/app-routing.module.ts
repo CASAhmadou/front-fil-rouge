@@ -10,7 +10,7 @@ const routes: Routes = [
   {path: 'commande', loadChildren: () => import(`./client/commande/commande.module`).then(m=>m.CommandeModule)},
   { path: 'accueil', component: ProduitComponent},
   { path: '', redirectTo: 'accueil', pathMatch:"full"},
-  { path: 'connexion', component: SecuriteComponent},
+  {path: 'connexion', loadChildren: () => import(`./securite/securite.module`).then(m=>m.SecuriteModule)},
   { path:'**', component: NotFoundComponent}
 ];
 

@@ -19,21 +19,25 @@ export interface MenuCommande{
 }
 
 export interface Menu{
-  id?: number
-  comMenuBoissonTailles?:CommandeBoissonTaille[]
+  id: number
+  nom?:string
+  image?:Blob
+  type?:string
+  prix?:number
+  commandeMenuBoissonTailles:CommandeMenuBoissonTaille[]
 }
 
-export interface CommandeBoissonTaille{
-  quantite:number
+export interface CommandeMenuBoissonTaille{
+  quantite?:number
   tailleBoissons?: BoissonTailleBoisson
 }
 
 export interface CommandeBoisson{
-  quantite:number
+  quantite?:number
   boissonTailleBoisson?:BoissonTailleBoisson
 }
 
 export interface CommandeFrite{
-  quantite:number
+  quantite?:number
   portionFrite?: Produit
 }

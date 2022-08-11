@@ -1,16 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { SecuriteComponent } from './securite.component';
+import { ConnexionComponent } from './connexion/connexion.component';
 
 const routes: Routes = [
-  { path: '', component:SecuriteComponent}
+  { path: '', component:ConnexionComponent},
+  {path: 'connexion', component: ConnexionComponent}
 ];
 
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule
-  ]
+    RouterModule.forChild(routes)
+  ],
+  exports: [RouterModule]
 })
 export class SecuriteRoutingModule { }

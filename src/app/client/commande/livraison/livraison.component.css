@@ -1,8 +1,8 @@
-
 .livraison
 {
-  width: 30%;
   background-color: #F4782F;
+  height: 25rem;
+  padding-top: 2em;
 }
 
 .panier .i{
@@ -27,9 +27,5 @@
 }
 
 .form-check{
-  font-size: 1.5rem;
-}
-
-.input{
-  width: 80%;
+  font-size: 1.3rem;
 }

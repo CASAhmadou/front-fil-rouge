@@ -1,3 +1,7 @@
+<cas-header></cas-header>
+<cas-footer></cas-footer>
+
+
 <ng-container *ngIf="(detail$|async) !=null">
   <div class="container mb-10">
     <!-- somme à commander -->
@@ -14,12 +18,12 @@
       </ng-container>
     </div>
 
-    <div class="container d-flex justify-content-around" >
+    <div class="container d-flex justify-content-around align-items-center" >
       <!-- detail produit à commander -->
       <div class="card" style="width: 18rem; height: 25rem;">
         <!-- detail produit selectionner -->
         <div class="d-flex justify-content-center flex-wrap">
-          <cas-compter></cas-compter>
+          <cas-compter (count)="countEmit($event)" [produits]="(detail$|async)"></cas-compter>
           <ng-container *ngIf="(detail$|async)?.burger?.type=='burger'">
             <img src="data:image/png;base64,{{(detail$|async)?.burger?.image}}" style="max-width: 13rem;" class="card-img-top" alt="...">
           </ng-container>
@@ -64,7 +68,7 @@
                       <ng-container *ngIf="(detail$|async)?.menu?.type=='menu'">
                         <div class="card-body">
                             <div class="" style="width: 10rem;" *ngFor="let tailleBoisson of (detail$|async)?.menu?.menuTailleBoissons">
-                                <cas-choix-boisson [tailleBoissons]= "tailleBoisson"></cas-choix-boisson>
+                                <cas-choix-boisson [qteMenu]="qteMenu" (sizeChange)="obj($event)" (ObjectControl)="parentControl($event)" [tailleBoissons]= "tailleBoisson"></cas-choix-boisson>
                             </div>
                         </div>
                       </ng-container>
@@ -123,8 +127,7 @@
 
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         </div>
-        <!-- <button *ngIf="produit$ | async as product" [disabled] = disabled_attr (click)="addToCart(product)" class="btn">AJOUTER AU PANIER</button> -->
-        <button *ngIf="detail$|async as detail" [disabled] = disabled_attr (click)="AjoutPanier(detail)"  class="btn">Ajouter au Panier</button>
+        <button *ngIf="detail$|async as detail" (click)="AjoutPanier(detail)"  class="btn">Ajouter au Panier</button>
       </div>
     </div>
 

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Catalogue } from '../../shared/models/catalogue';
@@ -18,6 +18,7 @@ export class DetailComponent implements OnInit {
 
   detail$ : Observable<Detail> | null = null
   commandeMenuBoissonTailles : CommandeMenuBoissonTaille[] = []
+
 
   constructor(private serv:CatalogueService,private route : ActivatedRoute,
     private router:Router, private panier: PanierService, private event: EventService) { }
@@ -46,8 +47,10 @@ export class DetailComponent implements OnInit {
   //   this.disabled_attr =  event
   // }
 
+  //error
   size:number = 1
   obj(event :any){
+    // alert(event)
     this.size= event
   }
 
@@ -64,7 +67,6 @@ export class DetailComponent implements OnInit {
         burger:detail.burger
       }
       this.panier.ajoutBurger(burger)
-      console.log(this.panier.behav.value)
     }
 
     if (detail.menu){
@@ -85,12 +87,12 @@ export class DetailComponent implements OnInit {
 
 
     if(detail.tailleBoissons){
+      alert(this.size)
         let boisson:CommandeBoisson = {
           quantite: this.size,
           boissonTailleBoisson: {}
         }
         this.panier.ajoutBoisson(boisson)
-        //this.toast.success({detail:"success",summary:"le burger bien a été enregistré dans le panier"})
         console.log(this.panier.behav.value)
       }
 
@@ -99,8 +101,7 @@ export class DetailComponent implements OnInit {
           quantite: this.size,
           portionFrite: detail
         }
-        this.panier.ajoutBoisson(frite)
-        //this.toast.success({detail:"success",summary:"le burger bien a été enregistré dans le panier"})
+        this.panier.ajoutFrite(frite)
         console.log(this.panier.behav.value)
       }
 

@@ -29,6 +29,7 @@ export class CompterComponent implements OnInit {
   resize(delta: number) {
     this.size = Math.min(40, Math.max(1, +this.size + delta));
     this.sizeChange.emit(this.size)
+   
     this.count.emit(this.size)
   }
 

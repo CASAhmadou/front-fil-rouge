@@ -153,7 +153,7 @@ ajoutBoisson(boissonCommande:CommandeBoisson){
 }
 
 /* frites commande */
-addFrite(friteCommande:CommandeFrite){
+ajoutFrite(friteCommande:CommandeFrite){
   const ls = JSON.parse(localStorage.getItem('cart') || 'null')
     let newData = {
       ...this.behav.value,

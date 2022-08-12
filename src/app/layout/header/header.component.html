@@ -28,12 +28,19 @@
 
                   </div>
                 </li>
+                <ng-container *ngIf="!isConnected">
+                  <li class="nav-item">
+                    <a class="nav-link" routerLink="/connexion">SE CONNECTER</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link">S'INSCRIRE</a>
+                  </li>
+              </ng-container>
+              <ng-container *ngIf="isConnected">
                 <li class="nav-item">
-                  <a class="nav-link" routerLink="/connexion">SE CONNECTER</a>
+                  <a class="nav-link" (click)="deconnect()">SE DECONNECTER</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">S'INSCRIRE</a>
-                </li>
+              </ng-container>
               </ul>
               <a href="" routerLink="/commande/panier">
                   <i class="fa-solid fa-cart-shopping panier">

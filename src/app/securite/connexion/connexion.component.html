@@ -2,29 +2,34 @@
       <div class="toast show container livraison d-flex justify-content-center align-items-center" aria-atomic="true">
         <div class="form-group ">
           <h1>Connectez - vous! </h1>
-         <div class="form-group">
-          <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="name@example.com">
-          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-            <label for="floatingInput">abc@gmail.com</label>
-          </div>
-          <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-            <label for="floatingPassword">Password</label>
-          </div>
 
-          <div class="d-flex justify-content-around mt-5">
-            <a routerLink="/inscrire">
-              <button type="button" class="btn btn-pers btn-lg btn-block">
-                NOUVEAU COMPTE
-              </button>
-            </a>
-            <a routerLink="/accueil">
-              <button type="button" class="btn btn-pers btn-lg btn-block">
-                CONNEXION
-              </button>
-            </a>
-          </div>
+         <div class="form-group">
+          <form name="form" #v="ngForm" (ngSubmit)="v.form.valid && send()">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" name="email" [(ngModel)]="connect.login"  #login="ngModel" id="exampleInputEmail1" placeholder="name@example.com" required>
+                <small id="emailHelp" class="form-text text-muted"></small>
+                <label for="floatingInput">abc@gmail.com</label>
+                <span class="form_error" *ngIf="login.errors && v.submitted">*obligatoire</span>
+              </div>
+              <div class="form-floating">
+                <input type="password" name="password" class="form-control" [(ngModel)]="connect.password" #password="ngModel" id="floatingPassword" placeholder="Password" required>
+                <label for="floatingPassword">Password</label>
+                <span class="form_error" *ngIf="password.errors && v.submitted">*obligatoire</span>
+              </div>
+
+              <div class="d-flex justify-content-around mt-5">
+               <!--  <button type="button" class="btn btn-pers btn-lg btn-block">
+                  NOUVEAU COMPTE
+                </button> -->
+                <!-- <a routerLink="/inscrire">
+                </a>
+                <a routerLink="/accueil">
+                </a> -->
+                  <button class="btn btn-pers btn-lg btn-block">
+                    CONNEXION
+                  </button>
+              </div>
+          </form>
         </div>
         </div>
       </div>

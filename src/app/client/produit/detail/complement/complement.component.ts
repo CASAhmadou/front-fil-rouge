@@ -21,8 +21,9 @@ export class ComplementComponent implements OnInit {
   fontSizePx = 0;
   size = 0
   tailleControle(value :number){
+
     this.size = value
-    //alert(this.size)
+    // alert(this.size)
     this.sizeChange.emit(this.size)
   }
 

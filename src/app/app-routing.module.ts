@@ -11,8 +11,8 @@ const routes: Routes = [
   { path: 'accueil', component: ProduitComponent},
   { path: '', redirectTo: 'accueil', pathMatch:"full"},
   {path: 'connexion', loadChildren: () => import(`./securite/securite.module`).then(m=>m.SecuriteModule)},
-  { path:'**', component: NotFoundComponent}
-  // {path: 'auth', loadChildren: ()=> import('./auth/auth.module').then(m=>m.AuthModule)}
+  { path:'**', component: NotFoundComponent},
+  {path: 'auth', loadChildren: ()=> import('./auth/auth.module').then(m=>m.AuthModule)}
 ];
 
 @NgModule({

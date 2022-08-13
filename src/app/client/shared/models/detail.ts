@@ -22,6 +22,7 @@ export interface Menu{
     menuBurgers?:MenuBurger
     menuPortionFrites?:MenuPortion[]
     menuTailleBoissons?:MenuTailleBoisson[]
+    complementBoisson:[]
 }
 
 export interface MenuTailleBoisson{

@@ -1,0 +1,829 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>front-fil-rouge documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">front-fil-rouge documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  ComplementComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/client/produit/detail/complement/complement.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>cas-complement</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./complement.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./complement.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#fontSizePx" >fontSizePx</a>
+                            </li>
+                            <li>
+                                <a href="#size" >size</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#tailleControle" >tailleControle</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#boissons" >boissons</a>
+                            </li>
+                            <li>
+                                <a href="#boissonTailleBoisson" >boissonTailleBoisson</a>
+                            </li>
+                            <li>
+                                <a href="#frites" >frites</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#count" >count</a>
+                            </li>
+                            <li>
+                                <a href="#sizeChange" >sizeChange</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/client/produit/detail/complement/complement.component.ts:17</a></div>
+                            </td>
+                        </tr>
+
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="boissons"></a>
+                        <b>boissons</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/TailleBoisson.html" target="_self" >TailleBoisson | null</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/client/produit/detail/complement/complement.component.ts:12</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="boissonTailleBoisson"></a>
+                        <b>boissonTailleBoisson</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>BoissonTailleBoisson | null</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/client/produit/detail/complement/complement.component.ts:11</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="frites"></a>
+                        <b>frites</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Produit.html" target="_self" >Produit | null</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/client/produit/detail/complement/complement.component.ts:13</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <section>
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="count"></a>
+                        <b>count</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter&lt;any&gt;</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/client/produit/detail/complement/complement.component.ts:17</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="sizeChange"></a>
+                        <b>sizeChange</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter&lt;number&gt;</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/client/produit/detail/complement/complement.component.ts:16</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="31"
+                            class="link-to-prism">src/app/client/produit/detail/complement/complement.component.ts:31</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="tailleControle"></a>
+                    <span class="name">
+                        <span ><b>tailleControle</b></span>
+                        <a href="#tailleControle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>tailleControle(value: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="23"
+                            class="link-to-prism">src/app/client/produit/detail/complement/complement.component.ts:23</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>value</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fontSizePx"></a>
+                    <span class="name">
+                        <span ><b>fontSizePx</b></span>
+                        <a href="#fontSizePx"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/client/produit/detail/complement/complement.component.ts:21</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="size"></a>
+                    <span class="name">
+                        <span ><b>size</b></span>
+                        <a href="#size"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/client/produit/detail/complement/complement.component.ts:22</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, EventEmitter, Input, OnInit, Output } from &#x27;@angular/core&#x27;;
+import { BoissonTailleBoisson, TailleBoisson } from &#x27;src/app/client/shared/models/detail&#x27;;
+import { Produit } from &#x27;src/app/client/shared/models/produit&#x27;;
+
+@Component({
+  selector: &#x27;cas-complement&#x27;,
+  templateUrl: &#x27;./complement.component.html&#x27;,
+  styleUrls: [&#x27;./complement.component.css&#x27;]
+})
+export class ComplementComponent implements OnInit {
+  @Input(&#x27;boissonTailleBoisson&#x27;) boissonTailleBoisson : BoissonTailleBoisson|null &#x3D; null;
+  @Input(&#x27;boissons&#x27;) boissons : TailleBoisson|null &#x3D; null;
+  @Input(&#x27;frites&#x27;) frites : Produit|null &#x3D; null;
+  // @Input(&#x27;boisson&#x27;) boisson : BoissonTailleBoisson|null &#x3D; null;
+
+  @Output() sizeChange : EventEmitter&lt;number&gt; &#x3D; new EventEmitter();
+  @Output() count: EventEmitter&lt;any&gt; &#x3D; new EventEmitter();
+
+  constructor() { }
+
+  fontSizePx &#x3D; 0;
+  size &#x3D; 0
+  tailleControle(value :number){
+
+    this.size &#x3D; value
+    // alert(this.size)
+    this.sizeChange.emit(this.size)
+  }
+
+
+  ngOnInit(): void {
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;card&quot; style&#x3D;&quot;width: 9rem;&quot;&gt;
+  &lt;ng-container *ngIf&#x3D;&quot;boissonTailleBoisson&quot;&gt;
+  &lt;div class&#x3D;&quot;img-input&quot;&gt;
+      &lt;div class&#x3D;&quot;cart_counter&quot;&gt;&lt;cas-compter (sizeChange)&#x3D;&quot;tailleControle($event)&quot; [(size)]&#x3D;&quot;fontSizePx&quot; [boissonTailleBoissons]&#x3D;&quot;boissonTailleBoisson&quot;&gt;&lt;/cas-compter&gt;&lt;/div&gt;
+      &lt;img src&#x3D;&quot;data:image/png;base64,{{boissonTailleBoisson.boisson?.image}}&quot; alt&#x3D;&quot;&quot;&gt;
+      &lt;label class&#x3D;&quot;container&quot;&gt;&lt;input type&#x3D;&quot;checkbox&quot; &gt;&lt;span class&#x3D;&quot;checkmark&quot;&gt;&lt;/span&gt;&lt;/label&gt;
+  &lt;/div&gt;
+
+&lt;/ng-container&gt;
+
+&lt;ng-container *ngIf&#x3D;&quot;boissons&quot;&gt;
+  &lt;div class&#x3D;&quot;img-input&quot;&gt;
+      &lt;div class&#x3D;&quot;cart_counter&quot;&gt;&lt;cas-compter (sizeChange)&#x3D;&quot;tailleControle($event)&quot; [boisson]&#x3D;&quot;boissons&quot;&gt;&lt;/cas-compter&gt;&lt;/div&gt;
+      &lt;img src&#x3D;&quot;data:image/png;base64,{{boissons.boisson?.image}}&quot; alt&#x3D;&quot;&quot;&gt;
+      &lt;label class&#x3D;&quot;container&quot;&gt;&lt;input type&#x3D;&quot;checkbox&quot; &gt;&lt;span class&#x3D;&quot;checkmark&quot;&gt;&lt;/span&gt;&lt;/label&gt;
+  &lt;/div&gt;
+&lt;/ng-container&gt;
+
+&lt;ng-container *ngIf&#x3D;&quot;frites&quot;&gt;
+  &lt;div class&#x3D;&quot;img-input&quot;&gt;
+      &lt;div class&#x3D;&quot;cart_counter&quot;&gt;&lt;cas-compter [frites]&#x3D;&quot;frites&quot;&gt;&lt;/cas-compter&gt;&lt;/div&gt;
+      &lt;img src&#x3D;&quot;data:image/png;base64,{{frites.image}}&quot; alt&#x3D;&quot;&quot;&gt;
+      &lt;label class&#x3D;&quot;container&quot;&gt;&lt;input type&#x3D;&quot;checkbox&quot;&gt;&lt;span class&#x3D;&quot;checkmark&quot;&gt;&lt;/span&gt;&lt;/label&gt;
+  &lt;/div&gt;
+&lt;/ng-container&gt;
+&lt;/div&gt;
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./complement.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.img-input{
+    display: flex;
+    margin-bottom: .5rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  img{
+    height: 65%;
+    width: 65%;
+  }
+  img:hover{
+    transform:scale(1.5);
+    box-shadow: 10px 15px 50px rgba(0, 0, 0, 0.09);
+  }
+  .card{
+    border: none;
+    margin: .5rem;
+  }
+
+/* Customize the label (the container) */
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 3rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  /* Hide the browser&#x27;s default checkbox */
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1.5rem;
+    width: 1.5rem;
+    background-color: #eee;
+    border: 2px solid #F4782F;
+  }
+
+  /* On mouse-over, add a grey background color */
+  .container:hover input ~ .checkmark {
+    background-color: rgb(255, 255, 255);
+    border:  1px solid #F4782F;
+  }
+
+  /* When the checkbox is checked, add a blue background */
+  .container input:checked ~ .checkmark {
+    background-color:#F4782F;
+  }
+
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: &quot;&quot;;
+    position: absolute;
+    display: none;
+  }
+
+  /* Show the checkmark when checked */
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  /* Style the checkmark/indicator */
+  .container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  .btn-count{
+    background-color: #F4782F;
+    border: none;
+
+  }
+  .d-flex{
+    margin-left: -10%;
+  }
+
+.cart-style{
+  margin-top: 10%;
+  margin-left: 25%;
+}
+
+
+label{
+    margin-left: 40%;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="card" style="width: 9rem;">  <ng-container *ngIf="boissonTailleBoisson">  <div class="img-input">      <div class="cart_counter"><cas-compter (sizeChange)="tailleControle($event)" [(size)]="fontSizePx" [boissonTailleBoissons]="boissonTailleBoisson"></cas-compter></div>      <img src="data:image/png;base64,{{boissonTailleBoisson.boisson?.image}}" alt="">      <label class="container"><input type="checkbox" ><span class="checkmark"></span></label>  </div></ng-container><ng-container *ngIf="boissons">  <div class="img-input">      <div class="cart_counter"><cas-compter (sizeChange)="tailleControle($event)" [boisson]="boissons"></cas-compter></div>      <img src="data:image/png;base64,{{boissons.boisson?.image}}" alt="">      <label class="container"><input type="checkbox" ><span class="checkmark"></span></label>  </div></ng-container><ng-container *ngIf="frites">  <div class="img-input">      <div class="cart_counter"><cas-compter [frites]="frites"></cas-compter></div>      <img src="data:image/png;base64,{{frites.image}}" alt="">      <label class="container"><input type="checkbox"><span class="checkmark"></span></label>  </div></ng-container></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlogComponent', 'selector': 'cas-blog'},{'name': 'CardComponent', 'selector': 'cas-card'},{'name': 'CatalogueComponent', 'selector': 'cas-catalogue'},{'name': 'ChoixBoissonComponent', 'selector': 'cas-choix-boisson'},{'name': 'CommandeComponent', 'selector': 'cas-commande'},{'name': 'ComplementComponent', 'selector': 'cas-complement'},{'name': 'CompterComponent', 'selector': 'cas-compter'},{'name': 'ConnexionComponent', 'selector': 'cas-connexion'},{'name': 'DetailComponent', 'selector': 'cas-detail'},{'name': 'DetailMenuComponent', 'selector': 'cas-detail-menu'},{'name': 'FooterComponent', 'selector': 'cas-footer'},{'name': 'HeaderComponent', 'selector': 'cas-header'},{'name': 'LigneComponent', 'selector': 'cas-ligne'},{'name': 'ListComponent', 'selector': 'cas-list'},{'name': 'ListeComponent', 'selector': 'cas-liste'},{'name': 'LivraisonComponent', 'selector': 'cas-livraison'},{'name': 'NotFoundComponent', 'selector': 'cas-not-found'},{'name': 'PanierComponent', 'selector': 'cas-panier'},{'name': 'ProduitComponent', 'selector': 'cas-produit'},{'name': 'SecuriteComponent', 'selector': 'cas-securite'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ComplementComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ComplementComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

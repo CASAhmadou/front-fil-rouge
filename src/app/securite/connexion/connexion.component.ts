@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { User } from '../shared/models/user';
 import { SessionLoginService } from '../shared/service/session-login.service';
 import { TokenLoginService } from '../shared/service/token-login.service';
@@ -10,9 +10,9 @@ import { TokenLoginService } from '../shared/service/token-login.service';
   styleUrls: ['./connexion.component.css']
 })
 export class ConnexionComponent implements OnInit {
-
   constructor(private sessionLogin: SessionLoginService,
-    private tok: TokenLoginService, private router:Router) { }
+    private tok: TokenLoginService, private router:Router, private route: ActivatedRoute,
+    ) { }
 
   ngOnInit(): void {
   }

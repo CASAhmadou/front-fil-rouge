@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Catalogue } from '../../shared/models/catalogue';
 import { Detail } from '../../shared/models/detail';
 import { BurgerCommande, CommandeBoisson, CommandeFrite, CommandeMenuBoissonTaille, MenuCommande } from '../../shared/models/panier';
+import { Produit } from '../../shared/models/produit';
 import { CatalogueService } from '../../shared/service/catalogue.service';
 import { EventService } from '../../shared/service/event.service';
 import { PanierService } from '../../shared/service/panier.service';
@@ -30,6 +31,7 @@ export class DetailComponent implements OnInit {
     disabled_attr = false
     many : any[] = []
     quantite = 0
+    boissonDuMenu: Produit[]=[]
 
   ngOnInit(): void {
 

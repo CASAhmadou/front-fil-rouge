@@ -6,7 +6,7 @@ export interface Panier {
   commandeMenus?: MenuCommande[]
   commandeBoissons?:CommandeBoisson[]
   commandeFrites?:CommandeFrite[]
-  zone?:Zone
+  zones?:Zone
 }
 
 export interface BurgerCommande{

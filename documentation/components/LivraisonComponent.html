@@ -125,6 +125,20 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#zone" >zone</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -155,15 +169,45 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor()</code>
+<code>constructor(panier: <a href="../injectables/PanierService.html" target="_self">PanierService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/client/commande/livraison/livraison.component.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/client/commande/livraison/livraison.component.ts:12</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>panier</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PanierService.html" target="_self" >PanierService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
@@ -197,8 +241,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="12"
-                            class="link-to-prism">src/app/client/commande/livraison/livraison.component.ts:12</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="15"
+                            class="link-to-prism">src/app/client/commande/livraison/livraison.component.ts:15</a></div>
                 </td>
             </tr>
 
@@ -215,12 +259,51 @@
         </tbody>
     </table>
 </section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="zone"></a>
+                    <span class="name">
+                        <span ><b>zone</b></span>
+                        <a href="#zone"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/client/commande/livraison/livraison.component.ts:12</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
 
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { Panier } from &#x27;../../shared/models/panier&#x27;;
+import { PanierService } from &#x27;../../shared/service/panier.service&#x27;;
 
 @Component({
   selector: &#x27;cas-livraison&#x27;,
@@ -229,11 +312,20 @@
 })
 export class LivraisonComponent implements OnInit {
 
-  constructor() { }
+  zone: any &#x3D;&#x27;&#x27;
+  constructor(private panier: PanierService) { }
 
   ngOnInit(): void {
+    this.panier.behav.subscribe(data&#x3D;&gt;{
+     console.log(this.zone &#x3D;data.zones)
+    })
   }
-
+  // this.panier.behav.subscribe(data&#x3D;&gt;{
+  //   this.newItems &#x3D; data
+  //   if(data.commandeBurgers &amp;&amp; data.commandeMenus)
+  //   this.items &#x3D; [...data.commandeBurgers,...data.commandeMenus]
+  //   this.total &#x3D; this.panier.getTotalPrice()
+  // })
 }
 </code></pre>
     </div>
@@ -337,7 +429,7 @@ export class LivraisonComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><div class="toast show livraison col" aria-atomic="true">  <div class="form-group container">    <label class="col-form-label col-form-label-lg" for="inputLarge">Numéro Téléphone</label>    <input class="form-control form-control-lg input" type="text" placeholder="77 777 77 77" id="inputLarge">  </div>  <div class="d-flex justify-content-around">    <div class="form-check">      <input class="form-check-input" type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">      <label class="form-check-label o" for="optionsRadios1">Livrable</label>    </div>    <div class="form-check">      <input class="form-check-input" type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">      <label class="form-check-label" for="optionsRadios1">Non Livrable</label>    </div>  </div>  <div class="form-group container">    <label class="col-form-label col-form-label-lg" for="inputLarge">Zone de Livraison</label>    <div class="form-group">      <fieldset>        <input class="form-control input" id="readOnlyInput" type="text" placeholder="Readonly input here..." readonly="">      </fieldset>    </div>  </div>  <div class="form-group container">    <label class="col-form-label col-form-label-lg" for="inputLarge">Adresse</label>    <input class="form-control form-control-lg input" type="text" placeholder="Yeumbeul" id="inputLarge">  </div></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlogComponent', 'selector': 'cas-blog'},{'name': 'CardComponent', 'selector': 'cas-card'},{'name': 'CatalogueComponent', 'selector': 'cas-catalogue'},{'name': 'ChoixBoissonComponent', 'selector': 'cas-choix-boisson'},{'name': 'CommandeComponent', 'selector': 'cas-commande'},{'name': 'ComplementComponent', 'selector': 'cas-complement'},{'name': 'CompterComponent', 'selector': 'cas-compter'},{'name': 'ConnexionComponent', 'selector': 'cas-connexion'},{'name': 'DetailComponent', 'selector': 'cas-detail'},{'name': 'DetailMenuComponent', 'selector': 'cas-detail-menu'},{'name': 'FooterComponent', 'selector': 'cas-footer'},{'name': 'HeaderComponent', 'selector': 'cas-header'},{'name': 'LigneComponent', 'selector': 'cas-ligne'},{'name': 'ListComponent', 'selector': 'cas-list'},{'name': 'ListeComponent', 'selector': 'cas-liste'},{'name': 'LivraisonComponent', 'selector': 'cas-livraison'},{'name': 'NotFoundComponent', 'selector': 'cas-not-found'},{'name': 'PanierComponent', 'selector': 'cas-panier'},{'name': 'ProduitComponent', 'selector': 'cas-produit'},{'name': 'SecuriteComponent', 'selector': 'cas-securite'}];
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlogComponent', 'selector': 'cas-blog'},{'name': 'CardComponent', 'selector': 'cas-card'},{'name': 'CatalogueComponent', 'selector': 'cas-catalogue'},{'name': 'ChoixBoissonComponent', 'selector': 'cas-choix-boisson'},{'name': 'ClientComponent', 'selector': 'cas-client'},{'name': 'CommandeComponent', 'selector': 'cas-commande'},{'name': 'ComplementComponent', 'selector': 'cas-complement'},{'name': 'CompterComponent', 'selector': 'cas-compter'},{'name': 'ConnexionComponent', 'selector': 'cas-connexion'},{'name': 'DetailComponent', 'selector': 'cas-detail'},{'name': 'DetailMenuComponent', 'selector': 'cas-detail-menu'},{'name': 'FooterComponent', 'selector': 'cas-footer'},{'name': 'HeaderComponent', 'selector': 'cas-header'},{'name': 'LigneComponent', 'selector': 'cas-ligne'},{'name': 'ListComponent', 'selector': 'cas-list'},{'name': 'ListeComponent', 'selector': 'cas-liste'},{'name': 'LivraisonComponent', 'selector': 'cas-livraison'},{'name': 'NotFoundComponent', 'selector': 'cas-not-found'},{'name': 'PanierComponent', 'selector': 'cas-panier'},{'name': 'ProduitComponent', 'selector': 'cas-produit'},{'name': 'SecuriteComponent', 'selector': 'cas-securite'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'LivraisonComponent'};
 </script>

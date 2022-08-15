@@ -22,7 +22,6 @@ export interface Menu{
     menuBurgers?:MenuBurger
     menuPortionFrites?:MenuPortion[]
     menuTailleBoissons?:MenuTailleBoisson[]
-    complementBoisson:[]
 }
 
 export interface MenuTailleBoisson{
@@ -31,9 +30,10 @@ export interface MenuTailleBoisson{
 }
 
 export interface TailleBoisson{
-    stock?:number
-    boisson?:Produit
+    id?:number
     prix?:number
+    libelle?:string
+    boissonTailleBoissons?:BoissonTailleBoisson[]
 }
 
 export interface TailleBoissonMenu{

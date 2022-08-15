@@ -26,10 +26,8 @@
                 <div class="card-header py-3">
                   <h5 class="mb-0">CONTENUE DU PANIER</h5>
                 </div>
-                <div class="card-body form-group">
-                  <ul class="list-group list-group-flush" *ngFor="let item of items; let i=index">
-                    <cas-ligne [item]="item" [itemMenu]="item"></cas-ligne>
-                   </ul>
+                <div class="card-body form-group" *ngFor="let item of items; let i=index">
+                    <cas-ligne (index)="DeleteIn($event)" [item]="item" [itemMenu]="item"></cas-ligne>
                 </div>
               </div>
             </div>

@@ -170,6 +170,9 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#boisson" >boisson</a>
+                            </li>
+                            <li>
                                 <a href="#boissons" >boissons</a>
                             </li>
                             <li>
@@ -227,6 +230,32 @@
 
     <section>
     <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="boisson"></a>
+                        <b>boisson</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>BoissonTailleBoisson | null</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/client/produit/detail/complement/complement.component.ts:14</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
@@ -551,7 +580,7 @@ export class ComplementComponent implements OnInit {
   @Input(&#x27;boissonTailleBoisson&#x27;) boissonTailleBoisson : BoissonTailleBoisson|null &#x3D; null;
   @Input(&#x27;boissons&#x27;) boissons : TailleBoisson|null &#x3D; null;
   @Input(&#x27;frites&#x27;) frites : Produit|null &#x3D; null;
-  // @Input(&#x27;boisson&#x27;) boisson : BoissonTailleBoisson|null &#x3D; null;
+  @Input(&#x27;boisson&#x27;) boisson : BoissonTailleBoisson|null &#x3D; null;
 
   @Output() sizeChange : EventEmitter&lt;number&gt; &#x3D; new EventEmitter();
   @Output() count: EventEmitter&lt;any&gt; &#x3D; new EventEmitter();
@@ -586,10 +615,10 @@ export class ComplementComponent implements OnInit {
 
 &lt;/ng-container&gt;
 
-&lt;ng-container *ngIf&#x3D;&quot;boissons&quot;&gt;
+&lt;ng-container *ngIf&#x3D;&quot;boisson&quot;&gt;
   &lt;div class&#x3D;&quot;img-input&quot;&gt;
-      &lt;div class&#x3D;&quot;cart_counter&quot;&gt;&lt;cas-compter (sizeChange)&#x3D;&quot;tailleControle($event)&quot; [boisson]&#x3D;&quot;boissons&quot;&gt;&lt;/cas-compter&gt;&lt;/div&gt;
-      &lt;img src&#x3D;&quot;data:image/png;base64,{{boissons.boisson?.image}}&quot; alt&#x3D;&quot;&quot;&gt;
+      &lt;div class&#x3D;&quot;cart_counter&quot;&gt;&lt;cas-compter (sizeChange)&#x3D;&quot;tailleControle($event)&quot; [boisson]&#x3D;&quot;boisson&quot;&gt;&lt;/cas-compter&gt;&lt;/div&gt;
+      &lt;img src&#x3D;&quot;data:image/png;base64,{{boisson.boisson?.image}}&quot; alt&#x3D;&quot;&quot;&gt;
       &lt;label class&#x3D;&quot;container&quot;&gt;&lt;input type&#x3D;&quot;checkbox&quot; &gt;&lt;span class&#x3D;&quot;checkmark&quot;&gt;&lt;/span&gt;&lt;/label&gt;
   &lt;/div&gt;
 &lt;/ng-container&gt;
@@ -745,8 +774,8 @@ label{
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="card" style="width: 9rem;">  <ng-container *ngIf="boissonTailleBoisson">  <div class="img-input">      <div class="cart_counter"><cas-compter (sizeChange)="tailleControle($event)" [(size)]="fontSizePx" [boissonTailleBoissons]="boissonTailleBoisson"></cas-compter></div>      <img src="data:image/png;base64,{{boissonTailleBoisson.boisson?.image}}" alt="">      <label class="container"><input type="checkbox" ><span class="checkmark"></span></label>  </div></ng-container><ng-container *ngIf="boissons">  <div class="img-input">      <div class="cart_counter"><cas-compter (sizeChange)="tailleControle($event)" [boisson]="boissons"></cas-compter></div>      <img src="data:image/png;base64,{{boissons.boisson?.image}}" alt="">      <label class="container"><input type="checkbox" ><span class="checkmark"></span></label>  </div></ng-container><ng-container *ngIf="frites">  <div class="img-input">      <div class="cart_counter"><cas-compter [frites]="frites"></cas-compter></div>      <img src="data:image/png;base64,{{frites.image}}" alt="">      <label class="container"><input type="checkbox"><span class="checkmark"></span></label>  </div></ng-container></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlogComponent', 'selector': 'cas-blog'},{'name': 'CardComponent', 'selector': 'cas-card'},{'name': 'CatalogueComponent', 'selector': 'cas-catalogue'},{'name': 'ChoixBoissonComponent', 'selector': 'cas-choix-boisson'},{'name': 'CommandeComponent', 'selector': 'cas-commande'},{'name': 'ComplementComponent', 'selector': 'cas-complement'},{'name': 'CompterComponent', 'selector': 'cas-compter'},{'name': 'ConnexionComponent', 'selector': 'cas-connexion'},{'name': 'DetailComponent', 'selector': 'cas-detail'},{'name': 'DetailMenuComponent', 'selector': 'cas-detail-menu'},{'name': 'FooterComponent', 'selector': 'cas-footer'},{'name': 'HeaderComponent', 'selector': 'cas-header'},{'name': 'LigneComponent', 'selector': 'cas-ligne'},{'name': 'ListComponent', 'selector': 'cas-list'},{'name': 'ListeComponent', 'selector': 'cas-liste'},{'name': 'LivraisonComponent', 'selector': 'cas-livraison'},{'name': 'NotFoundComponent', 'selector': 'cas-not-found'},{'name': 'PanierComponent', 'selector': 'cas-panier'},{'name': 'ProduitComponent', 'selector': 'cas-produit'},{'name': 'SecuriteComponent', 'selector': 'cas-securite'}];
+        var COMPONENT_TEMPLATE = '<div><div class="card" style="width: 9rem;">  <ng-container *ngIf="boissonTailleBoisson">  <div class="img-input">      <div class="cart_counter"><cas-compter (sizeChange)="tailleControle($event)" [(size)]="fontSizePx" [boissonTailleBoissons]="boissonTailleBoisson"></cas-compter></div>      <img src="data:image/png;base64,{{boissonTailleBoisson.boisson?.image}}" alt="">      <label class="container"><input type="checkbox" ><span class="checkmark"></span></label>  </div></ng-container><ng-container *ngIf="boisson">  <div class="img-input">      <div class="cart_counter"><cas-compter (sizeChange)="tailleControle($event)" [boisson]="boisson"></cas-compter></div>      <img src="data:image/png;base64,{{boisson.boisson?.image}}" alt="">      <label class="container"><input type="checkbox" ><span class="checkmark"></span></label>  </div></ng-container><ng-container *ngIf="frites">  <div class="img-input">      <div class="cart_counter"><cas-compter [frites]="frites"></cas-compter></div>      <img src="data:image/png;base64,{{frites.image}}" alt="">      <label class="container"><input type="checkbox"><span class="checkmark"></span></label>  </div></ng-container></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlogComponent', 'selector': 'cas-blog'},{'name': 'CardComponent', 'selector': 'cas-card'},{'name': 'CatalogueComponent', 'selector': 'cas-catalogue'},{'name': 'ChoixBoissonComponent', 'selector': 'cas-choix-boisson'},{'name': 'ClientComponent', 'selector': 'cas-client'},{'name': 'CommandeComponent', 'selector': 'cas-commande'},{'name': 'ComplementComponent', 'selector': 'cas-complement'},{'name': 'CompterComponent', 'selector': 'cas-compter'},{'name': 'ConnexionComponent', 'selector': 'cas-connexion'},{'name': 'DetailComponent', 'selector': 'cas-detail'},{'name': 'DetailMenuComponent', 'selector': 'cas-detail-menu'},{'name': 'FooterComponent', 'selector': 'cas-footer'},{'name': 'HeaderComponent', 'selector': 'cas-header'},{'name': 'LigneComponent', 'selector': 'cas-ligne'},{'name': 'ListComponent', 'selector': 'cas-list'},{'name': 'ListeComponent', 'selector': 'cas-liste'},{'name': 'LivraisonComponent', 'selector': 'cas-livraison'},{'name': 'NotFoundComponent', 'selector': 'cas-not-found'},{'name': 'PanierComponent', 'selector': 'cas-panier'},{'name': 'ProduitComponent', 'selector': 'cas-produit'},{'name': 'SecuriteComponent', 'selector': 'cas-securite'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ComplementComponent'};
 </script>

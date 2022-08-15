@@ -23,12 +23,6 @@ export class TokenLoginService {
     return !! token
   }
 
-  // getToken(){
-  //   const token = localStorage.getItem('token')
-  //   return token
-  // }
-
-
   supToken():void{
     localStorage.removeItem('token')
     this.router.navigate(['/'])

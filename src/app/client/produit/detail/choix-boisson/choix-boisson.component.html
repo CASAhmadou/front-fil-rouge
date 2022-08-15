@@ -1,14 +1,16 @@
-<div *ngIf="tailleBoissons" class="">
-  <h5> {{tailleBoissons.tailleBoisson?.libelle}}({{tailleBoissons.quantite}}) {{tailleBoissons.tailleBoisson?.prix}}f CFA l'unité</h5>
+<div *ngIf="menuTailleBoissons" class="">
+  <h5> {{menuTailleBoissons.tailleBoisson?.libelle}}({{menuTailleBoissons.quantite}}) {{menuTailleBoissons.tailleBoisson?.prix}}f CFA l'unité</h5>
     <div class="test">
-        <ng-container *ngFor="let boissonTailleBoisson of tailleBoissons.tailleBoisson?.boissonTailleBoissons">
-            <cas-complement
+        <ng-container *ngFor="let boissonTailleBoisson of menuTailleBoissons.tailleBoisson?.boissonTailleBoissons">
+            <cas-complement (sizeChange)="test(menuTailleBoissons.tailleBoisson?.id,qteMenu,boissonTailleBoisson?.boisson?.id,$event,boissonTailleBoisson?.stock,boissonTailleBoisson?.id)"
              [boissonTailleBoisson]="boissonTailleBoisson"></cas-complement>
         </ng-container>
     </div>
 </div>
 <div *ngIf="boissons" class="component-bottom">
-    <cas-complement [boissons]="boissons"></cas-complement>
+  <!-- <ng-container *ngFor="let boisson of boissons?.boissonTailleBoissons"> -->
+    <cas-complement (sizeChange)="test2(boissons.boisson?.id,$event,boissons.stock)" [boisson]="boissons"></cas-complement>
+  <!-- </ng-container> -->
 </div>
 <div *ngIf="frites" class="component-bottom">
     <cas-complement [frites]="frites"></cas-complement>

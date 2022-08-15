@@ -1,5 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { BurgerCommande, MenuCommande } from 'src/app/client/shared/models/panier';
+import { Observable } from 'rxjs';
+import { Detail } from 'src/app/client/shared/models/detail';
+import { BurgerCommande, CommandeBoisson, CommandeFrite, MenuCommande } from 'src/app/client/shared/models/panier';
+import { Produit } from 'src/app/client/shared/models/produit';
 
 @Component({
   selector: 'cas-ligne',
@@ -38,10 +41,21 @@ export class LigneComponent implements OnInit {
     return prix
   }
 
+  getPrixBoisson(data:any){
+    let prix = data.boisson.prix * (data.quantite+this.size)
+    return prix
+  }
+
+  // getPrixFrite(data:any){
+  //   let prix = data.produi * (data.quantite+this.size)
+  //   return prix
+  // }
+
   delete(event:any){
+    alert('ok')
     this.index.emit(event)
   }
-  
+
    qte:number = 0
   value(event :any){
     this.qte = event.target.value

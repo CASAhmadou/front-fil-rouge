@@ -10,6 +10,7 @@ export class ListeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    // alert('ok')
   }
 
 }

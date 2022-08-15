@@ -1,6 +1,10 @@
 <cas-header></cas-header>
 <cas-footer></cas-footer>
 
+<ng-container *ngIf="(detail$|async)==null">
+  <p>Page vide</p>
+</ng-container>
+
 
 <ng-container *ngIf="(detail$|async) !=null">
   <div class="container mb-10">
@@ -23,7 +27,7 @@
       <div class="card" style="width: 18rem; height: 25rem;">
         <!-- detail produit selectionner -->
         <div class="d-flex justify-content-center flex-wrap">
-          <cas-compter (count)="countEmit($event)" [produits]="(detail$|async)"></cas-compter>
+          <cas-compter (count)="countEmit($event)" [produits]="(detail$|async)" (disabled)="desactiveButton($event)"></cas-compter>
           <ng-container *ngIf="(detail$|async)?.burger?.type=='burger'">
             <img src="data:image/png;base64,{{(detail$|async)?.burger?.image}}" style="max-width: 13rem;" class="card-img-top" alt="...">
           </ng-container>
@@ -66,6 +70,11 @@
                 <h5>Boisson</h5>
                 <div class="d-flex justify-content-center">
                       <ng-container *ngIf="(detail$|async)?.menu?.type=='menu'">
+                        <ng-container *ngIf="text.length!=0">
+                          <div>
+                            <p>{{text}}</p>
+                          </div>
+                        </ng-container>
                         <div class="card-body">
                             <div class="" style="width: 10rem;" *ngFor="let tailleBoisson of (detail$|async)?.menu?.menuTailleBoissons">
                                 <cas-choix-boisson [qteMenu]="qteMenu" (sizeChange)="obj($event)" (ObjectControl)="parentControl($event)" [tailleBoissons]= "tailleBoisson"></cas-choix-boisson>
@@ -73,13 +82,14 @@
                         </div>
                       </ng-container>
 
-                      <ng-container *ngIf="(detail$|async)?.burger?.type=='burger'">
+                    <!--  <ng-container *ngIf="(detail$|async)?.burger?.type=='burger'">
                         <div class="card-body">
-                          <div class="" style="width: 10rem;" *ngFor="let tailleBoisson of (detail$|async)?.menu?.menuTailleBoissons">
+                           <div class="" style="width: 10rem;" *ngFor="let tailleBoisson of (detail$|async)?.burger?.complementBoisson">
                               <cas-choix-boisson [tailleBoissons]= "tailleBoisson"></cas-choix-boisson>
                           </div>
                         </div>
-                      </ng-container>
+                      </ng-container>-->
+
                 </div>
               </div>
               <!-- <button type="button" class="btn">autres Boissons</button> -->
@@ -99,13 +109,13 @@
                     </div>
                   </ng-container>
 
-                  <ng-container *ngIf="(detail$|async)?.menu?.type=='burger'">
+                  <!-- <ng-container *ngIf="(detail$|async)?.menu?.type=='burger'">
                     <div class="card-body">
                       <div class="component" *ngFor="let menuPortion of (detail$|async)?.burger?.menuPortionFrites">
                           <cas-detail-menu [menuPortions]="menuPortion"></cas-detail-menu>
                       </div>
                     </div>
-                  </ng-container>
+                  </ng-container> -->
                 </div>
               </div>
 
@@ -127,7 +137,7 @@
 
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         </div>
-        <button *ngIf="detail$|async as detail" (click)="AjoutPanier(detail)"  class="btn">Ajouter au Panier</button>
+        <button *ngIf="detail$|async as detail" (click)="AjoutPanier(detail)" [disabled]=disabled_attr class="btn">Ajouter au Panier</button>
       </div>
     </div>
 
@@ -145,9 +155,14 @@
             <div class="toast-body">
               <h5>Boissons</h5>
               <div class="d-flex justify-content-center">
+                <ng-container *ngIf="text2.length!=0">
+                  <div>
+                    <p>{{text2}}</p>
+                  </div>
+                </ng-container>
                   <div class="component" *ngFor="let boisson of (detail$|async)?.tailleBoissons">
                     <!-- <span>{{boisson.prix}}</span> -->
-                    <cas-choix-boisson [boissons]="boisson"></cas-choix-boisson>
+                    <cas-choix-boisson (ObjectControl)="parentControl2($event)" [boissons]="boisson"></cas-choix-boisson>
                   </div>
               </div>
             </div>

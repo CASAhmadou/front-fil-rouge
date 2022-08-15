@@ -45,9 +45,9 @@ export class DetailComponent implements OnInit {
     this.detail$=this.serv.getProduit$(this.id)
   }
 
-  // desactiveButton(event: any) {
-  //   this.disabled_attr =  event
-  // }
+  desactiveButton(event: any) {
+    this.disabled_attr =  event
+  }
 
   //error
   size:number = 1
@@ -88,50 +88,30 @@ export class DetailComponent implements OnInit {
     }
 
 
-    if(detail.tailleBoissons){
-      alert(this.size)
-        let boisson:CommandeBoisson = {
-          quantite: this.size,
-          boissonTailleBoisson: {}
-        }
-        this.panier.ajoutBoisson(boisson)
-        console.log(this.panier.behav.value)
-      }
+    // if(detail.tailleBoissons){
+    //   alert(this.size)
+    //     let boisson:CommandeBoisson = {
+    //       quantite: this.size,
+    //       boissonTailleBoisson: {}
+    //     }
+    //     this.panier.ajoutBoisson(boisson)
+    //     console.log(this.panier.behav.value)
+    //   }
 
-      if(detail.portionFrites){
-        let frite:CommandeFrite = {
-          quantite: this.size,
-          portionFrite: detail
-        }
-        this.panier.ajoutFrite(frite)
-        console.log(this.panier.behav.value)
-      }
+    //   if(detail.portionFrites){
+    //     let frite:CommandeFrite = {
+    //       quantite: this.size,
+    //       portionFrite: detail
+    //     }
+    //     this.panier.ajoutFrite(frite)
+    //     console.log(this.panier.behav.value)
+    //   }
 
   }
 
   panierOuvert():void{
     this.router.navigateByUrl(`commande/panier`)
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -273,7 +253,7 @@ export class DetailComponent implements OnInit {
         })
       }
     }
-    console.log(this.many)
+    // console.log(this.many)
     this.textAlert2(this.many)
   }
 

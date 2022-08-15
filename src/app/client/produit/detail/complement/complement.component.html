@@ -8,10 +8,10 @@
 
 </ng-container>
 
-<ng-container *ngIf="boissons">
+<ng-container *ngIf="boisson">
   <div class="img-input">
-      <div class="cart_counter"><cas-compter (sizeChange)="tailleControle($event)" [boisson]="boissons"></cas-compter></div>
-      <img src="data:image/png;base64,{{boissons.boisson?.image}}" alt="">
+      <div class="cart_counter"><cas-compter (sizeChange)="tailleControle($event)" [boisson]="boisson"></cas-compter></div>
+      <img src="data:image/png;base64,{{boisson.boisson?.image}}" alt="">
       <label class="container"><input type="checkbox" ><span class="checkmark"></span></label>
   </div>
 </ng-container>

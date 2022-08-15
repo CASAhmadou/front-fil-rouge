@@ -11,7 +11,7 @@ export class ComplementComponent implements OnInit {
   @Input('boissonTailleBoisson') boissonTailleBoisson : BoissonTailleBoisson|null = null;
   @Input('boissons') boissons : TailleBoisson|null = null;
   @Input('frites') frites : Produit|null = null;
-  // @Input('boisson') boisson : BoissonTailleBoisson|null = null;
+  @Input('boisson') boisson : BoissonTailleBoisson|null = null;
 
   @Output() sizeChange : EventEmitter<number> = new EventEmitter();
   @Output() count: EventEmitter<any> = new EventEmitter();

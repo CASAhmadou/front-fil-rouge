@@ -28,7 +28,8 @@ import { LayoutModule } from 'src/app/layout/layout.module';
   exports: [
     PanierComponent,
     LigneComponent,
-    LivraisonComponent
+    LivraisonComponent,
+    ListeComponent
   ]
 })
 export class CommandeModule { }

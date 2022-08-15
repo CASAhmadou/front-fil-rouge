@@ -9,8 +9,8 @@ import { Produit } from 'src/app/client/shared/models/produit';
 })
 
 export class ChoixBoissonComponent implements OnInit {
-  @Input('boissons') boissons : TailleBoisson|null = null;
-  @Input('tailleBoissons') tailleBoissons : MenuTailleBoisson|null = null;
+  @Input('boissons') boissons : BoissonTailleBoisson|null = null;
+  @Input('tailleBoissons') menuTailleBoissons : MenuTailleBoisson|null = null;
   @Input('frites') frites : Produit|null = null;
   @Input('qteMenu') qteMenu : number =1;
 
@@ -22,7 +22,7 @@ export class ChoixBoissonComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  
+
   newSize :number = 0
   size = 0
   testBool :boolean = false;

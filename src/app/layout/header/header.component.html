@@ -1,7 +1,19 @@
 
     <div class="con">
+     <div>
       <img src="../../../../assets/images/logo.png" alt="" class="d-inline-block align-text-top">
-    </div>
+     </div>
+
+    <!-- <div class="input-group">
+      <div class="form-outline">
+        <input id="search-input" type="search" id="form1" class="form-control" />
+        <label class="form-label" for="form1">Search</label>
+      </div>
+      <button id="search-button" type="button" class="btn btn-primary">
+        <i class="fas fa-search"></i>
+      </button>
+    </div> -->
+  </div>
 
   <div class="cnt-header ko sticky-top">
 
@@ -35,14 +47,17 @@
                   <li class="nav-item">
                     <a class="nav-link">S'INSCRIRE</a>
                   </li>
-              </ng-container>
-              <ng-container *ngIf="isConnected">
-                <li class="nav-item">
-                  <a class="nav-link" (click)="deconnect()">SE DECONNECTER</a>
-                </li>
-              </ng-container>
+                </ng-container>
+                <ng-container *ngIf="isConnected">
+                  <li class="nav-item">
+                    <a class="nav-link" (click)="listeCom()">MES COMMANDES</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" (click)="deconnect()">SE DECONNECTER</a>
+                  </li>
+                </ng-container>
               </ul>
-              <a href="" routerLink="/commande/panier">
+              <a routerLink="/commande/panier">
                   <i class="fa-solid fa-cart-shopping panier">
                     <span class="position-absolute start-50 translate-middle badge rounded-pill">{{point}}</span>
                   </i>

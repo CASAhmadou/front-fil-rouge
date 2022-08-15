@@ -86,7 +86,7 @@ const routes: Routes &#x3D; [
   { path: &#x27;&#x27;, redirectTo: &#x27;accueil&#x27;, pathMatch:&quot;full&quot;},
   {path: &#x27;connexion&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x60;./securite/securite.module&#x60;).then(m&#x3D;&gt;m.SecuriteModule)&quot;},
   { path:&#x27;**&#x27;, component: NotFoundComponent},
-  {path: &#x27;auth&#x27;, loadChildren: ()&#x3D;&gt; &quot;import(&#x60;./auth/auth.module&#x60;).then(m&#x3D;&gt;m.AuthModule)&quot;}
+  // {path: &#x27;auth&#x27;, loadChildren: ()&#x3D;&gt; import(&#x60;./auth/auth.module&#x60;).then(m&#x3D;&gt;m.AuthModule)}
 ];
 
 @NgModule({

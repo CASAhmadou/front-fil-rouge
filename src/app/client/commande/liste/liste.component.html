@@ -1,42 +1,35 @@
+
 <cas-header></cas-header>
 <cas-footer></cas-footer>
-
+<!-- {{commandes$|async|json}} -->
 <h1 class="text-center">Liste de mes Commandes</h1>
-<div class="container d-flex justify-content-around align-items-center mt-5">
-    <table class="table">
+<div class="container toast show d-flex justify-content-around align-items-center mt-5" style="width:70%;" role="alert" aria-live="assertive" aria-atomic="true">
+    <table class="table box-shadow">
       <thead class="thead-dark">
         <tr>
           <th scope="col">N° Commande</th>
           <th scope="col">Date</th>
           <th scope="col">Montant</th>
+          <th scope="col">Etat</th>
           <th scope="col">Options</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
+        <tr *ngFor="let commande of commandes">
+          <th scope="row">{{commande.numeroCommande}}</th>
+          <!-- | paginate:{itemsPerPage:3, currentPage: p, totalItems: lenghTotal} -->
+          <td>{{commande.dateCommande | date:'dd-MM-YYYY'}}</td>
+          <td>{{commande.montantCommande}} f CFA</td>
+          <td>{{commande.etat}}</td>
           <td>
             <button type="button" class="btn" data-bs-toggle="tooltip" data-bs-placement="bottom">Detail</button>
             <button type="button" class="btn" data-bs-toggle="tooltip" data-bs-placement="bottom">Annuler</button>
           </td>
         </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-        </tr>
       </tbody>
     </table>
   </div>
+
 
   <div>
     <ul class="pagination">

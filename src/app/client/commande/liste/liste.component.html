@@ -6,8 +6,19 @@
 <h1 class="text-center">Liste de mes Commandes</h1>
 
 <div class="filtre">
-  <input type="text" placeholder="filtre par etat" id="filtreByEtat" [(ngModel)]="searchTerm">
-  <input type="text" placeholder="filtre par date" id="filtreByEtat" [(ngModel)]="searchTermDate">
+  <h5>Filtre</h5>
+  <!-- <input type="text" placeholder="filtre par etat" id="filtreByEtat" > -->
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <label class="input-group-text" for="inputGroupSelect01">Etat</label>
+    </div>
+    <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="searchTerm">
+      <option value="en cours">en cours</option>
+      <option value="termine">termine</option>
+      <option value="Disponible">disponible</option>
+    </select>
+  </div>
+  <input type="date" placeholder="filtre par date" id="filtreByDate" [(ngModel)]="date">
 </div>
 <div class=" toast show d-flex justify-content-around align-items-center mt-5" style="width:100%;" role="alert" aria-live="assertive" aria-atomic="true">
     <table class="table box-shadow text-center">
@@ -21,9 +32,9 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let commande of commandes | paginate:{itemsPerPage:3,currentPage:i,totalItems:lenghTotal} | filtre:searchTerm | filtre:searchTermDate">
+        <tr *ngFor="let commande of commandes | paginate:{itemsPerPage:3,currentPage:i,totalItems:lenghTotal} | filtre:searchTerm | filtre:date">
           <th scope="row">{{commande.numeroCommande}}</th>
-          <td>{{commande.dateCommande | date:'dd-MM-YYYY'}}</td>
+          <td>{{commande.dateCommande | date:'dd/MM/YYYY'}}</td>
           <td>{{commande.montantCommande}} f CFA</td>
           <td>{{commande.etat}}</td>
           <td>

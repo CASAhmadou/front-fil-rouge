@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NgToastService } from 'ng-angular-popup';
 import { User } from '../shared/models/user';
 import { SessionLoginService } from '../shared/service/session-login.service';
 import { TokenLoginService } from '../shared/service/token-login.service';
@@ -11,7 +12,7 @@ import { TokenLoginService } from '../shared/service/token-login.service';
 })
 export class ConnexionComponent implements OnInit {
   constructor(private sessionLogin: SessionLoginService,
-    private tok: TokenLoginService, private router:Router, private route: ActivatedRoute,
+    private tok: TokenLoginService, private router:Router, private route: ActivatedRoute, private toast: NgToastService
     ) { }
 
   ngOnInit(): void {
@@ -22,10 +23,13 @@ export class ConnexionComponent implements OnInit {
   send():void{
     this.sessionLogin.nameLogin(this.connect).subscribe(
       data => {
-        // console.log(data.token)
         this.tok.valueToken(data.token)
+        this.toast.success({detail:"success",summary:"connexion reussie"})
       },
-        error => console.log(error)
+        error => {
+          console.log(error)
+        this.toast.error({detail:"ERROR",summary:"login ou mot de passe incorrect"})
+}
     )}
 
 }

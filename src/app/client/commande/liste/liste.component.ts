@@ -14,21 +14,17 @@ export class ListeComponent implements OnInit {
   lenghTotal: number = 0
   i:number=1
   commandes: any[]=[]
-
   searchTerm:any
-  searchTermDate:any
+  date:any
 
   constructor(private comService : CommandeService) { }
 
   ngOnInit(): void {
     this.comService.commandeClient().subscribe(data=>{
-      console.log(data)
+      // console.log(data)
       this.commandes = data
       this.lenghTotal = this.commandes.length
       return data
     })
   }
-
-
-
 }

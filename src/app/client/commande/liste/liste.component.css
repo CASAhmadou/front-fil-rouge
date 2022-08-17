@@ -2,7 +2,7 @@
   background-color: #F4782F;
 }
 
-.filtre input{
+.filtre input, select{
   margin: .5rem;
   border-radius: 5rem;
   width: 8rem;

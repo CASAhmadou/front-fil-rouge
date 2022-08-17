@@ -14,4 +14,5 @@ export class Filtre implements PipeTransform{
     return commandes.filter(commande => commande.etat?.toLowerCase().indexOf(
       searchTerm.toLowerCase()) !== -1);
   }
+
 }

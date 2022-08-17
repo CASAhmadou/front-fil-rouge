@@ -17,6 +17,4 @@ export class SessionLoginService {
   nameLogin(users: User): Observable<Token>{
     return this.http.post<Token>(this.login_check, users )
   }
-
-
 }

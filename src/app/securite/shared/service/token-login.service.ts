@@ -28,6 +28,9 @@ export class TokenLoginService {
     this.router.navigate(['/'])
   }
 
-
+  ouToken():any{
+    let token = localStorage.getItem('token')
+    return token
+  }
 
 }

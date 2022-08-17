@@ -1,3 +1,14 @@
 .btn:hover{
   background-color: #F4782F;
 }
+
+.filtre input{
+  margin: .5rem;
+  border-radius: 5rem;
+  width: 8rem;
+}
+
+.pag{
+  position: relative;
+  top: 10rem;
+}

@@ -9,6 +9,10 @@ import { ProduitModule } from '../produit/produit.module';
 import { LivraisonComponent } from './livraison/livraison.component';
 import { ListeComponent } from './liste/liste.component';
 import { LayoutModule } from 'src/app/layout/layout.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgbModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { Filtre } from '../shared/service/filtre.pipe';
+import { NgxPaginationModule} from 'ngx-pagination';
 
 
 @NgModule({
@@ -17,13 +21,18 @@ import { LayoutModule } from 'src/app/layout/layout.module';
     CommandeComponent,
     LigneComponent,
     LivraisonComponent,
-    ListeComponent
+    ListeComponent,
+    Filtre
   ],
   imports: [
     CommonModule,
     CommandeRoutingModule,
     ProduitModule,
-    LayoutModule
+    LayoutModule,
+    FormsModule,
+    NgxPaginationModule,
+    NgbModule,
+    ReactiveFormsModule
   ],
   exports: [
     PanierComponent,

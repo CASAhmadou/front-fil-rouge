@@ -37,16 +37,62 @@
     </div>
 
     <div class=" d-flex col-4 flex-wrap row" style="height: 30rem;">
-      <cas-livraison></cas-livraison>
+      <div class="toast show livraison col" aria-atomic="true">
+          <form [formGroup]="registerForm" (ngSubmit)="sendData()">
+          <div class="form-group container">
+            <label class="col-form-label col-form-label-lg" for="inputLarge">Numéro Téléphone</label>
+            <input class="form-control form-control-lg input" type="text" placeholder="77 777 77 77" id="inputLarge">
+          </div>
+
+          <div class="d-flex justify-content-around">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+              <label class="form-check-label o" for="optionsRadios1">Livrable</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+              <label class="form-check-label" for="optionsRadios1">Non Livrable</label>
+            </div>
+          </div>
+
+          <div class="form-group container">
+            <label class="col-form-label col-form-label-lg" for="inputLarge">Zone de Livraison</label>
+            <div class="form-group">
+
+                <select name="" formControlName="zone" id="">
+                  <option selected>zone</option>
+                <ng-container *ngFor="let zone of zones">
+                  <option value="{{zone.id}}">{{zone.libelle}}:
+                    <ng-container *ngFor="let quartier of zone.quartiers">
+                      {{quartier.libelle}}
+                    </ng-container>
+                  </option>
+                  </ng-container>
+                </select>
+                <div *ngIf="zone.invalid && zone.touched || zone.dirty">
+                  <span style="color: red;" *ngIf="zone.errors?.required">Zone obligatoire</span>
+                </div>
+                <!-- <fieldset>
+                  <input class="form-control input" id="readOnlyInput" type="text" placeholder="Readonly input here..." readonly="true">
+              </fieldset> -->
+            </div>
+          </div>
+
+          <div class="form-group container">
+            <label class="col-form-label col-form-label-lg" for="inputLarge">Adresse</label>
+            <input class="form-control form-control-lg input" type="text" placeholder="Yeumbeul" id="inputLarge">
+          </div>
+        </form>
+        </div>
 
       <div class="d-flex justify-content-around mt-5">
         <a routerLink="/produits">
-          <button type="button" class="btn btn-pers btn-lg btn-block">
+          <button type="submit" class="btn btn-pers btn-lg btn-block">
             ANNULER
           </button>
         </a>
         <a routerLink="/commande">
-          <button type="button" class="btn btn-pers btn-lg btn-block">
+          <button type="submit" (click)="commandeValide()" class="btn btn-pers btn-lg btn-block">
             COMMANDER
           </button>
         </a>

@@ -140,6 +140,10 @@ removeCart(object:any){
   }
   return this.behav.next
 }
+removeAllCart(){
+  localStorage.removeItem('cart')
+  window.location.reload()
+}
 
 /* boisson commande */
 ajoutBoisson(boissonCommande:CommandeBoisson){

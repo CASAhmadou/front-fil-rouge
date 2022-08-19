@@ -21,7 +21,10 @@ export class CommandeService {
         'Authorization':`Bearer ${this.token.ouToken()}`
       })
     }
+<<<<<<< HEAD
     console.log(panier)
+=======
+>>>>>>> bf6d652c79bf72474aa49aa96a8fa6002931c11f
     return this.http.post(this.commandeUrl,JSON.stringify(panier),variable)
   }
 
@@ -41,7 +44,11 @@ export class CommandeService {
     )
   }
 
+<<<<<<< HEAD
   zones(){
+=======
+  zoneAll(){
+>>>>>>> bf6d652c79bf72474aa49aa96a8fa6002931c11f
     return this.http.get<any>(this.zoneUrl).pipe(
       map(data=>{
         let test = data['hydra:member']

@@ -13,6 +13,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular-devkit/build-angular": "^14.1.2",
     "@angular/animations": "~13.0.0-next.0",
     "@angular/common": "~13.0.0-next.0",
     "@angular/compiler": "~13.0.0-next.0",
@@ -40,7 +41,10 @@
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
+<<<<<<< HEAD
     "@angular-devkit/build-angular": "^13.0.4",
+=======
+>>>>>>> bf6d652c79bf72474aa49aa96a8fa6002931c11f
     "@angular/cli": "~13.0.0",
     "@angular/compiler-cli": "~13.0.0-next.0",
     "@angular/localize": "^13.0.3",

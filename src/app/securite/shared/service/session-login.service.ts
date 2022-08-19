@@ -1,3 +1,4 @@
+
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
@@ -17,4 +18,9 @@ export class SessionLoginService {
   nameLogin(users: User): Observable<Token>{
     return this.http.post<Token>(this.login_check, users )
   }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> bf6d652c79bf72474aa49aa96a8fa6002931c11f
 }

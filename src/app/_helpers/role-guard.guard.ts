@@ -12,7 +12,7 @@ export class RoleGuardGuard implements CanActivate {
       if(this.token.haveAccess())
        return true;
       else{
-        this.router.navigate(['/gestionnaire'])
+        this.router.navigate(['gestionnaire/commande'])
         return false
       }
   }

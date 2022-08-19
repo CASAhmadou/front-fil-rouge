@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { GestionnaireComponent } from './gestionnaire.component';
+import { CommandeComponent } from './commande/commande.component';
 
 const routes: Routes = [
-  {path: '', component: GestionnaireComponent}
+  {path: 'commande', loadChildren: () => import('./commande/commande.module').then(m=>m.CommandeModule)},
+  {path: '', component: CommandeComponent}
 ];
 
 @NgModule({

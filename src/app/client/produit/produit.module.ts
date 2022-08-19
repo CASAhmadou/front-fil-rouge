@@ -7,7 +7,6 @@ import { RouterModule } from '@angular/router';
 import { BlogComponent } from '../components/blog/blog.component';
 import { ProduitComponent } from './produit.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ListComponent } from '../components/list/list.component';
 import { CardComponent } from '../components/card/card.component';
 import { DetailComponent } from './detail/detail.component';
 import { ChoixBoissonComponent } from './detail/choix-boisson/choix-boisson.component';
@@ -22,7 +21,6 @@ import { LayoutModule } from 'src/app/layout/layout.module';
     ProduitComponent,
     CatalogueComponent,
     BlogComponent,
-    ListComponent,
     CardComponent,
     DetailComponent,
     CompterComponent,

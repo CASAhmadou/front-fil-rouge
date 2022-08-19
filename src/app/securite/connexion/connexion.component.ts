@@ -23,8 +23,10 @@ export class ConnexionComponent implements OnInit {
   send():void{
     this.sessionLogin.nameLogin(this.connect).subscribe(
       data => {
+        // console.log(data.id)
         this.tok.valueToken(data.token)
         this.toast.success({detail:"success",summary:"connexion reussie"})
+
       },
         error => {
           console.log(error)

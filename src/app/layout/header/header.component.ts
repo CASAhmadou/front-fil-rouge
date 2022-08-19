@@ -35,4 +35,12 @@ export class HeaderComponent implements OnInit {
     this.router.navigateByUrl(`commande/liste`)
   }
 
+  livraison():void{
+    this.router.navigateByUrl(`gestionnaire/commande/livraison`)
+  }
+
+  livreur():void{
+    this.router.navigateByUrl(`gestionnaire/commande/livreur`)
+  }
+
 }

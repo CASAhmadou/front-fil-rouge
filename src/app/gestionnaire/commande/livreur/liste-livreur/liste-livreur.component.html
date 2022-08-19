@@ -1,0 +1,32 @@
+<cas-header></cas-header>
+<cas-footer></cas-footer>
+
+<div class="container mt-5">
+
+  <h1 class="text-center">Liste des Livreurs</h1>
+
+    <button type="button" style="font-size:1.5rem;" (click)="newLivreur()" class="btn">NOUVEAU LIVREUR</button>
+  <div class=" toast show d-flex justify-content-around align-items-center mt-5" style="width:100%;" role="alert" aria-live="assertive" aria-atomic="true">
+      <table class="table box-shadow text-center">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">N° Matricule</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Prenom</th>
+            <th scope="col">Etat</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let livreur of livreurs">
+            <th scope="row">{{livreur.matriculeMoto}}</th>
+            <td>{{livreur.nom}}</td>
+            <td>{{livreur.prenom}}</td>
+            <td>{{livreur.etat}}</td>
+
+        </tbody>
+      </table>
+    </div>
+    <!-- <pagination-controls class="pag" (pageChange)="p=$event"></pagination-controls> -->
+
+  </div>
+

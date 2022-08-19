@@ -5,13 +5,11 @@ import { ClientRoutingModule } from './client-routing.module';
 import { RouterModule } from '@angular/router';
 import { CardComponent } from './components/card/card.component';
 import { LayoutModule } from '../layout/layout.module';
-import { ClientComponent } from './client.component';
 import { BlogComponent } from './components/blog/blog.component';
 
 
 @NgModule({
   declarations: [
-    ClientComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +18,6 @@ import { BlogComponent } from './components/blog/blog.component';
     LayoutModule
   ],
   exports: [
-     ClientComponent
   ]
 })
 export class ClientModule { }

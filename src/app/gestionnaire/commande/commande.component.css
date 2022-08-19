@@ -2,6 +2,11 @@
   background-color: #F4782F;
 }
 
+.pag{
+  position: relative;
+  top: 1rem;
+}
+
 .filtre input, select{
   margin: .5rem;
   border-radius: 5rem;
@@ -17,9 +22,3 @@
 select:hover{
   background-color: #F4782F;
 }
-
-.pag{
-  position: relative;
-  top: 1rem;
-}
-

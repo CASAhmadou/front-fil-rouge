@@ -2,8 +2,7 @@ import { state } from '@angular/animations';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Route, Router, RouterStateSnapshot } from '@angular/router';
-import { Observable } from 'rxjs';
-import jwt_decode from 'jwt-decode';
+import jwt_decode from "jwt-decode"
 
 @Injectable({
   providedIn: 'root'
@@ -14,10 +13,22 @@ export class TokenLoginService {
 
   //garde token
   valueToken(token:string):void{
+    let tokInfo = this.getDecodedAccessToken(token)
+      if (tokInfo.roles[0] == ["ROLE_CLIENT"]) {
+        this.router.navigate(['commande/panier'])
+      }else{
+        this.router.navigate(['gestionnaire'])
+      }
     localStorage.setItem('token', token)
-    this.router.navigate(['produits'])
   }
 
+  getDecodedAccessToken(token: string): any {
+    try {
+      return jwt_decode(token);
+    } catch(Error) {
+      return null;
+    }
+  }
 
   onLogin():boolean{
     const token = localStorage.getItem('token')
@@ -45,5 +56,11 @@ export class TokenLoginService {
     }
     return false
   }
+
+  getId():any{
+    const id= localStorage.getItem('id')
+    return Number(id)
+  }
+
 
 }

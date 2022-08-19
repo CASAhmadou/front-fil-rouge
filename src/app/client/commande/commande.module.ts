@@ -11,8 +11,8 @@ import { ListeComponent } from './liste/liste.component';
 import { LayoutModule } from 'src/app/layout/layout.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { Filtre } from '../shared/service/filtre.pipe';
 import { NgxPaginationModule} from 'ngx-pagination';
+import { DateFilter, FiltreEtat } from '../shared/service/filtre.pipe';
 
 
 @NgModule({
@@ -22,7 +22,8 @@ import { NgxPaginationModule} from 'ngx-pagination';
     LigneComponent,
     LivraisonComponent,
     ListeComponent,
-    Filtre
+    DateFilter,
+    FiltreEtat
   ],
   imports: [
     CommonModule,

@@ -3,24 +3,28 @@
 <!-- {{commandes$|async|json}} -->
 <div class="container mt-5">
 
-<h1 class="text-center">Liste de mes Commandes</h1>
+  <h1 class="text-center">Liste de mes Commandes</h1>
 
-<div class="filtre">
   <h5>Filtre</h5>
-  <!-- <input type="text" placeholder="filtre par etat" id="filtreByEtat" > -->
-  <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <label class="input-group-text" for="inputGroupSelect01">Etat</label>
+  <div class="filtre d-flex" style="width: 20rem;">
+    <div class="mb-3">
+      <label>Par Etat</label>
+      <select class="form-control" id="exampleFormControlSelect1" [(ngModel)]="etatSearch">
+        <!-- <ng-container *ngFor="let commande of commandes"> -->
+          <option value="en cours">en cours</option>
+          <option value="termine">termine</option>
+          <option value="disponible">disponible</option>
+        <!-- </ng-container> -->
+      </select>
     </div>
-    <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="searchTerm">
-      <option value="en cours">en cours</option>
-      <option value="termine">termine</option>
-      <option value="Disponible">disponible</option>
-    </select>
+
+    <div>
+      <label>Par Date</label>
+      <input type="date" placeholder="filtre par date" id="filtreByDate" [(ngModel)]="dateSearch">
+    </div>
   </div>
-  <input type="date" placeholder="filtre par date" id="filtreByDate" [(ngModel)]="date">
-</div>
-<div class=" toast show d-flex justify-content-around align-items-center mt-5" style="width:100%;" role="alert" aria-live="assertive" aria-atomic="true">
+  
+  <div class=" toast show d-flex justify-content-around align-items-center mt-5" style="width:100%;" role="alert" aria-live="assertive" aria-atomic="true">
     <table class="table box-shadow text-center">
       <thead class="thead-dark">
         <tr>
@@ -32,9 +36,9 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let commande of commandes | paginate:{itemsPerPage:3,currentPage:i,totalItems:lenghTotal} | filtre:searchTerm | filtre:date">
+        <tr *ngFor="let commande of commandes | paginate:{itemsPerPage:3,currentPage:i,totalItems:lenghTotal} | filtreEtat:etatSearch | dateFilter:dateSearch">
           <th scope="row">{{commande.numeroCommande}}</th>
-          <td>{{commande.dateCommande | date:'dd/MM/YYYY'}}</td>
+          <td>{{commande.dateCommande | date:'dd-MM-YYYY'}}</td>
           <td>{{commande.montantCommande}} f CFA</td>
           <td>{{commande.etat}}</td>
           <td>

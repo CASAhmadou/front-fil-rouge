@@ -33,6 +33,8 @@
                   <div class="dropdown-menu">
 
                     <!-- <a class="dropdown-item" routerLink="/produits/catalogue">PRODUITS</a> -->
+                    <a class="dropdown-item" routerLink="/produits/catalogue" [queryParams]="{type:'burgers'}">AJOUT MENU</a>
+
 
                     <a class="dropdown-item" routerLink="/produits/catalogue" [queryParams]="{type:'burgers'}">BURGER</a>
 
@@ -50,7 +52,13 @@
                 </ng-container>
                 <ng-container *ngIf="isConnected">
                   <li class="nav-item">
-                    <a class="nav-link" (click)="listeCom()">COMMANDES</a>
+                    <a class="nav-link" (click)="listeCom()">LISTE COMMANDES</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" (click)="livraison()">LIVRAISONS</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" (click)="livreur()">LIVREURS</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" (click)="deconnect()">SE DECONNECTER</a>

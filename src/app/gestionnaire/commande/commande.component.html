@@ -1,0 +1,75 @@
+<cas-header></cas-header>
+<cas-footer></cas-footer>
+
+<!-- {{commandes$|async|json}} -->
+<div class="container mt-5">
+
+    <h1 class="text-center">Liste des Commandes</h1>
+
+    <!-- <input type="text" name="" placeholder="filtrer par etat" id="filtreByEtat" [(ngModel)]="searchTerm"  /> -->
+    <!-- <input type="text" name="" placeholder="filtrer par zone" id="filtreByZone" [(ngModel)]="searchTermZone" /> -->
+    <!-- <input type="text" name="" placeholder="filtrer par client" id="filtreByZone" [(ngModel)]="searchTermClient" /> -->
+
+    <h5>Filtre</h5>
+    <div class="filtre d-flex" style="width: 20rem;">
+      <div class="mb-3">
+        <label>Par Etat</label>
+        <select class="form-control" id="exampleFormControlSelect1" [(ngModel)]="searchTerm">
+            <option value="en cours">en cours</option>
+            <option value="disponible">disponible</option>
+            <option value="termine">termine</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label>Par Zone</label>
+        <select class="form-control" id="exampleFormControlSelect1" [(ngModel)]="searchTermZone">
+          <ng-container *ngFor="let commande of commandes">
+            <option value="{{commande.zone?.libelle}}">{{commande.zone?.libelle}}</option>
+          </ng-container>
+        </select>
+      </div>
+
+      <div>
+        <label>Par Client</label>
+        <input type="text" placeholder="filtre par date" id="filtreByDate" [(ngModel)]="searchTermClient">
+      </div>
+
+      <div>
+        <label>Par Date</label>
+        <input type="date" placeholder="filtre par date" id="filtreByDate" [(ngModel)]="searchTermDate">
+      </div>
+    </div>
+
+
+<div class=" toast show d-flex justify-content-around align-items-center mt-5" style="width:100%;" role="alert" aria-live="assertive" aria-atomic="true">
+    <table class="table box-shadow text-center">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">N° Commande</th>
+          <th scope="col">Date</th>
+          <th scope="col">Client</th>
+          <th scope="col">Montant</th>
+          <th scope="col">Etat</th>
+          <th scope="col">Options</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let commande of commandes | commandeFilter:searchTerm | CommandeDateFilter:searchTermDate | CommandeZoneFilter:searchTermZone | CommandeCLientFilter:searchTermClient | paginate:{itemsPerPage:5,currentPage:p,totalItems:totalLenght}">
+          <th scope="row">{{commande.numeroCommande}}</th>
+          <td>{{commande.dateCommande | date:'dd-MM-YYYY'}}</td>
+          <td>{{commande.client?.nom}} {{commande.client?.prenom}}</td>
+          <td>{{commande.montantCommande}} f CFA</td>
+          <td>{{commande.etat}}</td>
+          <td>
+            <button type="button" class="btn" (click)="editCommande(commande.id,'valide')" data-bs-toggle="tooltip" data-bs-placement="bottom">Valide</button>
+            <button type="button" class="btn" data-bs-toggle="tooltip" data-bs-placement="bottom">Terminer</button>
+            <button type="button" class="btn" data-bs-toggle="tooltip" data-bs-placement="bottom">Annuler</button>
+          </td>
+        <!-- </tr> -->
+      </tbody>
+    </table>
+  </div>
+  <pagination-controls class="pag" (pageChange)="p=$event"></pagination-controls>
+
+</div>

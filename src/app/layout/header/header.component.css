@@ -39,8 +39,13 @@
   font-size: 1.5rem;
 }
 
+li{
+  padding: .5rem;
+}
+
 li a:hover{
   border-radius: 5rem;
+  cursor: pointer;
   background-color: #F4782F;
 }
 

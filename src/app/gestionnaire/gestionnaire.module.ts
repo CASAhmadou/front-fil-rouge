@@ -2,16 +2,21 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { GestionnaireRoutingModule } from './gestionnaire-routing.module';
-import { GestionnaireComponent } from './gestionnaire.component';
+import { CommandeComponent } from './commande/commande.component';
 import { LayoutModule } from '../layout/layout.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CommandeCLientFilter, CommandeDateFilter, CommandeFilterPipe, CommandeZoneFilter } from './shared/services/commande-filter.pipe';
 
 
 @NgModule({
   declarations: [
-    GestionnaireComponent
+    CommandeComponent,
+    CommandeFilterPipe,
+    CommandeDateFilter,
+    CommandeCLientFilter,
+    CommandeZoneFilter
   ],
   imports: [
     CommonModule,
@@ -20,10 +25,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     FormsModule,
     NgxPaginationModule,
     NgbModule,
-    ReactiveFormsModule,
-  ],
-  exports:[
-    GestionnaireComponent
+    ReactiveFormsModule
   ]
 })
 export class GestionnaireModule { }

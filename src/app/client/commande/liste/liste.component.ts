@@ -14,8 +14,8 @@ export class ListeComponent implements OnInit {
   lenghTotal: number = 0
   i:number=1
   commandes: any[]=[]
-  searchTerm:any
-  date:any
+  etatSearch:any
+  dateSearch:any
 
   constructor(private comService : CommandeService) { }
 

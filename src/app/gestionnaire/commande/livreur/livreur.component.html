@@ -1,0 +1,82 @@
+<cas-header></cas-header>
+<cas-footer></cas-footer>
+
+
+<div class="container mt-5">
+  <div class="toast show container livraison d-flex flex-column" aria-atomic="true">
+    <div class="form-group ">
+      <h1>NOUVEAU LIVREUR </h1>
+
+     <div class="form-group d-flex">
+      <form name="form" [formGroup]="registerForm" (ngSubmit)="submitData()" >
+
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="form-floating">
+              <input type="text" formControlName="nom" class="form-control"  placeholder="Nom">
+              <label for="floatingPassword">Nom</label>
+              <div *ngIf="nom.invalid && nom.touched || nom.dirty">
+                  <span *ngIf="nom.errors?.required">La description est obligatoire</span>
+                  <span *ngIf="nom.errors?.pattern">Le nom est doit contenir que des lettres</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="form-floating">
+              <input type="text" formControlName="prenom" class="form-control" placeholder="Prenom">
+              <label for="floatingPassword">Prenom</label>
+              <div *ngIf="prenom.invalid && prenom.touched || prenom.dirty">
+                  <span *ngIf="prenom.errors?.required">Le prenom est obligatoire</span>
+                  <span *ngIf="prenom.errors?.pattern">Le prenom est doit contenir que des lettres</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-4">
+            <div class="form-floating">
+              <input type="email" formControlName="login" name="password" class="form-control" placeholder="abc@gmail.com">
+              <label for="floatingPassword">Login</label>
+              <div *ngIf="login.invalid && login.touched || login.dirty">
+                <span *ngIf="login.errors?.required">Le login est obligatoire</span>
+                <span *ngIf="login.errors?.email">Le login doit etre un email</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-4">
+            <div class="form-floating">
+              <input type="password" formControlName="password" class="form-control" id="floatingPassword" placeholder="Password">
+              <label for="floatingPassword">Password</label>
+              <div *ngIf="password.invalid && password.touched || password.dirty">
+                <span *ngIf="password.errors?.required">Le mot de passe est obligatoire</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-4">
+            <div class="form-floating">
+              <input type="text" formControlName="telephone" class="form-control" id="floatingPassword" placeholder="77 123 45 67">
+              <label for="floatingPassword">Telephone</label>
+              <div *ngIf="telephone.invalid && telephone.touched || telephone.dirty">
+                <span *ngIf="telephone.errors?.required">Le numero est obligatoire</span>
+                <span *ngIf="telephone.errors?.pattern">Le numero est doit contenir que des chiffres</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-4">
+            <div class="form-floating">
+              <input type="text" formControlName="matriculeMoto" class="form-control" id="floatingPassword" placeholder="Password">
+              <label for="floatingPassword">Matricule Moto</label>
+            </div>
+          </div>
+        </div>
+
+          <div class="d-flex justify-content-around mt-5">
+              <input class="btn" type="submit"  value="Enregistre" />
+          </div>
+      </form>
+    </div>
+    </div>
+  </div>
+</div>

@@ -51,7 +51,7 @@ export class LivreurComponent implements OnInit {
 
 
   submitData(){
-      console.log(this.registerForm.value)
+      // console.log(this.registerForm.value)
     this.comServ.addLivreur(this.registerForm.value).subscribe(
       err=>console.log("Error: " + err),
     )

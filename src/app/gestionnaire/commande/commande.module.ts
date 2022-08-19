@@ -22,7 +22,7 @@ import { ListeLivreurComponent } from './livreur/liste-livreur/liste-livreur.com
     LayoutModule,
     FormsModule,
     NgxPaginationModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   exports:[
     LivraisonComponent,

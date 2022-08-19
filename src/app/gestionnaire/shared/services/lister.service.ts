@@ -10,7 +10,6 @@ import { TokenLoginService } from 'src/app/securite/shared/service/token-login.s
 export class CommandeService {
 
   private urlAllCommande: string = 'http://localhost:8000/api/commandes'
-  private urlCommandeZoneI = 'http://127.0.0.1:8000/api/zones/1/commandes'
   private urlCommandeZone: string = 'http://127.0.0.1:8000/api/zones'
   private urlLivreurs: string = 'http://127.0.0.1:8000/api/livreurs'
   private urlPutCommande = 'http://127.0.0.1:8000/api/commandes'

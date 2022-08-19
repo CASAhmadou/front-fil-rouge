@@ -118,6 +118,9 @@
                                 <a href="#getTotalPrice" >getTotalPrice</a>
                             </li>
                             <li>
+                                <a href="#removeAllCart" >removeAllCart</a>
+                            </li>
+                            <li>
                                 <a href="#removeCart" >removeCart</a>
                             </li>
                         </ul>
@@ -176,8 +179,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="145"
-                            class="link-to-prism">src/app/client/shared/service/panier.service.ts:145</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="149"
+                            class="link-to-prism">src/app/client/shared/service/panier.service.ts:149</a></div>
                 </td>
             </tr>
 
@@ -314,8 +317,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="156"
-                            class="link-to-prism">src/app/client/shared/service/panier.service.ts:156</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="160"
+                            class="link-to-prism">src/app/client/shared/service/panier.service.ts:160</a></div>
                 </td>
             </tr>
 
@@ -463,6 +466,43 @@
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeAllCart"></a>
+                    <span class="name">
+                        <span ><b>removeAllCart</b></span>
+                        <a href="#removeAllCart"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>removeAllCart()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="143"
+                            class="link-to-prism">src/app/client/shared/service/panier.service.ts:143</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
                     </div>
                 </td>
@@ -809,6 +849,10 @@ removeCart(object:any){
 
   }
   return this.behav.next
+}
+removeAllCart(){
+  localStorage.removeItem(&#x27;cart&#x27;)
+  window.location.reload()
 }
 
 /* boisson commande */

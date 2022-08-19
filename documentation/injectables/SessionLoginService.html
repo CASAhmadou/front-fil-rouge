@@ -182,8 +182,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="16"
-                            class="link-to-prism">src/app/securite/shared/service/session-login.service.ts:16</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="17"
+                            class="link-to-prism">src/app/securite/shared/service/session-login.service.ts:17</a></div>
                 </td>
             </tr>
 
@@ -288,13 +288,12 @@ export class SessionLoginService {
 
   private login_check &#x3D; &quot;http://127.0.0.1:8000/api/login_check&quot;
 
+
   constructor(private http:HttpClient) { }
 
   nameLogin(users: User): Observable&lt;Token&gt;{
     return this.http.post&lt;Token&gt;(this.login_check, users )
   }
-
- 
 }
 </code></pre>
     </div>

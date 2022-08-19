@@ -1,0 +1,23 @@
+.livraison
+{
+  width: 90%;
+}
+.livraison h1{
+  margin-bottom: 50px;
+  text-align: center;
+}
+.livraison input{
+  font-size: 2rem;
+  width: 25rem;
+  border-radius: 5rem;
+}
+
+.btn:hover{
+  cursor: pointer;
+  border-radius: 5rem;
+  background-color:#F4782F;
+  color: white;
+}
+span{
+  color: white;
+}

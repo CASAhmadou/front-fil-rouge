@@ -6,6 +6,7 @@ export interface Commande {
   etat?:string
   montantCommande?:string
   client?:User
+  livreur?:User
   zone?:Zone
 }
 

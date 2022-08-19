@@ -13,6 +13,7 @@ export class LivraisonComponent implements OnInit {
   commandesZones :any[] = []
   commandesZones2 :any[] = []
   commandesZones3 :any[] = []
+  commandesZones4 :any[] = []
   commandesAll :any[] = []
 
   livreurs: any[] = []
@@ -40,8 +41,14 @@ export class LivraisonComponent implements OnInit {
     this.comServ.commandesByZone(3).subscribe(data=>{
       this.commandesZones3 = data.filter((commande:any) => commande.etat=="termine")
     })
+    this.comServ.commandesByZone(4).subscribe(data=>{
+      this.commandesZones4 = data.filter((commande:any) => commande.etat=="termine")
+    })
     this.comServ.allLivreur().subscribe(data=>{
-      this.livreurs = data.filter((livreur:any)=> livreur.etat=="disponible")
+      this.livreurs = data
+      this.livreurs.filter((livreur:any)=> livreur.etat=="disponible")
+      // console.log(this.livreurs)
+
     })
 
     /* form */

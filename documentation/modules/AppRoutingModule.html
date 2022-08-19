@@ -74,19 +74,18 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
 import { RouterModule, Routes } from &#x27;@angular/router&#x27;;
-import { CatalogueComponent } from &#x27;./client/produit/catalogue/catalogue.component&#x27;;
 import { ProduitComponent } from &#x27;./client/produit/produit.component&#x27;;
 import { NotFoundComponent } from &#x27;./not-found/not-found.component&#x27;;
-import { SecuriteComponent } from &#x27;./securite/securite.component&#x27;;
+import { RoleGuardGuard } from &#x27;./_helpers/role-guard.guard&#x27;;
 
 const routes: Routes &#x3D; [
   { path: &#x27;produits&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x60;./client/produit/produit.module&#x60;).then(m &#x3D;&gt; m.ProduitModule)&quot;},
-  {path: &#x27;commande&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x60;./client/commande/commande.module&#x60;).then(m&#x3D;&gt;m.CommandeModule)&quot;},
+  { path: &#x27;commande&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x60;./client/commande/commande.module&#x60;).then(m&#x3D;&gt;m.CommandeModule)&quot;,canActivate:[RoleGuardGuard]},
   { path: &#x27;accueil&#x27;, component: ProduitComponent},
+  { path: &#x27;gestionnaire&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x60;./gestionnaire/gestionnaire.module&#x60;).then(m &#x3D;&gt; m.GestionnaireModule)&quot;},
   { path: &#x27;&#x27;, redirectTo: &#x27;accueil&#x27;, pathMatch:&quot;full&quot;},
-  {path: &#x27;connexion&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x60;./securite/securite.module&#x60;).then(m&#x3D;&gt;m.SecuriteModule)&quot;},
+  { path: &#x27;connexion&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x60;./securite/securite.module&#x60;).then(m&#x3D;&gt;m.SecuriteModule)&quot;},
   { path:&#x27;**&#x27;, component: NotFoundComponent},
-  // {path: &#x27;auth&#x27;, loadChildren: ()&#x3D;&gt; import(&#x60;./auth/auth.module&#x60;).then(m&#x3D;&gt;m.AuthModule)}
 ];
 
 @NgModule({

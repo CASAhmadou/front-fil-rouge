@@ -75,14 +75,15 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
 import { RouterModule, Routes } from &#x27;@angular/router&#x27;;
 import { AuthGuard } from &#x27;src/app/_helpers/auth.guard&#x27;;
-import { ListComponent } from &#x27;../components/list/list.component&#x27;;
+import { RoleGuardGuard } from &#x27;src/app/_helpers/role-guard.guard&#x27;;
 import { CommandeComponent } from &#x27;./commande.component&#x27;;
+import { ListeComponent } from &#x27;./liste/liste.component&#x27;;
 import { PanierComponent } from &#x27;./panier/panier.component&#x27;;
 
 const routes: Routes &#x3D; [
   {path: &quot;panier&quot;, component: PanierComponent},
   {path: &#x27;&#x27;, component: CommandeComponent, canActivate: [AuthGuard] },
-  { path: &#x27;liste&#x27;, component: ListComponent, canActivate: [AuthGuard] }
+  { path: &quot;liste&quot;, component: ListeComponent, canActivate: [RoleGuardGuard] }
 ];
 @NgModule({
   imports: [RouterModule.forChild(routes)],

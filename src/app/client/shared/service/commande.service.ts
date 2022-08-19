@@ -21,6 +21,7 @@ export class CommandeService {
         'Authorization':`Bearer ${this.token.ouToken()}`
       })
     }
+    console.log(panier)
     return this.http.post(this.commandeUrl,JSON.stringify(panier),variable)
   }
 

@@ -17,6 +17,7 @@ import { CommandeCLientFilter, CommandeDateFilter, CommandeFilterPipe, CommandeZ
     CommandeDateFilter,
     CommandeCLientFilter,
     CommandeZoneFilter
+
   ],
   imports: [
     CommonModule,

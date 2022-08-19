@@ -31,11 +31,11 @@ export class CommandeComponent implements OnInit {
     })
   }
 
-    /* fonction changer etat commande */
-    editCommande(id:any,etat:string){
-      this.com.resetCommande(id,etat) .subscribe();
-        this.toast.info({detail:"info",summary:"le commande a bien été modifié"})
-        location.reload()
-    }
+  /* fonction changer etat commande */
+  editCommande(id:any,etat:string){
+    this.com.resetCommande(id,etat) .subscribe();
+      this.toast.info({detail:"info",summary:"le commande a bien été modifié"})
+      location.reload()
+  }
 
 }

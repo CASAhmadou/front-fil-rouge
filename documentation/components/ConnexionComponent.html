@@ -172,12 +172,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(sessionLogin: <a href="../injectables/SessionLoginService.html" target="_self">SessionLoginService</a>, tok: <a href="../injectables/TokenLoginService.html" target="_self">TokenLoginService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>)</code>
+<code>constructor(sessionLogin: <a href="../injectables/SessionLoginService.html" target="_self">SessionLoginService</a>, tok: <a href="../injectables/TokenLoginService.html" target="_self">TokenLoginService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, toast: NgToastService)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/securite/connexion/connexion.component.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/securite/connexion/connexion.component.ts:13</a></div>
                             </td>
                         </tr>
 
@@ -242,6 +242,18 @@
                                                     </td>
                                                     
                                                 </tr>
+                                                <tr>
+                                                        <td>toast</td>
+                                                  
+                                                        <td>
+                                                                    <code>NgToastService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -280,8 +292,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="17"
-                            class="link-to-prism">src/app/securite/connexion/connexion.component.ts:17</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="18"
+                            class="link-to-prism">src/app/securite/connexion/connexion.component.ts:18</a></div>
                 </td>
             </tr>
 
@@ -317,8 +329,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="22"
-                            class="link-to-prism">src/app/securite/connexion/connexion.component.ts:22</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="23"
+                            class="link-to-prism">src/app/securite/connexion/connexion.component.ts:23</a></div>
                 </td>
             </tr>
 
@@ -364,7 +376,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/securite/connexion/connexion.component.ts:20</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/securite/connexion/connexion.component.ts:21</a></div>
                         </td>
                     </tr>
 
@@ -379,6 +391,7 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import { ActivatedRoute, Router } from &#x27;@angular/router&#x27;;
+import { NgToastService } from &#x27;ng-angular-popup&#x27;;
 import { User } from &#x27;../shared/models/user&#x27;;
 import { SessionLoginService } from &#x27;../shared/service/session-login.service&#x27;;
 import { TokenLoginService } from &#x27;../shared/service/token-login.service&#x27;;
@@ -390,7 +403,7 @@ import { TokenLoginService } from &#x27;../shared/service/token-login.service&#x
 })
 export class ConnexionComponent implements OnInit {
   constructor(private sessionLogin: SessionLoginService,
-    private tok: TokenLoginService, private router:Router, private route: ActivatedRoute,
+    private tok: TokenLoginService, private router:Router, private route: ActivatedRoute, private toast: NgToastService
     ) { }
 
   ngOnInit(): void {
@@ -401,10 +414,15 @@ export class ConnexionComponent implements OnInit {
   send():void{
     this.sessionLogin.nameLogin(this.connect).subscribe(
       data &#x3D;&gt; {
-        // console.log(data.token)
+        // console.log(data.id)
         this.tok.valueToken(data.token)
+        this.toast.success({detail:&quot;success&quot;,summary:&quot;connexion reussie&quot;})
+
       },
-        error &#x3D;&gt; console.log(error)
+        error &#x3D;&gt; {
+          console.log(error)
+        this.toast.error({detail:&quot;ERROR&quot;,summary:&quot;login ou mot de passe incorrect&quot;})
+}
     )}
 
 }
@@ -412,7 +430,11 @@ export class ConnexionComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container mt-5&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">
+
+
+
+&lt;div class&#x3D;&quot;container mt-5&quot;&gt;
       &lt;div class&#x3D;&quot;toast show container livraison d-flex justify-content-center align-items-center&quot; aria-atomic&#x3D;&quot;true&quot;&gt;
         &lt;div class&#x3D;&quot;form-group &quot;&gt;
           &lt;h1&gt;Connectez - vous! &lt;/h1&gt;
@@ -515,7 +537,7 @@ export class ConnexionComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><div class="container mt-5">      <div class="toast show container livraison d-flex justify-content-center align-items-center" aria-atomic="true">        <div class="form-group ">          <h1>Connectez - vous! </h1>         <div class="form-group">          <form name="form" #v="ngForm" (ngSubmit)="v.form.valid && send()">              <div class="form-floating mb-3">                <input type="text" class="form-control" name="email" [(ngModel)]="connect.login"  #login="ngModel" id="exampleInputEmail1" placeholder="name@example.com" required>                <small id="emailHelp" class="form-text text-muted"></small>                <label for="floatingInput">abc@gmail.com</label>                <span class="form_error" *ngIf="login.errors && v.submitted">*obligatoire</span>              </div>              <div class="form-floating">                <input type="password" name="password" class="form-control" [(ngModel)]="connect.password" #password="ngModel" id="floatingPassword" placeholder="Password" required>                <label for="floatingPassword">Password</label>                <span class="form_error" *ngIf="password.errors && v.submitted">*obligatoire</span>              </div>              <div class="d-flex justify-content-around mt-5">                <a routerLink="/inscrire">                  <button type="button" class="btn btn-pers btn-lg btn-block">                    NOUVEAU COMPTE                  </button>                </a>                <!-- <a routerLink="/accueil">                </a> -->                  <button class="btn btn-pers btn-lg btn-block">                    CONNEXION                  </button>              </div>          </form>        </div>        </div>      </div>      <div class="d-flex justify-content-center mt-5">        <img src="../../../../assets/images/logo.png" alt="" class="d-inline-block align-text-top">      </div>    </div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlogComponent', 'selector': 'cas-blog'},{'name': 'CardComponent', 'selector': 'cas-card'},{'name': 'CatalogueComponent', 'selector': 'cas-catalogue'},{'name': 'ChoixBoissonComponent', 'selector': 'cas-choix-boisson'},{'name': 'ClientComponent', 'selector': 'cas-client'},{'name': 'CommandeComponent', 'selector': 'cas-commande'},{'name': 'ComplementComponent', 'selector': 'cas-complement'},{'name': 'CompterComponent', 'selector': 'cas-compter'},{'name': 'ConnexionComponent', 'selector': 'cas-connexion'},{'name': 'DetailComponent', 'selector': 'cas-detail'},{'name': 'DetailMenuComponent', 'selector': 'cas-detail-menu'},{'name': 'FooterComponent', 'selector': 'cas-footer'},{'name': 'HeaderComponent', 'selector': 'cas-header'},{'name': 'LigneComponent', 'selector': 'cas-ligne'},{'name': 'ListComponent', 'selector': 'cas-list'},{'name': 'ListeComponent', 'selector': 'cas-liste'},{'name': 'LivraisonComponent', 'selector': 'cas-livraison'},{'name': 'NotFoundComponent', 'selector': 'cas-not-found'},{'name': 'PanierComponent', 'selector': 'cas-panier'},{'name': 'ProduitComponent', 'selector': 'cas-produit'},{'name': 'SecuriteComponent', 'selector': 'cas-securite'}];
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlogComponent', 'selector': 'cas-blog'},{'name': 'CardComponent', 'selector': 'cas-card'},{'name': 'CatalogueComponent', 'selector': 'cas-catalogue'},{'name': 'ChoixBoissonComponent', 'selector': 'cas-choix-boisson'},{'name': 'CommandeComponent', 'selector': 'cas-commande'},{'name': 'CommandeComponent', 'selector': 'cas-commande'},{'name': 'ComplementComponent', 'selector': 'cas-complement'},{'name': 'CompterComponent', 'selector': 'cas-compter'},{'name': 'ConnexionComponent', 'selector': 'cas-connexion'},{'name': 'DetailComponent', 'selector': 'cas-detail'},{'name': 'DetailMenuComponent', 'selector': 'cas-detail-menu'},{'name': 'FooterComponent', 'selector': 'cas-footer'},{'name': 'HeaderComponent', 'selector': 'cas-header'},{'name': 'LigneComponent', 'selector': 'cas-ligne'},{'name': 'ListeComponent', 'selector': 'cas-liste'},{'name': 'ListeLivreurComponent', 'selector': 'cas-liste-livreur'},{'name': 'LivraisonComponent', 'selector': 'cas-livraison'},{'name': 'LivraisonComponent', 'selector': 'cas-livraison'},{'name': 'LivreurComponent', 'selector': 'cas-livreur'},{'name': 'NotFoundComponent', 'selector': 'cas-not-found'},{'name': 'PanierComponent', 'selector': 'cas-panier'},{'name': 'ProduitComponent', 'selector': 'cas-produit'},{'name': 'SecuriteComponent', 'selector': 'cas-securite'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ConnexionComponent'};
 </script>

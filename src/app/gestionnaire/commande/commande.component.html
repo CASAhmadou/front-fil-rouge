@@ -55,7 +55,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let commande of commandes | commandeFilter:searchTerm | CommandeDateFilter:searchTermDate | CommandeZoneFilter:searchTermZone | CommandeCLientFilter:searchTermClient | paginate:{itemsPerPage:5,currentPage:p,totalItems:totalLenght}">
+        <tr *ngFor="let commande of commandes | commandeFilter:searchTerm | CommandeDateFilter:searchTermDate | commandeZoneFilter:searchTermZone | CommandeCLientFilter:searchTermClient | paginate:{itemsPerPage:5,currentPage:p,totalItems:totalLenght}">
           <th scope="row">{{commande.numeroCommande}}</th>
           <td>{{commande.dateCommande | date:'dd-MM-YYYY'}}</td>
           <td>{{commande.client?.nom}} {{commande.client?.prenom}}</td>
@@ -66,7 +66,6 @@
             <button type="button" class="btn" data-bs-toggle="tooltip" data-bs-placement="bottom">Terminer</button>
             <button type="button" class="btn" data-bs-toggle="tooltip" data-bs-placement="bottom">Annuler</button>
           </td>
-        <!-- </tr> -->
       </tbody>
     </table>
   </div>

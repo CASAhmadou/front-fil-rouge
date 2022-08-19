@@ -30,7 +30,7 @@ transform(commandes: Commande[], searchTermDate: any) {
 }
 
 @Pipe({
-name:'CommandeZoneFilter'
+name:'commandeZoneFilter'
 })
 export class CommandeZoneFilter implements PipeTransform{
 transform(commandes: Commande[], searchTermZone: string) {

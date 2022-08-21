@@ -2,7 +2,6 @@
 <cas-header></cas-header>
 <cas-footer></cas-footer>
 <!-- {{commandes$|async|json}} -->
-<<<<<<< HEAD
 <div class="container mt-5">
 
   <h1 class="text-center">Liste de mes Commandes</h1>
@@ -25,14 +24,9 @@
       <input type="date" placeholder="filtre par date" id="filtreByDate" [(ngModel)]="dateSearch">
     </div>
   </div>
-  
+
   <div class=" toast show d-flex justify-content-around align-items-center mt-5" style="width:100%;" role="alert" aria-live="assertive" aria-atomic="true">
     <table class="table box-shadow text-center">
-=======
-<h1 class="text-center">Liste de mes Commandes</h1>
-<div class="container toast show d-flex justify-content-around align-items-center mt-5" style="width:70%;" role="alert" aria-live="assertive" aria-atomic="true">
-    <table class="table box-shadow">
->>>>>>> bf6d652c79bf72474aa49aa96a8fa6002931c11f
       <thead class="thead-dark">
         <tr>
           <th scope="col">N° Commande</th>
@@ -43,14 +37,8 @@
         </tr>
       </thead>
       <tbody>
-<<<<<<< HEAD
         <tr *ngFor="let commande of commandes | paginate:{itemsPerPage:3,currentPage:i,totalItems:lenghTotal} | filtreEtat:etatSearch | dateFilter:dateSearch">
           <th scope="row">{{commande.numeroCommande}}</th>
-=======
-        <tr *ngFor="let commande of commandes">
-          <th scope="row">{{commande.numeroCommande}}</th>
-          <!-- | paginate:{itemsPerPage:3, currentPage: p, totalItems: lenghTotal} -->
->>>>>>> bf6d652c79bf72474aa49aa96a8fa6002931c11f
           <td>{{commande.dateCommande | date:'dd-MM-YYYY'}}</td>
           <td>{{commande.montantCommande}} f CFA</td>
           <td>{{commande.etat}}</td>
@@ -62,35 +50,7 @@
       </tbody>
     </table>
   </div>
-  <pagination-controls class="pag" (pageChange)="i=$event"></pagination-controls>
-
-<<<<<<< HEAD
-</div>
-=======
-
-  <div>
-    <ul class="pagination">
-      <li class="page-item disabled">
-        <a class="page-link" href="#">&laquo;</a>
-      </li>
-      <li class="page-item active">
-        <a class="page-link" href="#">1</a>
-      </li>
-      <li class="page-item">
-        <a class="page-link" href="#">2</a>
-      </li>
-      <li class="page-item">
-        <a class="page-link" href="#">3</a>
-      </li>
-      <li class="page-item">
-        <a class="page-link" href="#">4</a>
-      </li>
-      <li class="page-item">
-        <a class="page-link" href="#">5</a>
-      </li>
-      <li class="page-item">
-        <a class="page-link" href="#">&raquo;</a>
-      </li>
-    </ul>
+  <div  class="d-flex justify-content-center mt-5">
+    <pagination-controls (pageChange)="i=$event"></pagination-controls>
   </div>
->>>>>>> bf6d652c79bf72474aa49aa96a8fa6002931c11f
+</div>

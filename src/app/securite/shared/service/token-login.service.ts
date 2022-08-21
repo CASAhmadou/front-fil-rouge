@@ -1,7 +1,5 @@
-import { state } from '@angular/animations';
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Route, Router, RouterStateSnapshot } from '@angular/router';
+import {Router } from '@angular/router';
 import jwt_decode from "jwt-decode"
 
 @Injectable({
@@ -14,6 +12,7 @@ export class TokenLoginService {
   //garde token
   valueToken(token:string):void{
     let tokInfo = this.getDecodedAccessToken(token)
+    // console.log(tokInfo)
       if (tokInfo.roles[0] == ["ROLE_CLIENT"]) {
         this.router.navigate(['commande/panier'])
       }else{
@@ -30,6 +29,11 @@ export class TokenLoginService {
     }
   }
 
+  viewGestionnaire():boolean{
+    const gest = this.haveAccess()
+    return gest
+  }
+
   onLogin():boolean{
     const token = localStorage.getItem('token')
     return !! token
@@ -41,7 +45,6 @@ export class TokenLoginService {
   }
 
   ouToken():any{
-<<<<<<< HEAD
     let token = localStorage.getItem('token') || ''
     return token
   }
@@ -60,13 +63,7 @@ export class TokenLoginService {
 
   getId():any{
     const id= localStorage.getItem('id')
+    // console.log(id)
     return Number(id)
   }
-
-=======
-    let token = localStorage.getItem('token')
-    return token
-  }
->>>>>>> bf6d652c79bf72474aa49aa96a8fa6002931c11f
-
 }

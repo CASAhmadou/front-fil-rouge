@@ -1,22 +1,22 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivate,Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 import { TokenLoginService } from '../securite/shared/service/token-login.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class RoleGuardGuard implements CanActivate {
+export class GestionGuard implements CanActivate {
   constructor(private token:TokenLoginService, private router: Router ){}
 
-  // client
   canActivate(){
-      if(this.token.haveAccess())
+      if(!this.token.haveAccess())
        return true;
       else{
-        this.router.navigate(['gestionnaire/commande'])
+        this.router.navigate(['commande/liste'])
         return false
       }
   }
+
 
 }

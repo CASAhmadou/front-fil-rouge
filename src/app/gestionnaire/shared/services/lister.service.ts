@@ -9,13 +9,21 @@ import { TokenLoginService } from 'src/app/securite/shared/service/token-login.s
 })
 export class CommandeService {
 
-  private urlAllCommande: string = 'http://localhost:8000/api/commandes'
-  private urlCommandeZone: string = 'http://127.0.0.1:8000/api/zones'
-  private urlLivreurs: string = 'http://127.0.0.1:8000/api/livreurs'
+  private urlAllCommande: string = 'http://127.0.0.1:8000/api/commandes'
+
   private urlPutCommande = 'http://127.0.0.1:8000/api/commandes'
+
+  private urlCommandeZone: string = 'http://127.0.0.1:8000/api/zones'
+
+  private urlLivreurs: string = 'http://127.0.0.1:8000/api/livreurs'
+
   private urlPostLivraison:string = 'http://127.0.0.1:8000/api/livraisons'
+
   private urlLivraisonAll:string = 'http://127.0.0.1:8000/api/livraisons'
+
   private urlCommandeLivraison:string = 'http://127.0.0.1:8000/api/livraisons'
+
+  private urlputLivraison:string = 'http://127.0.0.1:8000/api/livraisons'
 
   constructor(
     private http:HttpClient,
@@ -42,7 +50,7 @@ export class CommandeService {
   }
 
   /* commandes par zones */
-  commandesByZone(idZone:number){
+  commandesZone(idZone:number){
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
@@ -145,5 +153,34 @@ export class CommandeService {
       })
     };
     return this.http.post(this.urlLivreurs,JSON.stringify(object),httpOptions)
+  }
+
+  /* liste des zones */
+  allZone(){
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'Authorization': `Bearer ${this.token.ouToken()}`
+      })
+    };
+    return this.http.get<any>(this.urlCommandeZone,httpOptions)
+    .pipe(
+      map(data=>{
+        let test = data['hydra:member']
+        data = test
+        return data
+      }
+      ))
+  }
+  /* valider livraison */
+  validerLivraison (id:any,etat:string):Observable<number>{
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'Authorization': `Bearer ${this.token.ouToken()}`
+      })
+    }
+    const body = {"etat": etat}
+    return this.http.put<number>(this.urlputLivraison+"/"+id,body,httpOptions);
   }
 }

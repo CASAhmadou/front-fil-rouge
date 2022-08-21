@@ -149,13 +149,13 @@
                                 <a href="#livreurs" >livreurs</a>
                             </li>
                             <li>
-                                <a href="#panleExpanded" >panleExpanded</a>
+                                <a href="#ouvertPanel" >ouvertPanel</a>
                             </li>
                             <li>
-                                <a href="#panleExpanded2" >panleExpanded2</a>
+                                <a href="#ouvertPanel2" >ouvertPanel2</a>
                             </li>
                             <li>
-                                <a href="#panleExpanded3" >panleExpanded3</a>
+                                <a href="#ouvertPanel3" >ouvertPanel3</a>
                             </li>
                             <li>
                                 <a href="#registerForm" >registerForm</a>
@@ -243,39 +243,39 @@
                                         <tbody>
                                                 <tr>
                                                         <td>comServ</td>
-                                                  
+
                                                         <td>
                                                                         <code><a href="../injectables/CommandeService.html" target="_self" >CommandeService</a></code>
                                                         </td>
-                                                  
+
                                                     <td>
                                                             No
                                                     </td>
-                                                    
+
                                                 </tr>
                                                 <tr>
                                                         <td>fb</td>
-                                                  
+
                                                         <td>
                                                                         <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
                                                         </td>
-                                                  
+
                                                     <td>
                                                             No
                                                     </td>
-                                                    
+
                                                 </tr>
                                                 <tr>
                                                         <td>toast</td>
-                                                  
+
                                                         <td>
                                                                     <code>NgToastService</code>
                                                         </td>
-                                                  
+
                                                     <td>
                                                             No
                                                     </td>
-                                                    
+
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -291,7 +291,7 @@
 
 
     <section>
-    
+
     <h3 id="methods">
         Methods
     </h3>
@@ -363,7 +363,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
-                        
+
                         <table class="params">
                             <thead>
                                 <tr>
@@ -407,7 +407,7 @@
 
                     </div>
                     <div class="io-description">
-                        
+
                     </div>
                 </td>
             </tr>
@@ -452,7 +452,7 @@
     </table>
 </section>
     <section>
-    
+
     <h3 id="inputs">
         Properties
     </h3>
@@ -615,10 +615,10 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="panleExpanded"></a>
+                    <a name="ouvertPanel"></a>
                     <span class="name">
-                        <span ><b>panleExpanded</b></span>
-                        <a href="#panleExpanded"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>ouvertPanel</b></span>
+                        <a href="#ouvertPanel"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
@@ -640,10 +640,10 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="panleExpanded2"></a>
+                    <a name="ouvertPanel2"></a>
                     <span class="name">
-                        <span ><b>panleExpanded2</b></span>
-                        <a href="#panleExpanded2"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>ouvertPanel2</b></span>
+                        <a href="#ouvertPanel2"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
@@ -665,10 +665,10 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="panleExpanded3"></a>
+                    <a name="ouvertPanel3"></a>
                     <span class="name">
-                        <span ><b>panleExpanded3</b></span>
-                        <a href="#panleExpanded3"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>ouvertPanel3</b></span>
+                        <a href="#ouvertPanel3"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
@@ -808,9 +808,9 @@ export class LivraisonComponent implements OnInit {
 
   livreurs: any[] &#x3D; []
 
-  panleExpanded &#x3D; true;
-  panleExpanded2 &#x3D; true;
-  panleExpanded3 &#x3D; true;
+  ouvertPanel &#x3D; true;
+  ouvertPanel2 &#x3D; true;
+  ouvertPanel3 &#x3D; true;
 
   registerForm:any
 
@@ -822,13 +822,13 @@ export class LivraisonComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.comServ.commandesByZone(1).subscribe(data&#x3D;&gt;{
+    this.comServ.commandesZone(1).subscribe(data&#x3D;&gt;{
       this.commandesZones &#x3D; data.filter((commande:any) &#x3D;&gt; commande.etat&#x3D;&#x3D;&quot;termine&quot;)
     })
-    this.comServ.commandesByZone(2).subscribe(data&#x3D;&gt;{
+    this.comServ.commandesZone(2).subscribe(data&#x3D;&gt;{
       this.commandesZones2 &#x3D; data.filter((commande:any) &#x3D;&gt; commande.etat&#x3D;&#x3D;&quot;termine&quot;)
     })
-    this.comServ.commandesByZone(3).subscribe(data&#x3D;&gt;{
+    this.comServ.commandesZone(3).subscribe(data&#x3D;&gt;{
       this.commandesZones3 &#x3D; data.filter((commande:any) &#x3D;&gt; commande.etat&#x3D;&#x3D;&quot;termine&quot;)
     })
     this.comServ.allLivreur().subscribe(data&#x3D;&gt;{
@@ -897,10 +897,10 @@ export class LivraisonComponent implements OnInit {
         &lt;h2&gt;LISTE DES COMMANDES TERMINÉES&lt;/h2&gt;
         &lt;div class&#x3D;&quot;panel panel-primary&quot;  class&#x3D;&quot;choice&quot;&gt;
           &lt;form [formGroup]&#x3D;&quot;registerForm&quot; (ngSubmit)&#x3D;&quot;submitData()&quot;&gt;
-            &lt;div class&#x3D;&quot;panel-heading&quot; (click)&#x3D;&quot;panleExpanded &#x3D; !panleExpanded&quot; class&#x3D;&quot;header&quot;&gt;
+            &lt;div class&#x3D;&quot;panel-heading&quot; (click)&#x3D;&quot;ouvertPanel &#x3D; !ouvertPanel&quot; class&#x3D;&quot;header&quot;&gt;
               &lt;p&gt;ZONE 1&lt;/p&gt;
             &lt;/div&gt;
-            &lt;div *ngIf&#x3D;&quot;panleExpanded&quot;  class&#x3D;&quot;panel-body&quot; class&#x3D;&quot;body&quot;&gt;
+            &lt;div *ngIf&#x3D;&quot;ouvertPanel&quot;  class&#x3D;&quot;panel-body&quot; class&#x3D;&quot;body&quot;&gt;
               &lt;table class&#x3D;&quot;table table-striped&quot;&gt;
                   &lt;thead&gt;
                     &lt;tr&gt;
@@ -978,14 +978,14 @@ export class LivraisonComponent implements OnInit {
         </div>
     </div>
 
-    
+
 </div>
 
 <script src="../js/libs/vis.min.js"></script>
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div> <cas-header></cas-header><cas-footer></cas-footer><div class="content-wrapper">  <a class="livraison" routerLink="/gestionnaire/commande/listeLivraison">    LISTE DES LIVRAISONS  </a>    <div class="content">        <h2>LISTE DES COMMANDES TERMINÉES</h2>        <div class="panel panel-primary"  class="choice">          <form [formGroup]="registerForm" (ngSubmit)="submitData()">            <div class="panel-heading" (click)="panleExpanded = !panleExpanded" class="header">              <p>ZONE 1</p>            </div>            <div *ngIf="panleExpanded"  class="panel-body" class="body">              <table class="table table-striped">                  <thead>                    <tr>                      <th scope="col">Numero Commande</th>                      <th scope="col">Montant Commande</th>                      <th scope="col">Date Commande</th>                      <th scope="col">ACTION</th>                    </tr>                  </thead>                  <tbody>                    <tr *ngFor="let com of commandesZones  ">                      <td>{{com.numeroCommande}}</td>                      <td>{{com.montantCommande}}</td>                      <td>{{com.dateCommande | date}}</td>                      <td >                        <ng-container formArrayName="commandes">                            <input formControlName="id"                          (change)="onChange(com.id, $event)"                          type="checkbox" value={{com.id}}>                        </ng-container>                      </td>                    </tr>                  </tbody>                </table>                  <select  name="livreur" id="livreur" formControlName="livreur">                      <option value="">--choisissez un livreur--</option>                      <ng-container *ngFor="let livreur of  livreurs">                          <option value={{livreur.id}}>{{livreur.prenom}} {{livreur.nom}} - {{livreur.matriculeMoto}}</option>                      </ng-container>                  </select>                  <button type="submit" class="btn">Valider</button>            </div>          </form>        </div></div>'
+        var COMPONENT_TEMPLATE = '<div> <cas-header></cas-header><cas-footer></cas-footer><div class="content-wrapper">  <a class="livraison" routerLink="/gestionnaire/commande/listeLivraison">    LISTE DES LIVRAISONS  </a>    <div class="content">        <h2>LISTE DES COMMANDES TERMINÉES</h2>        <div class="panel panel-primary"  class="choice">          <form [formGroup]="registerForm" (ngSubmit)="submitData()">            <div class="panel-heading" (click)="ouvertPanel = !ouvertPanel" class="header">              <p>ZONE 1</p>            </div>            <div *ngIf="ouvertPanel"  class="panel-body" class="body">              <table class="table table-striped">                  <thead>                    <tr>                      <th scope="col">Numero Commande</th>                      <th scope="col">Montant Commande</th>                      <th scope="col">Date Commande</th>                      <th scope="col">ACTION</th>                    </tr>                  </thead>                  <tbody>                    <tr *ngFor="let com of commandesZones  ">                      <td>{{com.numeroCommande}}</td>                      <td>{{com.montantCommande}}</td>                      <td>{{com.dateCommande | date}}</td>                      <td >                        <ng-container formArrayName="commandes">                            <input formControlName="id"                          (change)="onChange(com.id, $event)"                          type="checkbox" value={{com.id}}>                        </ng-container>                      </td>                    </tr>                  </tbody>                </table>                  <select  name="livreur" id="livreur" formControlName="livreur">                      <option value="">--choisissez un livreur--</option>                      <ng-container *ngFor="let livreur of  livreurs">                          <option value={{livreur.id}}>{{livreur.prenom}} {{livreur.nom}} - {{livreur.matriculeMoto}}</option>                      </ng-container>                  </select>                  <button type="submit" class="btn">Valider</button>            </div>          </form>        </div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlogComponent', 'selector': 'cas-blog'},{'name': 'CardComponent', 'selector': 'cas-card'},{'name': 'CatalogueComponent', 'selector': 'cas-catalogue'},{'name': 'ChoixBoissonComponent', 'selector': 'cas-choix-boisson'},{'name': 'CommandeComponent', 'selector': 'cas-commande'},{'name': 'CommandeComponent', 'selector': 'cas-commande'},{'name': 'ComplementComponent', 'selector': 'cas-complement'},{'name': 'CompterComponent', 'selector': 'cas-compter'},{'name': 'ConnexionComponent', 'selector': 'cas-connexion'},{'name': 'DetailComponent', 'selector': 'cas-detail'},{'name': 'DetailMenuComponent', 'selector': 'cas-detail-menu'},{'name': 'FooterComponent', 'selector': 'cas-footer'},{'name': 'HeaderComponent', 'selector': 'cas-header'},{'name': 'LigneComponent', 'selector': 'cas-ligne'},{'name': 'ListeComponent', 'selector': 'cas-liste'},{'name': 'ListeLivreurComponent', 'selector': 'cas-liste-livreur'},{'name': 'LivraisonComponent', 'selector': 'cas-livraison'},{'name': 'LivraisonComponent', 'selector': 'cas-livraison'},{'name': 'LivreurComponent', 'selector': 'cas-livreur'},{'name': 'NotFoundComponent', 'selector': 'cas-not-found'},{'name': 'PanierComponent', 'selector': 'cas-panier'},{'name': 'ProduitComponent', 'selector': 'cas-produit'},{'name': 'SecuriteComponent', 'selector': 'cas-securite'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'LivraisonComponent-1'};

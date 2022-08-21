@@ -17,8 +17,8 @@ export class CommandeComponent implements OnInit {
   etat:string=""
 
   searchTerm = "en cours"
-  searchTermDate = ''
-  searchTermZone:any
+  searchTermDate = ""
+  searchTermZone:any=''
   searchTermClient:any
 
   constructor(private com:CommandeService,private toast: NgToastService) { }

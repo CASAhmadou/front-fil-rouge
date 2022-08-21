@@ -5,34 +5,36 @@
   <!-- {{livreurs|json}} -->
 
   <h1 class="text-center">Liste des Commandes</h1>
+  <button type="submit" style="font-size:1.5rem;" class="btn" (click)="livraison()">LISTE DES LIVRAISONS</button>
   <div class="toast show container livraison d-flex flex-column" aria-atomic="true">
-
-      <a class="livraison" routerLink="/gestionnaire/commande/listeLivraison">
-        LISTE DES LIVRAISONS
-      </a>
       <form [formGroup]="registerForm" (ngSubmit)="submitData()">
         <div class="d-flex">
-          <div class="panel-heading" style="width: 5rem;" (click)="panleExpanded = !panleExpanded" class="header">
-            <button type="submit" class="btn">Zone1</button>
-          </div>
-          <div class="panel-heading" style="width: 5rem;" (click)="panleExpanded2 = !panleExpanded2" class="header">
-            <button type="submit" class="btn">Zone2</button>
-          </div>
-          <div class="panel-heading" style="width: 5rem;" (click)="panleExpanded2 = !panleExpanded2" class="header">
-            <button type="submit" class="btn">Zone4</button>
-          </div>
+            <div class="panel-heading" style="width: 5rem;" (click)="ouvertPanel = !ouvertPanel" class="header">
+              <button type="submit" class="btn">Zone1</button>
+            </div>
+            <div class="panel-heading" style="width: 5rem;" (click)="ouvertPanel2 = !ouvertPanel2" class="header">
+              <button type="submit" class="btn">Zone2</button>
+            </div>
+            <div class="panel-heading" style="width: 5rem;" (click)="ouvertPanel3 = !ouvertPanel3" class="header">
+              <button type="submit" class="btn">Zone3</button>
+            </div>
+            <div class="panel-heading" style="width: 5rem;" (click)="ouvertPanel4 = !ouvertPanel4" class="header">
+              <button type="submit" class="btn">Zone4</button>
+            </div>
         </div>
-          <div *ngIf="panleExpanded || panleExpanded2 || panleExpanded3" class="panel-body" class="body">
-            <div class="d-flex justify-content-around align-items-center mt-5" style="width:100%;" role="alert" aria-live="assertive" aria-atomic="true">
-              <table class="table box-shadow text-center">
-                <thead class="thead-dark">
-                  <tr>
-                    <th scope="col">Numero Commande</th>
-                    <th scope="col">Montant Commande</th>
-                    <th scope="col">Date Commande</th>  
-                    <th scope="col">ACTION</th>
-                  </tr>
-                </thead>
+        <div class="panel-body" class="body">
+        <div class="d-flex justify-content-around align-items-center mt-5" style="width:100%;" role="alert" aria-live="assertive" aria-atomic="true">
+          <table class="table box-shadow text-center">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Numero Commande</th>
+                <th scope="col">Montant Commande</th>
+                <th scope="col">Date Commande</th>
+                <th scope="col">ACTION</th>
+              </tr>
+            </thead>
+
+            <ng-container *ngIf="ouvertPanel" >
                 <tbody>
                   <tr *ngFor="let com of commandesZones ">
                     <td>{{com.numeroCommande}}</td>
@@ -47,10 +49,64 @@
                     </td>
                   </tr>
                 </tbody>
+            </ng-container>
+
+              <ng-container *ngIf="ouvertPanel2" >
+                <tbody>
+                  <tr *ngFor="let com of commandesZones2 ">
+                    <td>{{com.numeroCommande}}</td>
+                    <td>{{com.montantCommande}}</td>
+                    <td>{{com.dateCommande | date}}</td>
+                    <td >
+                      <ng-container formArrayName="commandes">
+                          <input formControlName="id"
+                        (change)="onChange(com.id, $event)"
+                        type="checkbox" value={{com.id}}>
+                      </ng-container>
+                    </td>
+                  </tr>
+                </tbody>
+              </ng-container>
+
+              <ng-container *ngIf="ouvertPanel3" >
+                <tbody>
+                  <tr *ngFor="let com of commandesZones3 ">
+                    <td>{{com.numeroCommande}}</td>
+                    <td>{{com.montantCommande}}</td>
+                    <td>{{com.dateCommande | date}}</td>
+                    <td >
+                      <ng-container formArrayName="commandes">
+                          <input formControlName="id"
+                        (change)="onChange(com.id, $event)"
+                        type="checkbox" value={{com.id}}>
+                      </ng-container>
+                    </td>
+                  </tr>
+                </tbody>
+              </ng-container>
+
+              <ng-container *ngIf="ouvertPanel4" >
+                <tbody>
+                  <tr *ngFor="let com of commandesZones4 ">
+                    <td>{{com.numeroCommande}}</td>
+                    <td>{{com.montantCommande}}</td>
+                    <td>{{com.dateCommande | date}}</td>
+                    <td >
+                      <ng-container formArrayName="commandes">
+                          <input formControlName="id"
+                        (change)="onChange(com.id, $event)"
+                        type="checkbox" value={{com.id}}>
+                      </ng-container>
+                    </td>
+                  </tr>
+                </tbody>
+              </ng-container>
+
               </table>
             </div>
-
           </div>
+
+          <!-- charge livreur disponible -->
           <div class="mb-3" style="width: 13rem;">
             <label>Livreur</label>
             <select class="form-control" id="exampleFormControlSelect1" formControlName="livreur">
@@ -59,85 +115,8 @@
               </ng-container>
             </select>
           </div>
-          <input class="btn" type="submit"  value="Valider"/>
+          
+          <input class="btn" type="submit"  value="Enregistre"/>
         </form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- <!-- <div class="panel panel-primary"class="choice">
-            <div class="panel-heading"  (click)="panleExpanded2 = !panleExpanded2"  class="header">
-                <p>ZONE 2</p>
-            </div>
-            <div *ngIf="panleExpanded2"  class="panel-body" class="body">
-                <table class="table table-striped">
-                    <thead>
-                      <tr>
-                        <th scope="col">Numero Commande</th>
-                        <th scope="col">Montant Commande</th>
-                        <th scope="col">Date Commande</th>
-                        <th scope="col">ACTION</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr *ngFor="let com of commandesZones2  ">
-                        <td>{{com.numeroCommande}}</td>
-                        <td>{{com.montantCommande}}</td>
-                        <td>{{com.dateCommande}}</td>
-                        <td><input type="checkbox"></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  <select  name="livreur" id="livreur">
-                    <option value="">--choisissez un livreur--</option>
-                    <ng-container *ngFor="let livreur of  livreurs">
-                        <option value={{livreur.id}}>{{livreur.prenom}} {{livreur.nom}} - {{livreur.matriculeMoto}}</option>
-                    </ng-container>
-                </select>
-                <button class="btn">Valider</button>
-            </div>
-        </div>
-        <div class="panel panel-primary" class="choice">
-            <div class="panel-heading"  (click)="panleExpanded3 = !panleExpanded3" class="header">
-                <p>ZONE 3</p>
-            </div>
-            <div *ngIf="panleExpanded3"  class="panel-body" class="body">
-                <table class="table table-striped">
-                    <thead>
-                      <tr>
-                        <th scope="col">Numero Commande</th>
-                        <th scope="col">Montant Commande</th>
-                        <th scope="col">Date Commande</th>
-                        <th scope="col">ACTION</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr *ngFor="let com of commandesZones3  ">
-                        <td>{{com.numeroCommande}}</td>
-                        <td>{{com.montantCommande}}</td>
-                        <td>{{com.dateCommande}}</td>
-                        <td><input type="checkbox"></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  <select  name="livreur" id="livreur">
-                    <option value="">--choisissez un livreur--</option>
-                    <ng-container *ngFor="let livreur of  livreurs">
-                        <option value={{livreur.id}}>{{livreur.prenom}} {{livreur.nom}} - {{livreur.matriculeMoto}}</option>
-                    </ng-container>
-                </select>
-                <button class="btn">Valider</button>
-            </div>
-        </div> -->
     </div>
 </div>

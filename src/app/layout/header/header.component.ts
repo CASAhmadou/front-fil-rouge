@@ -12,11 +12,13 @@ export class HeaderComponent implements OnInit {
 
   constructor(private panier: PanierService, private tokenLogin: TokenLoginService, private router: Router,private route : ActivatedRoute) { }
 
+  isGestionnaire=true
   isConnected=true
   point: number=0
   panierTotal:number=0
   ngOnInit(): void {
    this.isConnected= this.tokenLogin.onLogin()
+   this.isGestionnaire= this.tokenLogin.viewGestionnaire()
     this.panier.behav.subscribe(data=> {
       if(data.commandeMenus && data.commandeBurgers && data.commandeFrites && data.commandeBoissons){
         this.panierTotal =data.commandeFrites.length + data.commandeBurgers.length
@@ -29,6 +31,7 @@ export class HeaderComponent implements OnInit {
   deconnect(){
     this.tokenLogin.supToken()
     this.isConnected=false
+    this.isGestionnaire=false
   }
 
   listeCom():void{

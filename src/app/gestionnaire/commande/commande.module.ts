@@ -8,6 +8,8 @@ import { LayoutModule } from 'src/app/layout/layout.module';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ListeLivreurComponent } from './livreur/liste-livreur/liste-livreur.component';
+import { ListeLivraisonComponent } from './livraison/liste-livraison/liste-livraison.component';
+import { CommandeLivraisonComponent } from './livraison/commande-livraison/commande-livraison.component';
 
 
 @NgModule({
@@ -15,6 +17,8 @@ import { ListeLivreurComponent } from './livreur/liste-livreur/liste-livreur.com
     LivraisonComponent,
     ListeLivreurComponent,
     LivreurComponent,
+    ListeLivraisonComponent,
+    CommandeLivraisonComponent,
   ],
   imports: [
     CommonModule,

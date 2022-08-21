@@ -32,9 +32,13 @@
 
                   <div class="dropdown-menu">
 
-                    <!-- <a class="dropdown-item" routerLink="/produits/catalogue">PRODUITS</a> -->
-                    <a class="dropdown-item" routerLink="/produits/catalogue" [queryParams]="{type:'burgers'}">AJOUT MENU</a>
+                    <ng-container *ngIf="!isGestionnaire">
+                      <a class="dropdown-item" routerLink="/produits/catalogue" [queryParams]="{type:'burgers'}">AJOUT BURGER</a>
+                    </ng-container>
 
+                    <ng-container *ngIf="!isGestionnaire">
+                      <a class="dropdown-item" routerLink="/produits/catalogue" [queryParams]="{type:'burgers'}">AJOUT MENU</a>
+                    </ng-container>
 
                     <a class="dropdown-item" routerLink="/produits/catalogue" [queryParams]="{type:'burgers'}">BURGER</a>
 
@@ -54,12 +58,15 @@
                   <li class="nav-item">
                     <a class="nav-link" (click)="listeCom()">LISTE COMMANDES</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" (click)="livraison()">LIVRAISONS</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" (click)="livreur()">LIVREURS</a>
-                  </li>
+                  <ng-container *ngIf="!isGestionnaire">
+                    <li class="nav-item">
+                     <a class="nav-link" (click)="livraison()">LIVRAISONS</a>
+                    </li>
+
+                    <li class="nav-item">
+                      <a class="nav-link" (click)="livreur()">LIVREURS</a>
+                    </li>
+                  </ng-container>
                   <li class="nav-item">
                     <a class="nav-link" (click)="deconnect()">SE DECONNECTER</a>
                   </li>

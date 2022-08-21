@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { RoleGuardGuard } from '../_helpers/role-guard.guard';
 import { CommandeComponent } from './commande/commande.component';
 
 const routes: Routes = [

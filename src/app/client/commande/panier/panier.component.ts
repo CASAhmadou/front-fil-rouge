@@ -31,9 +31,7 @@ export class PanierComponent implements OnInit {
       }
     })
 
-    this.commande.zones().subscribe(data=>{
-      this.zones=data
-    })
+   
 
     this.registerForm = new FormGroup({
       "zone": new FormControl(null, [Validators.required]),

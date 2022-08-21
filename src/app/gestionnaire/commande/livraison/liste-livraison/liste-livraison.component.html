@@ -1,0 +1,36 @@
+<cas-header></cas-header>
+<cas-footer></cas-footer>
+
+
+
+
+<div class="container mt-5">
+
+  <h1 class="text-center">Liste des Livraisons</h1>
+
+  <i class="prev fa-solid fa-circle-arrow-left" [routerLink]="['/gestionnaire/commande/livraison']" routerLinkActive="router-link-active" ></i>
+
+  <div class=" toast show d-flex justify-content-around align-items-center mt-5" style="width:100%;" role="alert" aria-live="assertive" aria-atomic="true">
+      <table class="table box-shadow text-center">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Livreur</th>
+            <th scope="col">Etat</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let livraison of livraisons">
+            <td>{{livraison.livreur.nom}} {{livraison.livreur?.prenom}}</td>
+            <td>{{livraison.etat}}</td>
+            <td>
+              <button type="button" class="btn" (click)="comLivre()" data-bs-toggle="tooltip" data-bs-placement="bottom">Detail</button>
+              <button type="button" class="btn" (click)='CommandetoEdit(livraison.id,"valide")' data-bs-toggle="tooltip" data-bs-placement="bottom">Valider</button>
+            </td>
+
+        </tbody>
+      </table>
+    </div>
+    <!-- <pagination-controls class="pag" (pageChange)="p=$event"></pagination-controls> -->
+
+  </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
 import { CommandeService } from '../../shared/services/lister.service';
 
@@ -18,35 +19,32 @@ export class LivraisonComponent implements OnInit {
 
   livreurs: any[] = []
 
-  panleExpanded = true;
-  panleExpanded2 = true;
-  panleExpanded3 = true;
+  ouvertPanel = true;
+  ouvertPanel2 = true;
+  ouvertPanel3 = true;
+  ouvertPanel4 = true;
 
   registerForm:any
 
-  constructor(
-    private comServ:CommandeService,
-    private fb:FormBuilder,
-    private toast: NgToastService,
-  ) { }
+  constructor(private comServ:CommandeService,private fb:FormBuilder,private toast: NgToastService,private router:Router) { }
 
   ngOnInit(): void {
 
-    this.comServ.commandesByZone(1).subscribe(data=>{
+    this.comServ.commandesZone(1).subscribe(data=>{
       this.commandesZones = data.filter((commande:any) => commande.etat=="termine")
     })
-    this.comServ.commandesByZone(2).subscribe(data=>{
+    this.comServ.commandesZone(2).subscribe(data=>{
       this.commandesZones2 = data.filter((commande:any) => commande.etat=="termine")
     })
-    this.comServ.commandesByZone(3).subscribe(data=>{
+    this.comServ.commandesZone(3).subscribe(data=>{
       this.commandesZones3 = data.filter((commande:any) => commande.etat=="termine")
     })
-    this.comServ.commandesByZone(4).subscribe(data=>{
+    this.comServ.commandesZone(4).subscribe(data=>{
       this.commandesZones4 = data.filter((commande:any) => commande.etat=="termine")
     })
+
     this.comServ.allLivreur().subscribe(data=>{
-      this.livreurs = data
-      this.livreurs.filter((livreur:any)=> livreur.etat=="disponible")
+      this.livreurs=data.filter((livreur:any)=> livreur?.etat=="disponible")
       // console.log(this.livreurs)
 
     })
@@ -61,7 +59,7 @@ export class LivraisonComponent implements OnInit {
   /* formulaire */
   submitData(){
     this.registerForm.value.livreur = {id:Number(this.livreur.value)}
-    console.log(this.registerForm.value)
+    // console.log(this.registerForm.value)
 
     /* enregistrer livraison */
     this.comServ.addLivraison(this.registerForm.value).subscribe(
@@ -69,7 +67,7 @@ export class LivraisonComponent implements OnInit {
         console.log(err)
       },
     )
-    this.toast.success({detail:"success",summary:"le menu a bien été enregistré"})
+    this.toast.success({detail:"success",summary:"le menu a bien été enregistré",duration:3000})
   }
 
   get commandes() {
@@ -94,6 +92,10 @@ export class LivraisonComponent implements OnInit {
       let index = checkFormArray.controls.findIndex(x => x.value == id)
       checkFormArray.removeAt(index);
     }
+  }
+
+  livraison():void{
+    this.router.navigateByUrl(`gestionnaire/commande/liste-livraison`)
   }
 
 }

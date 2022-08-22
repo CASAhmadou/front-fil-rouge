@@ -351,9 +351,9 @@ If your form layout allows it, you can swap the `.{valid|invalid}-feedback` clas
 
 ## Sass
 
-### Variables
+### authorizToks
 
-{{< scss-docs name="form-feedback-variables" file="scss/_variables.scss" >}}
+{{< scss-docs name="form-feedback-authorizToks" file="scss/_authorizToks.scss" >}}
 
 ### Mixins
 
@@ -363,9 +363,9 @@ Two mixins are combined together, through our [loop](#loop), to generate our for
 
 ### Map
 
-This is the validation Sass map from `_variables.scss`. Override or extend this to generate different or additional states.
+This is the validation Sass map from `_authorizToks.scss`. Override or extend this to generate different or additional states.
 
-{{< scss-docs name="form-validation-states" file="scss/_variables.scss" >}}
+{{< scss-docs name="form-validation-states" file="scss/_authorizToks.scss" >}}
 
 Maps of `$form-validation-states` can contain three optional parameters to override tooltips and focus styles.
 
@@ -377,6 +377,6 @@ Used to iterate over `$form-validation-states` map values to generate our valida
 
 ### Customizing
 
-Validation states can be customized via Sass with the `$form-validation-states` map. Located in our `_variables.scss` file, this Sass map is how we generate the default `valid`/`invalid` validation states. Included is a nested map for customizing each state's color, icon, tooltip color, and focus shadow. While no other states are supported by browsers, those using custom styles can easily add more complex form feedback.
+Validation states can be customized via Sass with the `$form-validation-states` map. Located in our `_authorizToks.scss` file, this Sass map is how we generate the default `valid`/`invalid` validation states. Included is a nested map for customizing each state's color, icon, tooltip color, and focus shadow. While no other states are supported by browsers, those using custom styles can easily add more complex form feedback.
 
 Please note that **we do not recommend customizing `$form-validation-states` values without also modifying the `form-validation-state` mixin**.

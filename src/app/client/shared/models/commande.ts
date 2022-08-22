@@ -1,3 +1,4 @@
+import { BurgerCommande, MenuCommande } from "./panier"
 
 export interface Commande {
   id?:number
@@ -8,6 +9,8 @@ export interface Commande {
   client?:User
   livreur?:User
   zone?:Zone
+  menuCommandes?:MenuCommande
+  burgerCommandes?:BurgerCommande
 }
 
 export interface User{

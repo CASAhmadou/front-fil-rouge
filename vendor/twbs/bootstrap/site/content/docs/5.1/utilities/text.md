@@ -137,15 +137,15 @@ Decorate text in components with text decoration classes.
 
 ## Sass
 
-### Variables
+### authorizToks
 
-{{< scss-docs name="font-variables" file="scss/_variables.scss" >}}
+{{< scss-docs name="font-authorizToks" file="scss/_authorizToks.scss" >}}
 
 ### Maps
 
 Font-size utilities are generated from this map, in combination with our utilities API.
 
-{{< scss-docs name="font-sizes" file="scss/_variables.scss" >}}
+{{< scss-docs name="font-sizes" file="scss/_authorizToks.scss" >}}
 
 ### Utilities API
 

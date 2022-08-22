@@ -1,4 +1,38 @@
 <cas-header></cas-header>
 <cas-footer></cas-footer>
+{{comLivraisons|json}}
 
-<p>commande-livraison works!</p>
+<div class="container mt-5">
+  <ng-container *ngFor="let com of comLivraisons">
+    <h1 class="text-center">Detail Commande n°{{com.numeroCommande}}</h1>
+
+
+    <div class="d-flex justify-content-around ecrit ">
+      <i class="prev fa-solid fa-circle-arrow-left" [routerLink]="['/produits/details/menu/{{id}}']" routerLinkActive="router-link-active" ></i>
+        <span class="prix badge">Montant= {{com.montantCommande}} f CFA</span>
+    </div>
+  </ng-container>
+  <div class=" toast show d-flex justify-content-around align-items-center mt-5" style="width:100%;" role="alert" aria-live="assertive" aria-atomic="true">
+      <table class="table box-shadow text-center">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Produits</th>
+            <th scope="col">Unite</th>
+            <th scope="col">Quantité</th>
+            <th scope="col">Prix</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let com of comLivraisons">
+            <td>{{com.menuCommandes.menu?.nom}}</td>
+            <td>02</td>
+            <td>14</td>
+            <td>2500</td>
+          </tbody>
+        </table>
+      </div>
+      <button type="button" class="btn" data-bs-toggle="tooltip" data-bs-placement="bottom">RECOMMANDER</button>
+    <!-- <pagination-controls class="pag" (pageChange)="p=$event"></pagination-controls> -->
+
+  </div>
+

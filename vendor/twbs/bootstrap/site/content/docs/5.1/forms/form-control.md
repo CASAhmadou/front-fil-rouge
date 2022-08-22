@@ -133,18 +133,18 @@ Learn more about [support for datalist elements](https://caniuse.com/datalist).
 
 ## Sass
 
-### Variables
+### authorizToks
 
 `$input-*` are shared across most of our form controls (and not buttons).
 
-{{< scss-docs name="form-input-variables" file="scss/_variables.scss" >}}
+{{< scss-docs name="form-input-authorizToks" file="scss/_authorizToks.scss" >}}
 
 `$form-label-*` and `$form-text-*` are for our `<label>`s and `.form-text` component.
 
-{{< scss-docs name="form-label-variables" file="scss/_variables.scss" >}}
+{{< scss-docs name="form-label-authorizToks" file="scss/_authorizToks.scss" >}}
 
-{{< scss-docs name="form-text-variables" file="scss/_variables.scss" >}}
+{{< scss-docs name="form-text-authorizToks" file="scss/_authorizToks.scss" >}}
 
 `$form-file-*` are for file input.
 
-{{< scss-docs name="form-file-variables" file="scss/_variables.scss" >}}
+{{< scss-docs name="form-file-authorizToks" file="scss/_authorizToks.scss" >}}

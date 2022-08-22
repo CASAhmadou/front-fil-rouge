@@ -173,9 +173,9 @@ Use spinners within buttons to indicate an action is currently processing or tak
 
 ## Sass
 
-### Variables
+### authorizToks
 
-{{< scss-docs name="spinner-variables" file="scss/_variables.scss" >}}
+{{< scss-docs name="spinner-authorizToks" file="scss/_authorizToks.scss" >}}
 
 ### Keyframes
 

@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'liste-livraison', component: ListeLivraisonComponent},
   { path: 'livreur', component: ListeLivreurComponent},
   { path: 'nouveau-livreur', component: LivreurComponent},
-  { path: 'commande-livraison', component: CommandeLivraisonComponent}
+  { path: 'commande-livraison/:id', component: CommandeLivraisonComponent}
 ];
 
 @NgModule({

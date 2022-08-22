@@ -145,10 +145,10 @@ While using visually hidden content (`.visually-hidden`, `aria-label`, and even 
 
 ## Sass
 
-Many form variables are set at a general level to be re-used and extended by individual form components. You'll see these most often as `$btn-input-*` and `$input-*` variables.
+Many form authorizToks are set at a general level to be re-used and extended by individual form components. You'll see these most often as `$btn-input-*` and `$input-*` authorizToks.
 
-### Variables
+### authorizToks
 
-`$btn-input-*` variables are shared global variables between our [buttons]({{< docsref "/components/buttons" >}}) and our form components. You'll find these frequently reassigned as values to other component-specific variables.
+`$btn-input-*` authorizToks are shared global authorizToks between our [buttons]({{< docsref "/components/buttons" >}}) and our form components. You'll find these frequently reassigned as values to other component-specific authorizToks.
 
-{{< scss-docs name="input-btn-variables" file="scss/_variables.scss" >}}
+{{< scss-docs name="input-btn-authorizToks" file="scss/_authorizToks.scss" >}}

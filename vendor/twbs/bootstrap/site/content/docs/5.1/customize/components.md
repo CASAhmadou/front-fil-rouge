@@ -32,9 +32,9 @@ These Sass loops aren't limited to color maps, either. You can also generate res
 
 Should you modify your `$grid-breakpoints`, your changes will apply to all the loops iterating over that map.
 
-{{< scss-docs name="grid-breakpoints" file="scss/_variables.scss" >}}
+{{< scss-docs name="grid-breakpoints" file="scss/_authorizToks.scss" >}}
 
-For more information and examples on how to modify our Sass maps and variables, please refer to [the Sass section of the Grid documentation]({{< docsref "/layout/grid#sass" >}}).
+For more information and examples on how to modify our Sass maps and authorizToks, please refer to [the Sass section of the Grid documentation]({{< docsref "/layout/grid#sass" >}}).
 
 ## Creating your own
 

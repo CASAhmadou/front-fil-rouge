@@ -9,21 +9,21 @@ import { TokenLoginService } from 'src/app/securite/shared/service/token-login.s
 })
 export class CommandeService {
 
-  private urlAllCommande: string = 'http://127.0.0.1:8000/api/commandes'
+  private commandeUrl: string = 'http://127.0.0.1:8000/api/commandes'
 
-  private urlPutCommande = 'http://127.0.0.1:8000/api/commandes'
+  private commandeEditUrl = 'http://127.0.0.1:8000/api/commandes'
 
-  private urlCommandeZone: string = 'http://127.0.0.1:8000/api/zones'
+  private commandeZoneUrl: string = 'http://127.0.0.1:8000/api/zones'
 
-  private urlLivreurs: string = 'http://127.0.0.1:8000/api/livreurs'
+  private livreurUrl: string = 'http://127.0.0.1:8000/api/livreurs'
 
-  private urlPostLivraison:string = 'http://127.0.0.1:8000/api/livraisons'
+  private livraisonCreateUrl:string = 'http://127.0.0.1:8000/api/livraisons'
 
-  private urlLivraisonAll:string = 'http://127.0.0.1:8000/api/livraisons'
+  private livraisonUrl:string = 'http://127.0.0.1:8000/api/livraisons'
 
-  private urlCommandeLivraison:string = 'http://127.0.0.1:8000/api/livraisons'
+  private livraisonCommandeUrl:string = 'http://127.0.0.1:8000/api/livraisons'
 
-  private urlputLivraison:string = 'http://127.0.0.1:8000/api/livraisons'
+  private livraisonEditUrl:string = 'http://127.0.0.1:8000/api/livraisons'
 
   constructor(
     private http:HttpClient,
@@ -31,15 +31,14 @@ export class CommandeService {
   ) { }
 
   /* all commande */
-
-  allCommande(){
-    const httpOptions = {
+  commandeAll(){
+    const authorizTok = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
         'Authorization': `Bearer ${this.token.ouToken()}`
       })
     };
-    return this.http.get<any>(this.urlAllCommande,httpOptions)
+    return this.http.get<any>(this.commandeUrl,authorizTok)
     .pipe(
       map(data=>{
         let test = data['hydra:member']
@@ -51,13 +50,13 @@ export class CommandeService {
 
   /* commandes par zones */
   commandesZone(idZone:number){
-    const httpOptions = {
+    const authorizTok = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
         'Authorization': `Bearer ${this.token.ouToken()}`
       })
     };
-    return this.http.get<any>((`${this.urlCommandeZone}/${idZone}/commandes`),httpOptions)
+    return this.http.get<any>((`${this.commandeZoneUrl}/${idZone}/commandes`),authorizTok)
     .pipe(
       map(data=>{
         let test = data['hydra:member']
@@ -68,14 +67,14 @@ export class CommandeService {
   }
 
   /* liste des livreurs */
-  allLivreur(){
-    const httpOptions = {
+  livreurAll(){
+    const authorizTok = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
         'Authorization': `Bearer ${this.token.ouToken()}`
       })
     };
-    return this.http.get<any>(this.urlLivreurs,httpOptions)
+    return this.http.get<any>(this.livreurUrl,authorizTok)
     .pipe(
       map(data=>{
         let test = data['hydra:member']
@@ -86,37 +85,37 @@ export class CommandeService {
   }
 
   /* fonction modif etat commande */
-  resetCommande (id:any,etat:string):Observable<number>{
-    const httpOptions = {
+  commandeAnnuler (id:any,etat:string):Observable<number>{
+    const authorizTok = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
         'Authorization': `Bearer ${this.token.ouToken()}`
       })
     }
     const body = {"etat": etat}
-    return this.http.put<number>(this.urlPutCommande+"/"+id,body,httpOptions);
+    return this.http.put<number>(this.commandeEditUrl+"/"+id,body,authorizTok);
   }
 
   /* fonction ajout livraison */
-  addLivraison(object:any){
-    const httpOptions = {
+  ajoutLivraison(object:any){
+    const authorizTok = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
         'Authorization': `Bearer ${this.token.ouToken()}`
       })
     };
-    //console.log(httpOptions)
-    return this.http.post(this.urlPostLivraison,object,httpOptions)
+    //console.log(authorizTok)
+    return this.http.post(this.livraisonCreateUrl,object,authorizTok)
   }
   /* liste des livraisons  */
-  allLivraisons(){
-    const httpOptions = {
+  livraisonAll(){
+    const authorizTok = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
         'Authorization': `Bearer ${this.token.ouToken()}`
       })
     };
-    return this.http.get<any>(this.urlLivraisonAll,httpOptions)
+    return this.http.get<any>(this.livraisonUrl,authorizTok)
     .pipe(
       map(data=>{
         let test = data['hydra:member']
@@ -128,15 +127,16 @@ export class CommandeService {
 
   /* commandes d une livraison */
   commandeByLivraison(id:any){
-    const httpOptions = {
+    const authorizTok = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
         'Authorization': `Bearer ${this.token.ouToken()}`
       })
     };
-    return this.http.get<any>(`${this.urlCommandeLivraison}/${id}/commandes`,httpOptions)
+    return this.http.get<any>(`${this.livraisonCommandeUrl}/${id}/commandes`,authorizTok)
     .pipe(
       map(data=>{
+        console.log(data)
         let test = data['hydra:member']
         data = test
         return data
@@ -145,25 +145,25 @@ export class CommandeService {
   }
 
   /* add livreur */
-  addLivreur(object:any){
-    const httpOptions = {
+  ajoutLivreur(object:any){
+    const authorizTok = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
         'Authorization': `Bearer ${this.token.ouToken()}`
       })
     };
-    return this.http.post(this.urlLivreurs,JSON.stringify(object),httpOptions)
+    return this.http.post(this.livreurUrl,JSON.stringify(object),authorizTok)
   }
 
   /* liste des zones */
-  allZone(){
-    const httpOptions = {
+  zoneAll(){
+    const authorizTok = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
         'Authorization': `Bearer ${this.token.ouToken()}`
       })
     };
-    return this.http.get<any>(this.urlCommandeZone,httpOptions)
+    return this.http.get<any>(this.commandeZoneUrl,authorizTok)
     .pipe(
       map(data=>{
         let test = data['hydra:member']
@@ -174,13 +174,13 @@ export class CommandeService {
   }
   /* valider livraison */
   validerLivraison (id:any,etat:string):Observable<number>{
-    const httpOptions = {
+    const authorizTok = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
         'Authorization': `Bearer ${this.token.ouToken()}`
       })
     }
     const body = {"etat": etat}
-    return this.http.put<number>(this.urlputLivraison+"/"+id,body,httpOptions);
+    return this.http.put<number>(this.livraisonEditUrl+"/"+id,body,authorizTok);
   }
 }

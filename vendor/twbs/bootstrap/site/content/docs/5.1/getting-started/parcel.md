@@ -51,7 +51,7 @@ import Alert as Alert from '../node_modules/bootstrap/js/dist/alert';
 
 To utilize the full potential of Bootstrap and customize it to your needs, use the source files as a part of your project's bundling process.
 
-Create your own `scss/custom.scss` to [import Bootstrap's Sass files]({{< docsref "/customize/sass#importing" >}}) and then override the [built-in custom variables]({{< docsref "/customize/sass#variable-defaults" >}}).
+Create your own `scss/custom.scss` to [import Bootstrap's Sass files]({{< docsref "/customize/sass#importing" >}}) and then override the [built-in custom authorizToks]({{< docsref "/customize/sass#authorizTok-defaults" >}}).
 
 ## Build app
 

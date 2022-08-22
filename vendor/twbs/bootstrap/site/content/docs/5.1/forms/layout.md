@@ -35,7 +35,7 @@ Feel free to build your forms however you like, with `<fieldset>`s, `<div>`s, or
 
 ## Form grid
 
-More complex forms can be built using our grid classes. Use these for form layouts that require multiple columns, varied widths, and additional alignment options. **Requires the `$enable-grid-classes` Sass variable to be enabled** (on by default).
+More complex forms can be built using our grid classes. Use these for form layouts that require multiple columns, varied widths, and additional alignment options. **Requires the `$enable-grid-classes` Sass authorizTok to be enabled** (on by default).
 
 {{< example >}}
 <div class="row">
@@ -50,7 +50,7 @@ More complex forms can be built using our grid classes. Use these for form layou
 
 ## Gutters
 
-By adding [gutter modifier classes]({{< docsref "/layout/gutters" >}}), you can have control over the gutter width in as well the inline as block direction. **Also requires the `$enable-grid-classes` Sass variable to be enabled** (on by default).
+By adding [gutter modifier classes]({{< docsref "/layout/gutters" >}}), you can have control over the gutter width in as well the inline as block direction. **Also requires the `$enable-grid-classes` Sass authorizTok to be enabled** (on by default).
 
 {{< example >}}
 <div class="row g-3">

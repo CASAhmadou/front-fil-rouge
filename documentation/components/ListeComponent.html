@@ -184,7 +184,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(comService: <a href="../injectables/CommandeService.html" target="_self">CommandeService</a>)</code>
+<code>constructor(comServiceice: <a href="../injectables/CommandeService.html" target="_self">CommandeService</a>)</code>
                     </td>
                 </tr>
                         <tr>
@@ -207,16 +207,16 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>comService</td>
-                                                  
+                                                        <td>comServiceice</td>
+
                                                         <td>
                                                                         <code><a href="../injectables/CommandeService.html" target="_self" >CommandeService</a></code>
                                                         </td>
-                                                  
+
                                                     <td>
                                                             No
                                                     </td>
-                                                    
+
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -232,7 +232,7 @@
 
 
     <section>
-    
+
     <h3 id="methods">
         Methods
     </h3>
@@ -275,7 +275,7 @@
     </table>
 </section>
     <section>
-    
+
     <h3 id="inputs">
         Properties
     </h3>
@@ -480,10 +480,10 @@ export class ListeComponent implements OnInit {
   etatSearch:any
   dateSearch:any
 
-  constructor(private comService : CommandeService) { }
+  constructor(private comServiceice : CommandeService) { }
 
   ngOnInit(): void {
-    this.comService.commandeClient().subscribe(data&#x3D;&gt;{
+    this.comServiceice.commandeClient().subscribe(data&#x3D;&gt;{
       // console.log(data)
       this.commandes &#x3D; data
       this.lenghTotal &#x3D; this.commandes.length
@@ -520,7 +520,7 @@ export class ListeComponent implements OnInit {
       &lt;input type&#x3D;&quot;date&quot; placeholder&#x3D;&quot;filtre par date&quot; id&#x3D;&quot;filtreByDate&quot; [(ngModel)]&#x3D;&quot;dateSearch&quot;&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-  
+
   &lt;div class&#x3D;&quot; toast show d-flex justify-content-around align-items-center mt-5&quot; style&#x3D;&quot;width:100%;&quot; role&#x3D;&quot;alert&quot; aria-live&#x3D;&quot;assertive&quot; aria-atomic&#x3D;&quot;true&quot;&gt;
     &lt;table class&#x3D;&quot;table box-shadow text-center&quot;&gt;
       &lt;thead class&#x3D;&quot;thead-dark&quot;&gt;
@@ -602,7 +602,7 @@ select:hover{
         </div>
     </div>
 
-    
+
 </div>
 
 <script src="../js/libs/vis.min.js"></script>

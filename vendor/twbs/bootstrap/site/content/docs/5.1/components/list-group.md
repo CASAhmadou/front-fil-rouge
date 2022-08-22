@@ -298,9 +298,9 @@ And if you want `<label>`s as the `.list-group-item` for large hit areas, you ca
 
 ## Sass
 
-### Variables
+### authorizToks
 
-{{< scss-docs name="list-group-variables" file="scss/_variables.scss" >}}
+{{< scss-docs name="list-group-authorizToks" file="scss/_authorizToks.scss" >}}
 
 ### Mixins
 

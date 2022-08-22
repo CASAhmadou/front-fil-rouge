@@ -1,9 +1,6 @@
 <cas-header></cas-header>
 <cas-footer></cas-footer>
-
-
-
-
+<!-- {{livraisons|json}} -->
 <div class="container mt-5">
 
   <h1 class="text-center">Liste des Livraisons</h1>
@@ -24,7 +21,7 @@
             <td>{{livraison.livreur.nom}} {{livraison.livreur?.prenom}}</td>
             <td>{{livraison.etat}}</td>
             <td>
-              <button type="button" class="btn" (click)="comLivre()" data-bs-toggle="tooltip" data-bs-placement="bottom">Detail</button>
+              <button type="button" class="btn" routerLink="/gestionnaire/commande/commande-livraison/{{livraison.id}}" data-bs-toggle="tooltip" data-bs-placement="bottom">Detail</button>
               <button type="button" class="btn" (click)='CommandetoEdit(livraison.id,"valide")' data-bs-toggle="tooltip" data-bs-placement="bottom">Valider</button>
             </td>
 

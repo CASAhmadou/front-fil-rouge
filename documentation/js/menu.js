@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 localContextInUrl = 'classes';
                 break;
             case 'miscellaneous-functions':
-            case 'miscellaneous-variables':
+            case 'miscellaneous-authorizToks':
             case 'miscellaneous-typealiases':
             case 'miscellaneous-enumerations':
                 localContextInUrl = 'miscellaneous';

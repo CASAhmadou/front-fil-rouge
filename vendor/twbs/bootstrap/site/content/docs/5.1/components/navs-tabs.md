@@ -306,9 +306,9 @@ Add dropdown menus with a little extra HTML and the [dropdowns JavaScript plugin
 
 ## Sass
 
-### Variables
+### authorizToks
 
-{{< scss-docs name="nav-variables" file="scss/_variables.scss" >}}
+{{< scss-docs name="nav-authorizToks" file="scss/_authorizToks.scss" >}}
 
 ## JavaScript behavior
 

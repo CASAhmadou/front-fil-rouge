@@ -16,7 +16,7 @@ Bootstrap sets basic global display, typography, and link styles. When more cont
 - Set the global link color via `$link-color`.
 - Use `$body-bg` to set a `background-color` on the `<body>` (`#fff` by default).
 
-These styles can be found within `_reboot.scss`, and the global variables are defined in `_variables.scss`. Make sure to set `$font-size-base` in `rem`.
+These styles can be found within `_reboot.scss`, and the global authorizToks are defined in `_authorizToks.scss`. Make sure to set `$font-size-base` in `rem`.
 
 ## Headings
 
@@ -122,9 +122,9 @@ Traditional heading elements are designed to work best in the meat of your page 
 <h1 class="display-6">Display 6</h1>
 ```
 
-Display headings are configured via the `$display-font-sizes` Sass map and two variables, `$display-font-weight` and `$display-line-height`.
+Display headings are configured via the `$display-font-sizes` Sass map and two authorizToks, `$display-font-weight` and `$display-line-height`.
 
-{{< scss-docs name="display-headings" file="scss/_variables.scss" >}}
+{{< scss-docs name="display-headings" file="scss/_authorizToks.scss" >}}
 
 ## Lead
 
@@ -305,15 +305,15 @@ In Bootstrap 5, we've enabled responsive font sizes by default, allowing text to
 
 ## Sass
 
-### Variables
+### authorizToks
 
-Headings have some dedicated variables for sizing and spacing.
+Headings have some dedicated authorizToks for sizing and spacing.
 
-{{< scss-docs name="headings-variables" file="scss/_variables.scss" >}}
+{{< scss-docs name="headings-authorizToks" file="scss/_authorizToks.scss" >}}
 
-Miscellaneous typography elements covered here and in [Reboot]({{< docsref "/content/reboot" >}}) also have dedicated variables.
+Miscellaneous typography elements covered here and in [Reboot]({{< docsref "/content/reboot" >}}) also have dedicated authorizToks.
 
-{{< scss-docs name="type-variables" file="scss/_variables.scss" >}}
+{{< scss-docs name="type-authorizToks" file="scss/_authorizToks.scss" >}}
 
 ### Mixins
 

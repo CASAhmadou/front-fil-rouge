@@ -29,7 +29,7 @@ toc: true
 
 - Redesigned homepage, docs layout, and footer.
 - Added [new Parcel guide](https://getbootstrap.com/docs/5.1/getting-started/parcel/).
-- Added [new Customize section](https://getbootstrap.com/docs/5.1/customize/overview/), replacing [v4's Theming page](https://getbootstrap.com/docs/4.6/getting-started/theming/), with new details on Sass, global configuration options, color schemes, CSS variables, and more.
+- Added [new Customize section](https://getbootstrap.com/docs/5.1/customize/overview/), replacing [v4's Theming page](https://getbootstrap.com/docs/4.6/getting-started/theming/), with new details on Sass, global configuration options, color schemes, CSS authorizToks, and more.
 - Reorganized all form documentation into [new Forms section](https://getbootstrap.com/docs/5.1/forms/overview/), breaking apart the content into more focused pages.
 - Similarly, updated [the Layout section](https://getbootstrap.com/docs/5.1/layout/breakpoints/), to flesh out grid content more clearly.
 - Renamed "Navs" component page to "Navs & Tabs".
@@ -41,7 +41,7 @@ toc: true
 
 - We've ditched the default Sass map merges to make it easier to remove redundant values. Keep in mind you now have to define all values in the Sass maps like `$theme-colors`. Check out how to deal with [Sass maps]({{< docsref "/customize/sass#maps-and-loops" >}}).
 
-- <span class="badge bg-danger">Breaking</span> Renamed `color-yiq()` function and related variables to `color-contrast()` as it's no longer related to YIQ colorspace. [See #30168.](https://github.com/twbs/bootstrap/pull/30168/)
+- <span class="badge bg-danger">Breaking</span> Renamed `color-yiq()` function and related authorizToks to `color-contrast()` as it's no longer related to YIQ colorspace. [See #30168.](https://github.com/twbs/bootstrap/pull/30168/)
   - `$yiq-contrasted-threshold` is renamed to `$min-contrast-ratio`.
   - `$yiq-text-dark` and `$yiq-text-light` are respectively renamed to `$color-contrast-dark` and `$color-contrast-light`.
 
@@ -49,9 +49,9 @@ toc: true
   - `media-breakpoint-down()` uses the breakpoint itself instead of the next breakpoint (e.g., `media-breakpoint-down(lg)` instead of `media-breakpoint-down(md)` targets viewports smaller than `lg`).
   - Similarly, the second parameter in `media-breakpoint-between()` also uses the breakpoint itself instead of the next breakpoint (e.g., `media-between(sm, lg)` instead of `media-breakpoint-between(sm, md)` targets viewports between `sm` and `lg`).
 
-- <span class="badge bg-danger">Breaking</span> Removed print styles and `$enable-print-styles` variable. Print display classes are still around. [See #28339](https://github.com/twbs/bootstrap/pull/28339).
+- <span class="badge bg-danger">Breaking</span> Removed print styles and `$enable-print-styles` authorizTok. Print display classes are still around. [See #28339](https://github.com/twbs/bootstrap/pull/28339).
 
-- <span class="badge bg-danger">Breaking</span> Dropped `color()`, `theme-color()`, and `gray()` functions in favor of variables. [See #29083](https://github.com/twbs/bootstrap/pull/29083).
+- <span class="badge bg-danger">Breaking</span> Dropped `color()`, `theme-color()`, and `gray()` functions in favor of authorizToks. [See #29083](https://github.com/twbs/bootstrap/pull/29083).
 
 - <span class="badge bg-danger">Breaking</span> Renamed `theme-color-level()` function to `color-level()` and now accepts any color you want instead of only `$theme-color` colors. [See #29083](https://github.com/twbs/bootstrap/pull/29083) **Watch out:** `color-level()` was later on dropped in `v5.0.0-alpha3`.
 
@@ -79,7 +79,7 @@ toc: true
 
 - The color system which worked with `color-level()` and `$theme-color-interval` was removed in favor of a new color system. All `lighten()` and `darken()` functions in our codebase are replaced by `tint-color()` and `shade-color()`. These functions will mix the color with either white or black instead of changing its lightness by a fixed amount. The `shift-color()` will either tint or shade a color depending on whether its weight parameter is positive or negative. [See #30622](https://github.com/twbs/bootstrap/pull/30622) for more details.
 
-- Added new tints and shades for every color, providing nine separate colors for each base color, as new Sass variables.
+- Added new tints and shades for every color, providing nine separate colors for each base color, as new Sass authorizToks.
 
 - Improved color contrast. Bumped color contrast ratio from 3:1 to 4.5:1 and updated blue, green, cyan, and pink colors to ensure WCAG 2.1 AA contrast. Also changed our color contrast color from `$gray-900` to `$black`.
 
@@ -109,21 +109,21 @@ toc: true
 
 - **[RFS]({{< docsref "/getting-started/rfs" >}}) is now enabled by default.** Headings using the `font-size()` mixin will automatically adjust their `font-size` to scale with the viewport. _This feature was previously opt-in with v4._
 
-- <span class="badge bg-danger">Breaking</span> Overhauled our display typography to replace our `$display-*` variables and with a `$display-font-sizes` Sass map. Also removed the individual `$display-*-weight` variables for a single `$display-font-weight` and adjusted `font-size`s.
+- <span class="badge bg-danger">Breaking</span> Overhauled our display typography to replace our `$display-*` authorizToks and with a `$display-font-sizes` Sass map. Also removed the individual `$display-*-weight` authorizToks for a single `$display-font-weight` and adjusted `font-size`s.
 
 - Added two new `.display-*` heading sizes, `.display-5` and `.display-6`.
 
 - **Links are underlined by default** (not just on hover), unless they're part of specific components.
 
-- **Redesigned tables** to refresh their styles and rebuild them with CSS variables for more control over styling.
+- **Redesigned tables** to refresh their styles and rebuild them with CSS authorizToks for more control over styling.
 
 - <span class="badge bg-danger">Breaking</span> Nested tables do not inherit styles anymore.
 
 - <span class="badge bg-danger">Breaking</span> `.thead-light` and `.thead-dark` are dropped in favor of the `.table-*` variant classes which can be used for all table elements (`thead`, `tbody`, `tfoot`, `tr`, `th` and `td`).
 
-- <span class="badge bg-danger">Breaking</span> The `table-row-variant()` mixin is renamed to `table-variant()` and accepts only 2 parameters: `$color` (color name) and `$value` (color code). The border color and accent colors are automatically calculated based on the table factor variables.
+- <span class="badge bg-danger">Breaking</span> The `table-row-variant()` mixin is renamed to `table-variant()` and accepts only 2 parameters: `$color` (color name) and `$value` (color code). The border color and accent colors are automatically calculated based on the table factor authorizToks.
 
-- Split table cell padding variables into `-y` and `-x`.
+- Split table cell padding authorizToks into `-y` and `-x`.
 
 - <span class="badge bg-danger">Breaking</span> Dropped `.pre-scrollable` class. [See #29135](https://github.com/twbs/bootstrap/pull/29135)
 
@@ -139,7 +139,7 @@ toc: true
 
 ## RTL
 
-- Horizontal direction specific variables, utilities, and mixins have all been renamed to use logical properties like those found in flexbox layouts—e.g., `start` and `end` in lieu of `left` and `right`.
+- Horizontal direction specific authorizToks, utilities, and mixins have all been renamed to use logical properties like those found in flexbox layouts—e.g., `start` and `end` in lieu of `left` and `right`.
 
 ## Forms
 
@@ -171,7 +171,7 @@ toc: true
 
 ## Components
 
-- Unified `padding` values for alerts, breadcrumbs, cards, dropdowns, list groups, modals, popovers, and tooltips to be based on our `$spacer` variable. [See #30564](https://github.com/twbs/bootstrap/pull/30564).
+- Unified `padding` values for alerts, breadcrumbs, cards, dropdowns, list groups, modals, popovers, and tooltips to be based on our `$spacer` authorizTok. [See #30564](https://github.com/twbs/bootstrap/pull/30564).
 
 ### Accordion
 
@@ -239,9 +239,9 @@ toc: true
 
 ### Dropdowns
 
-- Added new `.dropdown-menu-dark` variant and associated variables for on-demand dark dropdowns.
+- Added new `.dropdown-menu-dark` variant and associated authorizToks for on-demand dark dropdowns.
 
-- Added new variable for `$dropdown-padding-x`.
+- Added new authorizTok for `$dropdown-padding-x`.
 
 - Darkened the dropdown divider for improved contrast.
 
@@ -265,7 +265,7 @@ toc: true
 
 ### Navs and tabs
 
-- Added new `null` variables for `font-size`, `font-weight`, `color`, and `:hover` `color` to the `.nav-link` class.
+- Added new `null` authorizToks for `font-size`, `font-weight`, `color`, and `:hover` `color` to the `.nav-link` class.
 
 ### Navbars
 
@@ -352,11 +352,11 @@ toc: true
 
 ## Helpers
 
-- <span class="badge bg-danger">Breaking</span> **Responsive embed helpers have been renamed to [ratio helpers]({{< docsref "/helpers/ratio" >}})** with new class names and improved behaviors, as well as a helpful CSS variable.
+- <span class="badge bg-danger">Breaking</span> **Responsive embed helpers have been renamed to [ratio helpers]({{< docsref "/helpers/ratio" >}})** with new class names and improved behaviors, as well as a helpful CSS authorizTok.
   - Classes have been renamed to change `by` to `x` in the aspect ratio. For example, `.ratio-16by9` is now `.ratio-16x9`.
   - We've dropped the `.embed-responsive-item` and element group selector in favor of a simpler `.ratio > *` selector. No more class is needed, and the ratio helper now works with any HTML element.
   - The `$embed-responsive-aspect-ratios` Sass map has been renamed to `$aspect-ratios` and its values have been simplified to include the class name and the percentage as the `key: value` pair.
-  - CSS variables are now generated and included for each value in the Sass map. Modify the `--bs-aspect-ratio` variable on the `.ratio` to create any [custom aspect ratio]({{< docsref "/helpers/ratio#custom-ratios" >}}).
+  - CSS authorizToks are now generated and included for each value in the Sass map. Modify the `--bs-aspect-ratio` authorizTok on the `.ratio` to create any [custom aspect ratio]({{< docsref "/helpers/ratio#custom-ratios" >}}).
 
 - <span class="badge bg-danger">Breaking</span> **"Screen reader" classes are now ["visually hidden" classes]({{< docsref "/helpers/visually-hidden" >}}).**
   - Changed the Sass file from `scss/helpers/_screenreaders.scss` to `scss/helpers/_visually-hidden.scss`

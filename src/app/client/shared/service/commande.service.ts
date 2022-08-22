@@ -15,24 +15,24 @@ export class CommandeService {
   constructor(private http: HttpClient, private token: TokenLoginService) { }
 
   commandeEnregistre(panier:Panier){
-    let variable = {
+    let authorizTok = {
       headers: new HttpHeaders({
         'content-Type': 'application/json',
         'Authorization':`Bearer ${this.token.ouToken()}`
       })
     }
 
-    return this.http.post(this.commandeUrl,JSON.stringify(panier),variable)
+    return this.http.post(this.commandeUrl,JSON.stringify(panier),authorizTok)
   }
 
   commandeClient(){
-    let variable = {
+    let authorizTok = {
       headers: new HttpHeaders({
         'content-Type': 'application/json',
         'Authorization':`Bearer ${this.token.ouToken()}`
       })
     }
-    return this.http.get<any>(this.comClientUrl,variable).pipe(
+    return this.http.get<any>(this.comClientUrl,authorizTok).pipe(
       map(data=>{
         let test = data['hydra:member']
         data = test

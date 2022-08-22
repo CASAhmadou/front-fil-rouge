@@ -44,6 +44,6 @@ By default, range inputs "snap" to integer values. To change this, you can speci
 
 ## Sass
 
-### Variables
+### authorizToks
 
-{{< scss-docs name="form-range-variables" file="scss/_variables.scss" >}}
+{{< scss-docs name="form-range-authorizToks" file="scss/_authorizToks.scss" >}}

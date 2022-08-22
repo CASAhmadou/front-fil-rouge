@@ -1,11 +1,11 @@
-// Variables
+// authorizToks
 //
-// Variables should follow the `$component-state-property-size` formula for
+// authorizToks should follow the `$component-state-property-size` formula for
 // consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
 
 // Color system
 
-// scss-docs-start gray-color-variables
+// scss-docs-start gray-color-authorizToks
 $white:    #fff !default;
 $gray-100: #f8f9fa !default;
 $gray-200: #e9ecef !default;
@@ -17,7 +17,7 @@ $gray-700: #495057 !default;
 $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
 $black:    #000 !default;
-// scss-docs-end gray-color-variables
+// scss-docs-end gray-color-authorizToks
 
 // fusv-disable
 // scss-docs-start gray-colors-map
@@ -35,7 +35,7 @@ $grays: (
 // scss-docs-end gray-colors-map
 // fusv-enable
 
-// scss-docs-start color-variables
+// scss-docs-start color-authorizToks
 $blue:    #0d6efd !default;
 $indigo:  #6610f2 !default;
 $purple:  #6f42c1 !default;
@@ -46,7 +46,7 @@ $yellow:  #ffc107 !default;
 $green:   #198754 !default;
 $teal:    #20c997 !default;
 $cyan:    #0dcaf0 !default;
-// scss-docs-end color-variables
+// scss-docs-end color-authorizToks
 
 // scss-docs-start colors-map
 $colors: (
@@ -66,7 +66,7 @@ $colors: (
 ) !default;
 // scss-docs-end colors-map
 
-// scss-docs-start theme-color-variables
+// scss-docs-start theme-color-authorizToks
 $primary:       $blue !default;
 $secondary:     $gray-600 !default;
 $success:       $green !default;
@@ -75,7 +75,7 @@ $warning:       $yellow !default;
 $danger:        $red !default;
 $light:         $gray-100 !default;
 $dark:          $gray-900 !default;
-// scss-docs-end theme-color-variables
+// scss-docs-end theme-color-authorizToks
 
 // scss-docs-start theme-colors-map
 $theme-colors: (
@@ -353,25 +353,25 @@ $enable-negative-margins:     false !default;
 $enable-deprecation-messages: true !default;
 $enable-important-utilities:  true !default;
 
-// Prefix for :root CSS variables
+// Prefix for :root CSS authorizToks
 
-$variable-prefix:             bs- !default;
+$authorizTok-prefix:             bs- !default;
 
 // Gradient
 //
 // The gradient which is added to components if `$enable-gradients` is `true`
 // This gradient is also added to elements with `.bg-gradient`
-// scss-docs-start variable-gradient
+// scss-docs-start authorizTok-gradient
 $gradient: linear-gradient(180deg, rgba($white, .15), rgba($white, 0)) !default;
-// scss-docs-end variable-gradient
+// scss-docs-end authorizTok-gradient
 
 // Spacing
 //
 // Control the default styling of most Bootstrap elements by modifying these
-// variables. Mostly focused on spacing.
+// authorizToks. Mostly focused on spacing.
 // You can add more entries to the $spacers map, should you need more variation.
 
-// scss-docs-start spacer-variables-maps
+// scss-docs-start spacer-authorizToks-maps
 $spacer: 1rem !default;
 $spacers: (
   0: 0,
@@ -383,7 +383,7 @@ $spacers: (
 ) !default;
 
 $negative-spacers: if($enable-negative-margins, negativify-map($spacers), null) !default;
-// scss-docs-end spacer-variables-maps
+// scss-docs-end spacer-authorizToks-maps
 
 // Position
 //
@@ -409,7 +409,7 @@ $body-text-align:           null !default;
 //
 // Extends the default `$theme-colors` maps to help create our utilities.
 
-// Come v6, we'll de-dupe these variables. Until then, for backward compatibility, we keep them to reassign.
+// Come v6, we'll de-dupe these authorizToks. Until then, for backward compatibility, we keep them to reassign.
 // scss-docs-start utilities-colors
 $utilities-colors: $theme-colors-rgb !default;
 // scss-docs-end utilities-colors
@@ -514,7 +514,7 @@ $container-padding-x: $grid-gutter-width * .5 !default;
 //
 // Define common padding and border radius sizes and more.
 
-// scss-docs-start border-variables
+// scss-docs-start border-authorizToks
 $border-width:                1px !default;
 $border-widths: (
   1: 1px,
@@ -525,30 +525,30 @@ $border-widths: (
 ) !default;
 
 $border-color:                $gray-300 !default;
-// scss-docs-end border-variables
+// scss-docs-end border-authorizToks
 
-// scss-docs-start border-radius-variables
+// scss-docs-start border-radius-authorizToks
 $border-radius:               .25rem !default;
 $border-radius-sm:            .2rem !default;
 $border-radius-lg:            .3rem !default;
 $border-radius-pill:          50rem !default;
-// scss-docs-end border-radius-variables
+// scss-docs-end border-radius-authorizToks
 
-// scss-docs-start box-shadow-variables
+// scss-docs-start box-shadow-authorizToks
 $box-shadow:                  0 .5rem 1rem rgba($black, .15) !default;
 $box-shadow-sm:               0 .125rem .25rem rgba($black, .075) !default;
 $box-shadow-lg:               0 1rem 3rem rgba($black, .175) !default;
 $box-shadow-inset:            inset 0 1px 2px rgba($black, .075) !default;
-// scss-docs-end box-shadow-variables
+// scss-docs-end box-shadow-authorizToks
 
 $component-active-color:      $white !default;
 $component-active-bg:         $primary !default;
 
-// scss-docs-start caret-variables
+// scss-docs-start caret-authorizToks
 $caret-width:                 .3em !default;
 $caret-vertical-align:        $caret-width * .85 !default;
 $caret-spacing:               $caret-width * .85 !default;
-// scss-docs-end caret-variables
+// scss-docs-end caret-authorizToks
 
 $transition-base:             all .2s ease-in-out !default;
 $transition-fade:             opacity .15s linear !default;
@@ -572,13 +572,13 @@ $aspect-ratios: (
 //
 // Font, line-height, and color for body text, headings, and more.
 
-// scss-docs-start font-variables
+// scss-docs-start font-authorizToks
 // stylelint-disable value-keyword-case
 $font-family-sans-serif:      system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 // stylelint-enable value-keyword-case
-$font-family-base:            var(--#{$variable-prefix}font-sans-serif) !default;
-$font-family-code:            var(--#{$variable-prefix}font-monospace) !default;
+$font-family-base:            var(--#{$authorizTok-prefix}font-sans-serif) !default;
+$font-family-code:            var(--#{$authorizTok-prefix}font-monospace) !default;
 
 // $font-size-root affects the value of `rem`, which is used for as well font sizes, paddings, and margins
 // $font-size-base affects the font size of the body text
@@ -605,7 +605,7 @@ $h3-font-size:                $font-size-base * 1.75 !default;
 $h4-font-size:                $font-size-base * 1.5 !default;
 $h5-font-size:                $font-size-base * 1.25 !default;
 $h6-font-size:                $font-size-base !default;
-// scss-docs-end font-variables
+// scss-docs-end font-authorizToks
 
 // scss-docs-start font-sizes
 $font-sizes: (
@@ -618,14 +618,14 @@ $font-sizes: (
 ) !default;
 // scss-docs-end font-sizes
 
-// scss-docs-start headings-variables
+// scss-docs-start headings-authorizToks
 $headings-margin-bottom:      $spacer * .5 !default;
 $headings-font-family:        null !default;
 $headings-font-style:         null !default;
 $headings-font-weight:        500 !default;
 $headings-line-height:        1.2 !default;
 $headings-color:              null !default;
-// scss-docs-end headings-variables
+// scss-docs-end headings-authorizToks
 
 // scss-docs-start display-headings
 $display-font-sizes: (
@@ -641,7 +641,7 @@ $display-font-weight: 300 !default;
 $display-line-height: $headings-line-height !default;
 // scss-docs-end display-headings
 
-// scss-docs-start type-variables
+// scss-docs-start type-authorizToks
 $lead-font-size:              $font-size-base * 1.25 !default;
 $lead-font-weight:            300 !default;
 
@@ -676,14 +676,14 @@ $nested-kbd-font-weight:      $font-weight-bold !default;
 $list-inline-padding:         .5rem !default;
 
 $mark-bg:                     #fcf8e3 !default;
-// scss-docs-end type-variables
+// scss-docs-end type-authorizToks
 
 
 // Tables
 //
 // Customizes the `.table` component with basic values, each used across all table variations.
 
-// scss-docs-start table-variables
+// scss-docs-start table-authorizToks
 $table-cell-padding-y:        .5rem !default;
 $table-cell-padding-x:        .5rem !default;
 $table-cell-padding-y-sm:     .25rem !default;
@@ -720,7 +720,7 @@ $table-group-separator-color: currentColor !default;
 $table-caption-color:         $text-muted !default;
 
 $table-bg-scale:              -80% !default;
-// scss-docs-end table-variables
+// scss-docs-end table-authorizToks
 
 // scss-docs-start table-loop
 $table-variants: (
@@ -738,9 +738,9 @@ $table-variants: (
 
 // Buttons + Forms
 //
-// Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
+// Shared authorizToks that are reassigned to `$input-` and `$btn-` specific authorizToks.
 
-// scss-docs-start input-btn-variables
+// scss-docs-start input-btn-authorizToks
 $input-btn-padding-y:         .375rem !default;
 $input-btn-padding-x:         .75rem !default;
 $input-btn-font-family:       null !default;
@@ -762,14 +762,14 @@ $input-btn-padding-x-lg:      1rem !default;
 $input-btn-font-size-lg:      $font-size-lg !default;
 
 $input-btn-border-width:      $border-width !default;
-// scss-docs-end input-btn-variables
+// scss-docs-end input-btn-authorizToks
 
 
 // Buttons
 //
 // For each of Bootstrap's buttons, define text, background, and border color.
 
-// scss-docs-start btn-variables
+// scss-docs-start btn-authorizToks
 $btn-padding-y:               $input-btn-padding-y !default;
 $btn-padding-x:               $input-btn-padding-x !default;
 $btn-font-family:             $input-btn-font-family !default;
@@ -813,28 +813,28 @@ $btn-active-bg-shade-amount:      20% !default;
 $btn-active-bg-tint-amount:       20% !default;
 $btn-active-border-shade-amount:  25% !default;
 $btn-active-border-tint-amount:   10% !default;
-// scss-docs-end btn-variables
+// scss-docs-end btn-authorizToks
 
 
 // Forms
 
-// scss-docs-start form-text-variables
+// scss-docs-start form-text-authorizToks
 $form-text-margin-top:                  .25rem !default;
 $form-text-font-size:                   $small-font-size !default;
 $form-text-font-style:                  null !default;
 $form-text-font-weight:                 null !default;
 $form-text-color:                       $text-muted !default;
-// scss-docs-end form-text-variables
+// scss-docs-end form-text-authorizToks
 
-// scss-docs-start form-label-variables
+// scss-docs-start form-label-authorizToks
 $form-label-margin-bottom:              .5rem !default;
 $form-label-font-size:                  null !default;
 $form-label-font-style:                 null !default;
 $form-label-font-weight:                null !default;
 $form-label-color:                      null !default;
-// scss-docs-end form-label-variables
+// scss-docs-end form-label-authorizToks
 
-// scss-docs-start form-input-variables
+// scss-docs-start form-input-authorizToks
 $input-padding-y:                       $input-btn-padding-y !default;
 $input-padding-x:                       $input-btn-padding-x !default;
 $input-font-family:                     $input-btn-font-family !default;
@@ -885,9 +885,9 @@ $input-height-lg:                       add($input-line-height * 1em, add($input
 $input-transition:                      border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
 
 $form-color-width:                      3rem !default;
-// scss-docs-end form-input-variables
+// scss-docs-end form-input-authorizToks
 
-// scss-docs-start form-check-variables
+// scss-docs-start form-check-authorizToks
 $form-check-input-width:                  1em !default;
 $form-check-min-height:                   $font-size-base * $line-height-base !default;
 $form-check-padding-start:                $form-check-input-width + .5em !default;
@@ -921,9 +921,9 @@ $form-check-label-disabled-opacity:        $form-check-input-disabled-opacity !d
 $form-check-btn-check-disabled-opacity:    $btn-disabled-opacity !default;
 
 $form-check-inline-margin-end:    1rem !default;
-// scss-docs-end form-check-variables
+// scss-docs-end form-check-authorizToks
 
-// scss-docs-start form-switch-variables
+// scss-docs-start form-switch-authorizToks
 $form-switch-color:               rgba($black, .25) !default;
 $form-switch-width:               2em !default;
 $form-switch-padding-start:       $form-switch-width + .5em !default;
@@ -937,18 +937,18 @@ $form-switch-focus-bg-image:      url("data:image/svg+xml,<svg xmlns='http://www
 $form-switch-checked-color:       $component-active-color !default;
 $form-switch-checked-bg-image:    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$form-switch-checked-color}'/></svg>") !default;
 $form-switch-checked-bg-position: right center !default;
-// scss-docs-end form-switch-variables
+// scss-docs-end form-switch-authorizToks
 
-// scss-docs-start input-group-variables
+// scss-docs-start input-group-authorizToks
 $input-group-addon-padding-y:           $input-padding-y !default;
 $input-group-addon-padding-x:           $input-padding-x !default;
 $input-group-addon-font-weight:         $input-font-weight !default;
 $input-group-addon-color:               $input-color !default;
 $input-group-addon-bg:                  $gray-200 !default;
 $input-group-addon-border-color:        $input-border-color !default;
-// scss-docs-end input-group-variables
+// scss-docs-end input-group-authorizToks
 
-// scss-docs-start form-select-variables
+// scss-docs-start form-select-authorizToks
 $form-select-padding-y:             $input-padding-y !default;
 $form-select-padding-x:             $input-padding-x !default;
 $form-select-font-family:           $input-font-family !default;
@@ -990,9 +990,9 @@ $form-select-font-size-lg:        $input-font-size-lg !default;
 $form-select-border-radius-lg:    $input-border-radius-lg !default;
 
 $form-select-transition:          $input-transition !default;
-// scss-docs-end form-select-variables
+// scss-docs-end form-select-authorizToks
 
-// scss-docs-start form-range-variables
+// scss-docs-start form-range-authorizToks
 $form-range-track-width:          100% !default;
 $form-range-track-height:         .5rem !default;
 $form-range-track-cursor:         pointer !default;
@@ -1011,15 +1011,15 @@ $form-range-thumb-focus-box-shadow-width:  $input-focus-width !default; // For f
 $form-range-thumb-active-bg:               tint-color($component-active-bg, 70%) !default;
 $form-range-thumb-disabled-bg:             $gray-500 !default;
 $form-range-thumb-transition:              background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
-// scss-docs-end form-range-variables
+// scss-docs-end form-range-authorizToks
 
-// scss-docs-start form-file-variables
+// scss-docs-start form-file-authorizToks
 $form-file-button-color:          $input-color !default;
 $form-file-button-bg:             $input-group-addon-bg !default;
 $form-file-button-hover-bg:       shade-color($form-file-button-bg, 5%) !default;
-// scss-docs-end form-file-variables
+// scss-docs-end form-file-authorizToks
 
-// scss-docs-start form-floating-variables
+// scss-docs-start form-floating-authorizToks
 $form-floating-height:            add(3.5rem, $input-height-border) !default;
 $form-floating-line-height:       1.25 !default;
 $form-floating-padding-x:         $input-padding-x !default;
@@ -1029,11 +1029,11 @@ $form-floating-input-padding-b:   .625rem !default;
 $form-floating-label-opacity:     .65 !default;
 $form-floating-label-transform:   scale(.85) translateY(-.5rem) translateX(.15rem) !default;
 $form-floating-transition:        opacity .1s ease-in-out, transform .1s ease-in-out !default;
-// scss-docs-end form-floating-variables
+// scss-docs-end form-floating-authorizToks
 
 // Form validation
 
-// scss-docs-start form-feedback-variables
+// scss-docs-start form-feedback-authorizToks
 $form-feedback-margin-top:          $form-text-margin-top !default;
 $form-feedback-font-size:           $form-text-font-size !default;
 $form-feedback-font-style:          $form-text-font-style !default;
@@ -1044,7 +1044,7 @@ $form-feedback-icon-valid-color:    $form-feedback-valid-color !default;
 $form-feedback-icon-valid:          url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'><path fill='#{$form-feedback-icon-valid-color}' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/></svg>") !default;
 $form-feedback-icon-invalid-color:  $form-feedback-invalid-color !default;
 $form-feedback-icon-invalid:        url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='#{$form-feedback-icon-invalid-color}'><circle cx='6' cy='6' r='4.5'/><path stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/><circle cx='6' cy='8.2' r='.6' fill='#{$form-feedback-icon-invalid-color}' stroke='none'/></svg>") !default;
-// scss-docs-end form-feedback-variables
+// scss-docs-end form-feedback-authorizToks
 
 // scss-docs-start form-validation-states
 $form-validation-states: (
@@ -1079,7 +1079,7 @@ $zindex-tooltip:                    1080 !default;
 
 // Navs
 
-// scss-docs-start nav-variables
+// scss-docs-start nav-authorizToks
 $nav-link-padding-y:                .5rem !default;
 $nav-link-padding-x:                1rem !default;
 $nav-link-font-size:                null !default;
@@ -1100,12 +1100,12 @@ $nav-tabs-link-active-border-color: $gray-300 $gray-300 $nav-tabs-link-active-bg
 $nav-pills-border-radius:           $border-radius !default;
 $nav-pills-link-active-color:       $component-active-color !default;
 $nav-pills-link-active-bg:          $component-active-bg !default;
-// scss-docs-end nav-variables
+// scss-docs-end nav-authorizToks
 
 
 // Navbar
 
-// scss-docs-start navbar-variables
+// scss-docs-start navbar-authorizToks
 $navbar-padding-y:                  $spacer * .5 !default;
 $navbar-padding-x:                  null !default;
 
@@ -1124,9 +1124,9 @@ $navbar-toggler-font-size:          $font-size-lg !default;
 $navbar-toggler-border-radius:      $btn-border-radius !default;
 $navbar-toggler-focus-width:        $btn-focus-width !default;
 $navbar-toggler-transition:         box-shadow .15s ease-in-out !default;
-// scss-docs-end navbar-variables
+// scss-docs-end navbar-authorizToks
 
-// scss-docs-start navbar-theme-variables
+// scss-docs-start navbar-theme-authorizToks
 $navbar-dark-color:                 rgba($white, .55) !default;
 $navbar-dark-hover-color:           rgba($white, .75) !default;
 $navbar-dark-active-color:          $white !default;
@@ -1145,14 +1145,14 @@ $navbar-light-brand-color:                $navbar-light-active-color !default;
 $navbar-light-brand-hover-color:          $navbar-light-active-color !default;
 $navbar-dark-brand-color:                 $navbar-dark-active-color !default;
 $navbar-dark-brand-hover-color:           $navbar-dark-active-color !default;
-// scss-docs-end navbar-theme-variables
+// scss-docs-end navbar-theme-authorizToks
 
 
 // Dropdowns
 //
 // Dropdown menu container and contents.
 
-// scss-docs-start dropdown-variables
+// scss-docs-start dropdown-authorizToks
 $dropdown-min-width:                10rem !default;
 $dropdown-padding-x:                0 !default;
 $dropdown-padding-y:                .5rem !default;
@@ -1182,9 +1182,9 @@ $dropdown-item-padding-x:           $spacer !default;
 
 $dropdown-header-color:             $gray-600 !default;
 $dropdown-header-padding:           $dropdown-padding-y $dropdown-item-padding-x !default;
-// scss-docs-end dropdown-variables
+// scss-docs-end dropdown-authorizToks
 
-// scss-docs-start dropdown-dark-variables
+// scss-docs-start dropdown-dark-authorizToks
 $dropdown-dark-color:               $gray-300 !default;
 $dropdown-dark-bg:                  $gray-800 !default;
 $dropdown-dark-border-color:        $dropdown-border-color !default;
@@ -1197,12 +1197,12 @@ $dropdown-dark-link-active-color:   $dropdown-link-active-color !default;
 $dropdown-dark-link-active-bg:      $dropdown-link-active-bg !default;
 $dropdown-dark-link-disabled-color: $gray-500 !default;
 $dropdown-dark-header-color:        $gray-500 !default;
-// scss-docs-end dropdown-dark-variables
+// scss-docs-end dropdown-dark-authorizToks
 
 
 // Pagination
 
-// scss-docs-start pagination-variables
+// scss-docs-start pagination-authorizToks
 $pagination-padding-y:              .375rem !default;
 $pagination-padding-x:              .75rem !default;
 $pagination-padding-y-sm:           .25rem !default;
@@ -1238,7 +1238,7 @@ $pagination-transition:              color .15s ease-in-out, background-color .1
 
 $pagination-border-radius-sm:       $border-radius-sm !default;
 $pagination-border-radius-lg:       $border-radius-lg !default;
-// scss-docs-end pagination-variables
+// scss-docs-end pagination-authorizToks
 
 
 // Placeholders
@@ -1250,7 +1250,7 @@ $placeholder-opacity-min:           .2 !default;
 
 // Cards
 
-// scss-docs-start card-variables
+// scss-docs-start card-authorizToks
 $card-spacer-y:                     $spacer !default;
 $card-spacer-x:                     $spacer !default;
 $card-title-spacer-y:               $spacer * .5 !default;
@@ -1268,11 +1268,11 @@ $card-color:                        null !default;
 $card-bg:                           $white !default;
 $card-img-overlay-padding:          $spacer !default;
 $card-group-margin:                 $grid-gutter-width * .5 !default;
-// scss-docs-end card-variables
+// scss-docs-end card-authorizToks
 
 // Accordion
 
-// scss-docs-start accordion-variables
+// scss-docs-start accordion-authorizToks
 $accordion-padding-y:                     1rem !default;
 $accordion-padding-x:                     1.25rem !default;
 $accordion-color:                         $body-color !default;
@@ -1304,11 +1304,11 @@ $accordion-icon-transform:                rotate(-180deg) !default;
 
 $accordion-button-icon:         url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-icon-color}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !default;
 $accordion-button-active-icon:  url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-icon-active-color}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !default;
-// scss-docs-end accordion-variables
+// scss-docs-end accordion-authorizToks
 
 // Tooltips
 
-// scss-docs-start tooltip-variables
+// scss-docs-start tooltip-authorizToks
 $tooltip-font-size:                 $font-size-sm !default;
 $tooltip-max-width:                 200px !default;
 $tooltip-color:                     $white !default;
@@ -1322,22 +1322,22 @@ $tooltip-margin:                    0 !default;
 $tooltip-arrow-width:               .8rem !default;
 $tooltip-arrow-height:              .4rem !default;
 $tooltip-arrow-color:               $tooltip-bg !default;
-// scss-docs-end tooltip-variables
+// scss-docs-end tooltip-authorizToks
 
 // Form tooltips must come after regular tooltips
-// scss-docs-start tooltip-feedback-variables
+// scss-docs-start tooltip-feedback-authorizToks
 $form-feedback-tooltip-padding-y:     $tooltip-padding-y !default;
 $form-feedback-tooltip-padding-x:     $tooltip-padding-x !default;
 $form-feedback-tooltip-font-size:     $tooltip-font-size !default;
 $form-feedback-tooltip-line-height:   null !default;
 $form-feedback-tooltip-opacity:       $tooltip-opacity !default;
 $form-feedback-tooltip-border-radius: $tooltip-border-radius !default;
-// scss-docs-end tooltip-feedback-variables
+// scss-docs-end tooltip-feedback-authorizToks
 
 
 // Popovers
 
-// scss-docs-start popover-variables
+// scss-docs-start popover-authorizToks
 $popover-font-size:                 $font-size-sm !default;
 $popover-bg:                        $white !default;
 $popover-max-width:                 276px !default;
@@ -1361,12 +1361,12 @@ $popover-arrow-height:              .5rem !default;
 $popover-arrow-color:               $popover-bg !default;
 
 $popover-arrow-outer-color:         fade-in($popover-border-color, .05) !default;
-// scss-docs-end popover-variables
+// scss-docs-end popover-authorizToks
 
 
 // Toasts
 
-// scss-docs-start toast-variables
+// scss-docs-start toast-authorizToks
 $toast-max-width:                   350px !default;
 $toast-padding-x:                   .75rem !default;
 $toast-padding-y:                   .5rem !default;
@@ -1382,24 +1382,24 @@ $toast-spacing:                     $container-padding-x !default;
 $toast-header-color:                $gray-600 !default;
 $toast-header-background-color:     rgba($white, .85) !default;
 $toast-header-border-color:         rgba($black, .05) !default;
-// scss-docs-end toast-variables
+// scss-docs-end toast-authorizToks
 
 
 // Badges
 
-// scss-docs-start badge-variables
+// scss-docs-start badge-authorizToks
 $badge-font-size:                   .75em !default;
 $badge-font-weight:                 $font-weight-bold !default;
 $badge-color:                       $white !default;
 $badge-padding-y:                   .35em !default;
 $badge-padding-x:                   .65em !default;
 $badge-border-radius:               $border-radius !default;
-// scss-docs-end badge-variables
+// scss-docs-end badge-authorizToks
 
 
 // Modals
 
-// scss-docs-start modal-variables
+// scss-docs-start modal-authorizToks
 $modal-inner-padding:               $spacer !default;
 
 $modal-footer-margin-between:       .5rem !default;
@@ -1437,14 +1437,14 @@ $modal-fade-transform:              translate(0, -50px) !default;
 $modal-show-transform:              none !default;
 $modal-transition:                  transform .3s ease-out !default;
 $modal-scale-transform:             scale(1.02) !default;
-// scss-docs-end modal-variables
+// scss-docs-end modal-authorizToks
 
 
 // Alerts
 //
 // Define alert colors, border radius, and padding.
 
-// scss-docs-start alert-variables
+// scss-docs-start alert-authorizToks
 $alert-padding-y:               $spacer !default;
 $alert-padding-x:               $spacer !default;
 $alert-margin-bottom:           1rem !default;
@@ -1455,12 +1455,12 @@ $alert-bg-scale:                -80% !default;
 $alert-border-scale:            -70% !default;
 $alert-color-scale:             40% !default;
 $alert-dismissible-padding-r:   $alert-padding-x * 3 !default; // 3x covers width of x plus default padding on either side
-// scss-docs-end alert-variables
+// scss-docs-end alert-authorizToks
 
 
 // Progress bars
 
-// scss-docs-start progress-variables
+// scss-docs-start progress-authorizToks
 $progress-height:                   1rem !default;
 $progress-font-size:                $font-size-base * .75 !default;
 $progress-bg:                       $gray-200 !default;
@@ -1470,12 +1470,12 @@ $progress-bar-color:                $white !default;
 $progress-bar-bg:                   $primary !default;
 $progress-bar-animation-timing:     1s linear infinite !default;
 $progress-bar-transition:           width .6s ease !default;
-// scss-docs-end progress-variables
+// scss-docs-end progress-authorizToks
 
 
 // List group
 
-// scss-docs-start list-group-variables
+// scss-docs-start list-group-authorizToks
 $list-group-color:                  $gray-900 !default;
 $list-group-bg:                     $white !default;
 $list-group-border-color:           rgba($black, .125) !default;
@@ -1500,32 +1500,32 @@ $list-group-action-hover-color:     $list-group-action-color !default;
 
 $list-group-action-active-color:    $body-color !default;
 $list-group-action-active-bg:       $gray-200 !default;
-// scss-docs-end list-group-variables
+// scss-docs-end list-group-authorizToks
 
 
 // Image thumbnails
 
-// scss-docs-start thumbnail-variables
+// scss-docs-start thumbnail-authorizToks
 $thumbnail-padding:                 .25rem !default;
 $thumbnail-bg:                      $body-bg !default;
 $thumbnail-border-width:            $border-width !default;
 $thumbnail-border-color:            $gray-300 !default;
 $thumbnail-border-radius:           $border-radius !default;
 $thumbnail-box-shadow:              $box-shadow-sm !default;
-// scss-docs-end thumbnail-variables
+// scss-docs-end thumbnail-authorizToks
 
 
 // Figures
 
-// scss-docs-start figure-variables
+// scss-docs-start figure-authorizToks
 $figure-caption-font-size:          $small-font-size !default;
 $figure-caption-color:              $gray-600 !default;
-// scss-docs-end figure-variables
+// scss-docs-end figure-authorizToks
 
 
 // Breadcrumbs
 
-// scss-docs-start breadcrumb-variables
+// scss-docs-start breadcrumb-authorizToks
 $breadcrumb-font-size:              null !default;
 $breadcrumb-padding-y:              0 !default;
 $breadcrumb-padding-x:              0 !default;
@@ -1537,11 +1537,11 @@ $breadcrumb-active-color:           $gray-600 !default;
 $breadcrumb-divider:                quote("/") !default;
 $breadcrumb-divider-flipped:        $breadcrumb-divider !default;
 $breadcrumb-border-radius:          null !default;
-// scss-docs-end breadcrumb-variables
+// scss-docs-end breadcrumb-authorizToks
 
 // Carousel
 
-// scss-docs-start carousel-variables
+// scss-docs-start carousel-authorizToks
 $carousel-control-color:             $white !default;
 $carousel-control-width:             15% !default;
 $carousel-control-opacity:           .5 !default;
@@ -1573,12 +1573,12 @@ $carousel-transition:                transform $carousel-transition-duration eas
 $carousel-dark-indicator-active-bg:  $black !default;
 $carousel-dark-caption-color:        $black !default;
 $carousel-dark-control-icon-filter:  invert(1) grayscale(100) !default;
-// scss-docs-end carousel-variables
+// scss-docs-end carousel-authorizToks
 
 
 // Spinners
 
-// scss-docs-start spinner-variables
+// scss-docs-start spinner-authorizToks
 $spinner-width:           2rem !default;
 $spinner-height:          $spinner-width !default;
 $spinner-vertical-align:  -.125em !default;
@@ -1588,12 +1588,12 @@ $spinner-animation-speed: .75s !default;
 $spinner-width-sm:        1rem !default;
 $spinner-height-sm:       $spinner-width-sm !default;
 $spinner-border-width-sm: .2em !default;
-// scss-docs-end spinner-variables
+// scss-docs-end spinner-authorizToks
 
 
 // Close
 
-// scss-docs-start close-variables
+// scss-docs-start close-authorizToks
 $btn-close-width:            1em !default;
 $btn-close-height:           $btn-close-width !default;
 $btn-close-padding-x:        .25em !default;
@@ -1606,12 +1606,12 @@ $btn-close-hover-opacity:    .75 !default;
 $btn-close-focus-opacity:    1 !default;
 $btn-close-disabled-opacity: .25 !default;
 $btn-close-white-filter:     invert(1) grayscale(100%) brightness(200%) !default;
-// scss-docs-end close-variables
+// scss-docs-end close-authorizToks
 
 
 // Offcanvas
 
-// scss-docs-start offcanvas-variables
+// scss-docs-start offcanvas-authorizToks
 $offcanvas-padding-y:               $modal-inner-padding !default;
 $offcanvas-padding-x:               $modal-inner-padding !default;
 $offcanvas-horizontal-width:        400px !default;
@@ -1625,7 +1625,7 @@ $offcanvas-color:                   $modal-content-color !default;
 $offcanvas-box-shadow:              $modal-content-box-shadow-xs !default;
 $offcanvas-backdrop-bg:             $modal-backdrop-bg !default;
 $offcanvas-backdrop-opacity:        $modal-backdrop-opacity !default;
-// scss-docs-end offcanvas-variables
+// scss-docs-end offcanvas-authorizToks
 
 // Code
 

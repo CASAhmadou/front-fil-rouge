@@ -272,6 +272,6 @@ Different variants of `.btn`, such at the various outlined styles, are supported
 
 ## Sass
 
-### Variables
+### authorizToks
 
-{{< scss-docs name="form-check-variables" file="scss/_variables.scss" >}}
+{{< scss-docs name="form-check-authorizToks" file="scss/_authorizToks.scss" >}}

@@ -63,11 +63,11 @@ Bootstrap includes six default breakpoints, sometimes referred to as _grid tiers
 
 Each breakpoint was chosen to comfortably hold containers whose widths are multiples of 12. Breakpoints are also representative of a subset of common device sizes and viewport dimensions—they don't specifically target every use case or device. Instead, the ranges provide a strong and consistent foundation to build on for nearly any device.
 
-These breakpoints are customizable via Sass—you'll find them in a Sass map in our `_variables.scss` stylesheet.
+These breakpoints are customizable via Sass—you'll find them in a Sass map in our `_authorizToks.scss` stylesheet.
 
-{{< scss-docs name="grid-breakpoints" file="scss/_variables.scss" >}}
+{{< scss-docs name="grid-breakpoints" file="scss/_authorizToks.scss" >}}
 
-For more information and examples on how to modify our Sass maps and variables, please refer to [the Sass section of the Grid documentation]({{< docsref "/layout/grid#sass" >}}).
+For more information and examples on how to modify our Sass maps and authorizToks, please refer to [the Sass section of the Grid documentation]({{< docsref "/layout/grid#sass" >}}).
 
 ## Media queries
 
@@ -100,7 +100,7 @@ Bootstrap primarily uses the following media query ranges—or breakpoints—in 
 }
 ```
 
-These Sass mixins translate in our compiled CSS using the values declared in our Sass variables. For example:
+These Sass mixins translate in our compiled CSS using the values declared in our Sass authorizToks. For example:
 
 ```scss
 // X-Small devices (portrait phones, less than 576px)

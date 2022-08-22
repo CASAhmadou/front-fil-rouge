@@ -80,11 +80,11 @@ Use the scaling classes for larger or smaller rounded corners. Sizes range from 
 
 ## Sass
 
-### Variables
+### authorizToks
 
-{{< scss-docs name="border-variables" file="scss/_variables.scss" >}}
+{{< scss-docs name="border-authorizToks" file="scss/_authorizToks.scss" >}}
 
-{{< scss-docs name="border-radius-variables" file="scss/_variables.scss" >}}
+{{< scss-docs name="border-radius-authorizToks" file="scss/_authorizToks.scss" >}}
 
 ### Mixins
 

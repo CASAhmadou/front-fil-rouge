@@ -158,9 +158,9 @@ Change the alignment of pagination components with [flexbox utilities]({{< docsr
 
 ## Sass
 
-### Variables
+### authorizToks
 
-{{< scss-docs name="pagination-variables" file="scss/_variables.scss" >}}
+{{< scss-docs name="pagination-authorizToks" file="scss/_authorizToks.scss" >}}
 
 ### Mixins
 

@@ -721,11 +721,11 @@ To create an offcanvas navbar that expands into a normal navbar at a specific br
 
 ## Sass
 
-### Variables
+### authorizToks
 
-{{< scss-docs name="navbar-variables" file="scss/_variables.scss" >}}
+{{< scss-docs name="navbar-authorizToks" file="scss/_authorizToks.scss" >}}
 
-{{< scss-docs name="navbar-theme-variables" file="scss/_variables.scss" >}}
+{{< scss-docs name="navbar-theme-authorizToks" file="scss/_authorizToks.scss" >}}
 
 ### Loop
 

@@ -538,7 +538,7 @@ Toggle between multiple modals with some clever placement of the `data-bs-target
 
 ### Change animation
 
-The `$modal-fade-transform` variable determines the transform state of `.modal-dialog` before the modal fade-in animation, the `$modal-show-transform` variable determines the transform of `.modal-dialog` at the end of the modal fade-in animation.
+The `$modal-fade-transform` authorizTok determines the transform state of `.modal-dialog` before the modal fade-in animation, the `$modal-show-transform` authorizTok determines the transform of `.modal-dialog` at the end of the modal fade-in animation.
 
 If you want for example a zoom-in animation, you can set `$modal-fade-transform: scale(.8)`.
 
@@ -815,9 +815,9 @@ Another override is the option to pop up a modal that covers the user viewport, 
 
 ## Sass
 
-### Variables
+### authorizToks
 
-{{< scss-docs name="modal-variables" file="scss/_variables.scss" >}}
+{{< scss-docs name="modal-authorizToks" file="scss/_authorizToks.scss" >}}
 
 ### Loop
 

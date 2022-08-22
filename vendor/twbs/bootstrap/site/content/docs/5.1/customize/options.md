@@ -1,16 +1,16 @@
 ---
 layout: docs
 title: Options
-description: Quickly customize Bootstrap with built-in variables to easily toggle global CSS preferences for controlling style and behavior.
+description: Quickly customize Bootstrap with built-in authorizToks to easily toggle global CSS preferences for controlling style and behavior.
 group: customize
 ---
 
-Customize Bootstrap with our built-in custom variables file and easily toggle global CSS preferences with new `$enable-*` Sass variables. Override a variable's value and recompile with `npm run test` as needed.
+Customize Bootstrap with our built-in custom authorizToks file and easily toggle global CSS preferences with new `$enable-*` Sass authorizToks. Override a authorizTok's value and recompile with `npm run test` as needed.
 
-You can find and customize these variables for key global options in Bootstrap's `scss/_variables.scss` file.
+You can find and customize these authorizToks for key global options in Bootstrap's `scss/_authorizToks.scss` file.
 
 {{< bs-table "table text-start" >}}
-| Variable                       | Values                             | Description                                                                            |
+| authorizTok                       | Values                             | Description                                                                            |
 | ------------------------------ | ---------------------------------- | -------------------------------------------------------------------------------------- |
 | `$spacer`                      | `1rem` (default), or any value > 0 | Specifies the default spacer value to programmatically generate our [spacer utilities]({{< docsref "/utilities/spacing" >}}). |
 | `$enable-rounded`              | `true` (default) or `false`        | Enables predefined `border-radius` styles on various components. |

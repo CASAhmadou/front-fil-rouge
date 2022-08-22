@@ -219,7 +219,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(comServ: <a href="../injectables/CommandeService.html" target="_self">CommandeService</a>, fb: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, toast: NgToastService)</code>
+<code>constructor(comService: <a href="../injectables/CommandeService.html" target="_self">CommandeService</a>, fb: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, toast: NgToastService)</code>
                     </td>
                 </tr>
                         <tr>
@@ -242,7 +242,7 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>comServ</td>
+                                                        <td>comService</td>
 
                                                         <td>
                                                                         <code><a href="../injectables/CommandeService.html" target="_self" >CommandeService</a></code>
@@ -815,23 +815,23 @@ export class LivraisonComponent implements OnInit {
   registerForm:any
 
   constructor(
-    private comServ:CommandeService,
+    private comService:CommandeService,
     private fb:FormBuilder,
     private toast: NgToastService,
   ) { }
 
   ngOnInit(): void {
 
-    this.comServ.commandesZone(1).subscribe(data&#x3D;&gt;{
+    this.comService.commandesZone(1).subscribe(data&#x3D;&gt;{
       this.commandesZones &#x3D; data.filter((commande:any) &#x3D;&gt; commande.etat&#x3D;&#x3D;&quot;termine&quot;)
     })
-    this.comServ.commandesZone(2).subscribe(data&#x3D;&gt;{
+    this.comService.commandesZone(2).subscribe(data&#x3D;&gt;{
       this.commandesZones2 &#x3D; data.filter((commande:any) &#x3D;&gt; commande.etat&#x3D;&#x3D;&quot;termine&quot;)
     })
-    this.comServ.commandesZone(3).subscribe(data&#x3D;&gt;{
+    this.comService.commandesZone(3).subscribe(data&#x3D;&gt;{
       this.commandesZones3 &#x3D; data.filter((commande:any) &#x3D;&gt; commande.etat&#x3D;&#x3D;&quot;termine&quot;)
     })
-    this.comServ.allLivreur().subscribe(data&#x3D;&gt;{
+    this.comService.livreurAll().subscribe(data&#x3D;&gt;{
       this.livreurs &#x3D; data.filter((livreur:any)&#x3D;&gt; livreur.etat&#x3D;&#x3D;&quot;disponible&quot;)
     })
 
@@ -848,7 +848,7 @@ export class LivraisonComponent implements OnInit {
     console.log(this.registerForm.value)
 
     /* enregistrer livraison */
-    this.comServ.addLivraison(this.registerForm.value).subscribe(
+    this.comService.ajoutLivraison(this.registerForm.value).subscribe(
       err&#x3D;&gt;{
         console.log(err)
       },

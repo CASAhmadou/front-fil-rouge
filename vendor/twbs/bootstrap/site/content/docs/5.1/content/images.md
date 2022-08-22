@@ -56,8 +56,8 @@ If you are using the `<picture>` element to specify multiple `<source>` elements
 
 ## Sass
 
-### Variables
+### authorizToks
 
-Variables are available for image thumbnails.
+authorizToks are available for image thumbnails.
 
-{{< scss-docs name="thumbnail-variables" file="scss/_variables.scss" >}}
+{{< scss-docs name="thumbnail-authorizToks" file="scss/_authorizToks.scss" >}}

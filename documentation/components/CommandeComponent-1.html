@@ -217,27 +217,27 @@
                                         <tbody>
                                                 <tr>
                                                         <td>com</td>
-                                                  
+
                                                         <td>
                                                                         <code><a href="../injectables/CommandeService.html" target="_self" >CommandeService</a></code>
                                                         </td>
-                                                  
+
                                                     <td>
                                                             No
                                                     </td>
-                                                    
+
                                                 </tr>
                                                 <tr>
                                                         <td>toast</td>
-                                                  
+
                                                         <td>
                                                                     <code>NgToastService</code>
                                                         </td>
-                                                  
+
                                                     <td>
                                                             No
                                                     </td>
-                                                    
+
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -253,7 +253,7 @@
 
 
     <section>
-    
+
     <h3 id="methods">
         Methods
     </h3>
@@ -288,7 +288,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
-                        
+
                         <table class="params">
                             <thead>
                                 <tr>
@@ -332,7 +332,7 @@
 
                     </div>
                     <div class="io-description">
-                        
+
                     </div>
                 </td>
             </tr>
@@ -377,7 +377,7 @@
     </table>
 </section>
     <section>
-    
+
     <h3 id="inputs">
         Properties
     </h3>
@@ -646,7 +646,7 @@ export class CommandeComponent implements OnInit {
   constructor(private com:CommandeService,private toast: NgToastService) { }
 
   ngOnInit(): void {
-    this.com.allCommande().subscribe(data&#x3D;&gt;{
+    this.com.commandeAll().subscribe(data&#x3D;&gt;{
       // console.log(data)
       this.commandes &#x3D; data
       this.totalLenght &#x3D; this.commandes.length
@@ -655,7 +655,7 @@ export class CommandeComponent implements OnInit {
 
     /* fonction changer etat commande */
     editCommande(id:any,etat:string){
-      this.com.resetCommande(id,etat) .subscribe();
+      this.com.commandeAnnuler(id,etat) .subscribe();
         this.toast.info({detail:&quot;info&quot;,summary:&quot;le commande a bien été modifié&quot;})
         location.reload()
     }
@@ -792,7 +792,7 @@ select:hover{
         </div>
     </div>
 
-    
+
 </div>
 
 <script src="../js/libs/vis.min.js"></script>

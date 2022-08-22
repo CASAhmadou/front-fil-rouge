@@ -88,6 +88,6 @@ Use the `.rounded-pill` utility class to make badges more rounded with a larger 
 
 ## Sass
 
-### Variables
+### authorizToks
 
-{{< scss-docs name="badge-variables" file="scss/_variables.scss" >}}
+{{< scss-docs name="badge-authorizToks" file="scss/_authorizToks.scss" >}}

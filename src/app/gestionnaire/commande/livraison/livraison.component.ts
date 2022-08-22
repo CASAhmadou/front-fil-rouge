@@ -26,24 +26,24 @@ export class LivraisonComponent implements OnInit {
 
   registerForm:any
 
-  constructor(private comServ:CommandeService,private fb:FormBuilder,private toast: NgToastService,private router:Router) { }
+  constructor(private comService:CommandeService,private fb:FormBuilder,private toast: NgToastService,private router:Router) { }
 
   ngOnInit(): void {
 
-    this.comServ.commandesZone(1).subscribe(data=>{
+    this.comService.commandesZone(1).subscribe(data=>{
       this.commandesZones = data.filter((commande:any) => commande.etat=="termine")
     })
-    this.comServ.commandesZone(2).subscribe(data=>{
+    this.comService.commandesZone(2).subscribe(data=>{
       this.commandesZones2 = data.filter((commande:any) => commande.etat=="termine")
     })
-    this.comServ.commandesZone(3).subscribe(data=>{
+    this.comService.commandesZone(3).subscribe(data=>{
       this.commandesZones3 = data.filter((commande:any) => commande.etat=="termine")
     })
-    this.comServ.commandesZone(4).subscribe(data=>{
+    this.comService.commandesZone(4).subscribe(data=>{
       this.commandesZones4 = data.filter((commande:any) => commande.etat=="termine")
     })
 
-    this.comServ.allLivreur().subscribe(data=>{
+    this.comService.livreurAll().subscribe(data=>{
       this.livreurs=data.filter((livreur:any)=> livreur?.etat=="disponible")
       // console.log(this.livreurs)
 
@@ -62,7 +62,7 @@ export class LivraisonComponent implements OnInit {
     // console.log(this.registerForm.value)
 
     /* enregistrer livraison */
-    this.comServ.addLivraison(this.registerForm.value).subscribe(
+    this.comService.ajoutLivraison(this.registerForm.value).subscribe(
       err=>{
         console.log(err)
       },

@@ -1,8 +1,18 @@
 body{
     overflow-x:hidden;
-  
+    height: 100vh;
 }
 
 *{
   box-sizing: border-box;
+}
+
+
+.prev{
+  cursor: pointer;
+  font-size: 3rem;
+}
+
+.btn:hover{
+  background-color: #F4782F;
 }

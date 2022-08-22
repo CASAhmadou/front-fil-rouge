@@ -152,27 +152,27 @@
                                         <tbody>
                                                 <tr>
                                                         <td>http</td>
-                                                  
+
                                                         <td>
                                                                         <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
                                                         </td>
-                                                  
+
                                                     <td>
                                                             No
                                                     </td>
-                                                    
+
                                                 </tr>
                                                 <tr>
                                                         <td>token</td>
-                                                  
+
                                                         <td>
                                                                         <code><a href="../injectables/TokenLoginService.html" target="_self" >TokenLoginService</a></code>
                                                         </td>
-                                                  
+
                                                     <td>
                                                             No
                                                     </td>
-                                                    
+
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -184,7 +184,7 @@
 </section>
 
             <section>
-    
+
     <h3 id="methods">
         Methods
     </h3>
@@ -256,7 +256,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
-                        
+
                         <table class="params">
                             <thead>
                                 <tr>
@@ -288,7 +288,7 @@
 
                     </div>
                     <div class="io-description">
-                        
+
                     </div>
                 </td>
             </tr>
@@ -333,7 +333,7 @@
     </table>
 </section>
             <section>
-    
+
     <h3 id="inputs">
         Properties
     </h3>
@@ -456,23 +456,23 @@ export class CommandeService {
   constructor(private http: HttpClient, private token: TokenLoginService) { }
 
   commandeEnregistre(panier:Panier){
-    let variable &#x3D; {
+    let authorizTok &#x3D; {
       headers: new HttpHeaders({
         &#x27;content-Type&#x27;: &#x27;application/json&#x27;,
         &#x27;Authorization&#x27;:&#x60;Bearer ${this.token.ouToken()}&#x60;
       })
     }
-    return this.http.post(this.commandeUrl,JSON.stringify(panier),variable)
+    return this.http.post(this.commandeUrl,JSON.stringify(panier),authorizTok)
   }
 
   commandeClient(){
-    let variable &#x3D; {
+    let authorizTok &#x3D; {
       headers: new HttpHeaders({
         &#x27;content-Type&#x27;: &#x27;application/json&#x27;,
         &#x27;Authorization&#x27;:&#x60;Bearer ${this.token.ouToken()}&#x60;
       })
     }
-    return this.http.get&lt;any&gt;(this.comClientUrl,variable).pipe(
+    return this.http.get&lt;any&gt;(this.comClientUrl,authorizTok).pipe(
       map(data&#x3D;&gt;{
         let test &#x3D; data[&#x27;hydra:member&#x27;]
         data &#x3D; test

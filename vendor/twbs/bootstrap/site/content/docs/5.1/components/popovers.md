@@ -111,9 +111,9 @@ For disabled popover triggers, you may also prefer `data-bs-trigger="hover focus
 
 ## Sass
 
-### Variables
+### authorizToks
 
-{{< scss-docs name="popover-variables" file="scss/_variables.scss" >}}
+{{< scss-docs name="popover-authorizToks" file="scss/_authorizToks.scss" >}}
 
 ## Usage
 

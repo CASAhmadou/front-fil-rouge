@@ -76,6 +76,6 @@ Add the `disabled` boolean attribute on a select to give it a grayed out appeara
 
 ## Sass
 
-### Variables
+### authorizToks
 
-{{< scss-docs name="form-select-variables" file="scss/_variables.scss" >}}
+{{< scss-docs name="form-select-authorizToks" file="scss/_authorizToks.scss" >}}

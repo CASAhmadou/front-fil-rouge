@@ -20,7 +20,7 @@
       "border-bottom-left-radius",
       "transition"
     ],
-    "scss/dollar-variable-default": [
+    "scss/dollar-authorizTok-default": [
       true,
       {
         "ignore": "local"

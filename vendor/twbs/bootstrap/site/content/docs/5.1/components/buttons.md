@@ -229,9 +229,9 @@ buttons.forEach(function (button) {
 
 ## Sass
 
-### Variables
+### authorizToks
 
-{{< scss-docs name="btn-variables" file="scss/_variables.scss" >}}
+{{< scss-docs name="btn-authorizToks" file="scss/_authorizToks.scss" >}}
 
 ### Mixins
 

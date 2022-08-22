@@ -139,6 +139,6 @@ Animate placeholders with `.placeholder-glow` or `.placeholder-wave` to better c
 
 ## Sass
 
-### Variables
+### authorizToks
 
-{{< scss-docs name="placeholders" file="scss/_variables.scss" >}}
+{{< scss-docs name="placeholders" file="scss/_authorizToks.scss" >}}

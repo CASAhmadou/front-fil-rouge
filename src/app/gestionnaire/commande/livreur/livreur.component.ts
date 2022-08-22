@@ -13,7 +13,7 @@ export class LivreurComponent implements OnInit {
   registerForm:any
   constructor(
     private fb:FormBuilder,
-    private comServ:CommandeService,
+    private comService:CommandeService,
     private toast: NgToastService,
   ) { }
 
@@ -52,7 +52,7 @@ export class LivreurComponent implements OnInit {
 
   submitData(){
       // console.log(this.registerForm.value)
-    this.comServ.addLivreur(this.registerForm.value).subscribe(
+    this.comService.ajoutLivreur(this.registerForm.value).subscribe(
       err=>console.log("Error: " + err),
     )
     this.toast.success({detail:"success",summary:"le livreur a bien été enregistré"})

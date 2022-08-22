@@ -29,7 +29,7 @@ Adjust the `overflow` property on the fly with four default values and classes. 
 <div class="overflow-scroll">...</div>
 ```
 
-Using Sass variables, you may customize the overflow utilities by changing the `$overflows` variable in `_variables.scss`.
+Using Sass authorizToks, you may customize the overflow utilities by changing the `$overflows` authorizTok in `_authorizToks.scss`.
 
 ## Sass
 

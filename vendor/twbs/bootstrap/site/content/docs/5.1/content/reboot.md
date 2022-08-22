@@ -18,24 +18,24 @@ Here are our guidelines and reasons for choosing what to override in Reboot:
 - For easier scaling across device sizes, block elements should use `rem`s for `margin`s.
 - Keep declarations of `font`-related properties to a minimum, using `inherit` whenever possible.
 
-## CSS variables
+## CSS authorizToks
 
 <small class="d-inline-flex px-2 py-1 font-monospace text-muted border rounded-3">Added in v5.1.1</small>
 
-With v5.1.1, we standardized our required `@import`s across all our CSS bundles (including `bootstrap.css`, `bootstrap-reboot.css`, and `bootstrap-grid.css` to include `_root.scss` . This adds `:root` level CSS variables to all bundles, regardless of how many of them are used in that bundle. Ultimately Bootstrap 5 will continue to see more CSS variables added over time.
+With v5.1.1, we standardized our required `@import`s across all our CSS bundles (including `bootstrap.css`, `bootstrap-reboot.css`, and `bootstrap-grid.css` to include `_root.scss` . This adds `:root` level CSS authorizToks to all bundles, regardless of how many of them are used in that bundle. Ultimately Bootstrap 5 will continue to see more CSS authorizToks added over time.
 
 ## Page defaults
 
 The `<html>` and `<body>` elements are updated to provide better page-wide defaults. More specifically:
 
 - The `box-sizing` is globally set on every element—including `*::before` and `*::after`, to `border-box`. This ensures that the declared width of element is never exceeded due to padding or border.
-  - No base `font-size` is declared on the `<html>`, but `16px` is assumed (the browser default). `font-size: 1rem` is applied on the `<body>` for easy responsive type-scaling via media queries while respecting user preferences and ensuring a more accessible approach. This browser default can be overridden by modifying the `$font-size-root` variable.
+  - No base `font-size` is declared on the `<html>`, but `16px` is assumed (the browser default). `font-size: 1rem` is applied on the `<body>` for easy responsive type-scaling via media queries while respecting user preferences and ensuring a more accessible approach. This browser default can be overridden by modifying the `$font-size-root` authorizTok.
 - The `<body>` also sets a global `font-family`, `font-weight`, `line-height`, and `color`. This is inherited later by some form elements to prevent font inconsistencies.
 - For safety, the `<body>` has a declared `background-color`, defaulting to `#fff`.
 
 ## Native font stack
 
-Bootstrap utilizes a "native font stack" or "system font stack" for optimum text rendering on every device and OS. These system fonts have been designed specifically with today's devices in mind, with improved rendering on screens, variable font support, and more. Read more about [native font stacks in this *Smashing Magazine* article](https://www.smashingmagazine.com/2015/11/using-system-ui-fonts-practical-guide/).
+Bootstrap utilizes a "native font stack" or "system font stack" for optimum text rendering on every device and OS. These system fonts have been designed specifically with today's devices in mind, with improved rendering on screens, authorizTok font support, and more. Read more about [native font stacks in this *Smashing Magazine* article](https://www.smashingmagazine.com/2015/11/using-system-ui-fonts-practical-guide/).
 
 ```scss
 $font-family-sans-serif:
@@ -62,15 +62,15 @@ Note that because the font stack includes emoji fonts, many common symbol/dingba
 
 This `font-family` is applied to the `<body>` and automatically inherited globally throughout Bootstrap. To switch the global `font-family`, update `$font-family-base` and recompile Bootstrap.
 
-## CSS variables
+## CSS authorizToks
 
-As Bootstrap 5 continues to mature, more and more styles will be built with [CSS variables]({{< docsref "/customize/css-variables" >}}) as a means to provide more real-time customization without the need to always recompile Sass. Our approach is to take our source Sass variables and transform them into CSS variables. That way, even if you don't use CSS variables, you still have all the power of Sass. **This is still in-progress and will take time to fully implement.**
+As Bootstrap 5 continues to mature, more and more styles will be built with [CSS authorizToks]({{< docsref "/customize/css-authorizToks" >}}) as a means to provide more real-time customization without the need to always recompile Sass. Our approach is to take our source Sass authorizToks and transform them into CSS authorizToks. That way, even if you don't use CSS authorizToks, you still have all the power of Sass. **This is still in-progress and will take time to fully implement.**
 
-For example, consider these `:root` CSS variables for common `<body>` styles:
+For example, consider these `:root` CSS authorizToks for common `<body>` styles:
 
-{{< scss-docs name="root-body-variables" file="scss/_root.scss" >}}
+{{< scss-docs name="root-body-authorizToks" file="scss/_root.scss" >}}
 
-In practice, those variables are then applied in Reboot like so:
+In practice, those authorizToks are then applied in Reboot like so:
 
 {{< scss-docs name="reboot-body-rules" file="scss/_reboot.scss" >}}
 
@@ -185,9 +185,9 @@ Use `<pre>`s for multiple lines of code. Once again, be sure to escape any angle
 </code></pre>
 {{< /example >}}
 
-## Variables
+## authorizToks
 
-For indicating variables use the `<var>` tag.
+For indicating authorizToks use the `<var>` tag.
 
 {{< example >}}
 <var>y</var> = <var>m</var><var>x</var> + <var>b</var>

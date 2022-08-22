@@ -17,10 +17,10 @@ export class ListeComponent implements OnInit {
   etatSearch:any
   dateSearch:any
 
-  constructor(private comService : CommandeService) { }
+  constructor(private comServiceice : CommandeService) { }
 
   ngOnInit(): void {
-    this.comService.commandeClient().subscribe(data=>{
+    this.comServiceice.commandeClient().subscribe(data=>{
       // console.log(data)
       this.commandes = data
       this.lenghTotal = this.commandes.length

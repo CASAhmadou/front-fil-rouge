@@ -236,7 +236,7 @@ Carousels support swiping left/right on touchscreen devices to move between slid
 
 ## Dark variant
 
-Add `.carousel-dark` to the `.carousel` for darker controls, indicators, and captions. Controls have been inverted from their default white fill with the `filter` CSS property. Captions and controls have additional Sass variables that customize the `color` and `background-color`.
+Add `.carousel-dark` to the `.carousel` for darker controls, indicators, and captions. Controls have been inverted from their default white fill with the `filter` CSS property. Captions and controls have additional Sass authorizToks that customize the `color` and `background-color`.
 
 {{< example >}}
 <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
@@ -281,13 +281,13 @@ Add `.carousel-dark` to the `.carousel` for darker controls, indicators, and cap
 
 ## Custom transition
 
-The transition duration of `.carousel-item` can be changed with the `$carousel-transition-duration` Sass variable before compiling or custom styles if you're using the compiled CSS. If multiple transitions are applied, make sure the transform transition is defined first (eg. `transition: transform 2s ease, opacity .5s ease-out`).
+The transition duration of `.carousel-item` can be changed with the `$carousel-transition-duration` Sass authorizTok before compiling or custom styles if you're using the compiled CSS. If multiple transitions are applied, make sure the transform transition is defined first (eg. `transition: transform 2s ease, opacity .5s ease-out`).
 
 ## Sass
 
-### Variables
+### authorizToks
 
-{{< scss-docs name="carousel-variables" file="scss/_variables.scss" >}}
+{{< scss-docs name="carousel-authorizToks" file="scss/_authorizToks.scss" >}}
 
 ## Usage
 

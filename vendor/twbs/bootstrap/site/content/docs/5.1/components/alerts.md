@@ -158,9 +158,9 @@ When an alert is dismissed, the element is completely removed from the page stru
 
 ## Sass
 
-### Variables
+### authorizToks
 
-{{< scss-docs name="alert-variables" file="scss/_variables.scss" >}}
+{{< scss-docs name="alert-authorizToks" file="scss/_authorizToks.scss" >}}
 
 ### Variant mixin
 

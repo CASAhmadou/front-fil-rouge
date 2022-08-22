@@ -35,7 +35,7 @@ Where *position* is one of:
 - `50` - for `50%` edge position
 - `100` - for `100%` edge position
 
-(You can add more position values by adding entries to the `$position-values` Sass map variable.)
+(You can add more position values by adding entries to the `$position-values` Sass map authorizTok.)
 
 {{< example class="bd-example-position-utils" >}}
 <div class="position-relative">
@@ -102,7 +102,7 @@ Here are some real life examples of these classes:
 </button>
 {{< /example >}}
 
-You can use these classes with existing components to create new ones. Remember that you can extend its functionality by adding entries to the `$position-values` variable.
+You can use these classes with existing components to create new ones. Remember that you can extend its functionality by adding entries to the `$position-values` authorizTok.
 
 {{< example class="bd-example-position-examples" >}}
 <div class="position-relative m-4">
@@ -121,7 +121,7 @@ You can use these classes with existing components to create new ones. Remember 
 
 Default position utility values are declared in a Sass map, then used to generate our utilities.
 
-{{< scss-docs name="position-map" file="scss/_variables.scss" >}}
+{{< scss-docs name="position-map" file="scss/_authorizToks.scss" >}}
 
 ### Utilities API
 

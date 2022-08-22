@@ -955,19 +955,19 @@ By default, the dropdown menu is closed when clicking inside or outside the drop
 
 ## Sass
 
-### Variables
+### authorizToks
 
-Variables for all dropdowns:
+authorizToks for all dropdowns:
 
-{{< scss-docs name="dropdown-variables" file="scss/_variables.scss" >}}
+{{< scss-docs name="dropdown-authorizToks" file="scss/_authorizToks.scss" >}}
 
-Variables for the [dark dropdown](#dark-dropdowns):
+authorizToks for the [dark dropdown](#dark-dropdowns):
 
-{{< scss-docs name="dropdown-dark-variables" file="scss/_variables.scss" >}}
+{{< scss-docs name="dropdown-dark-authorizToks" file="scss/_authorizToks.scss" >}}
 
-Variables for the CSS-based carets that indicate a dropdown's interactivity:
+authorizToks for the CSS-based carets that indicate a dropdown's interactivity:
 
-{{< scss-docs name="caret-variables" file="scss/_variables.scss" >}}
+{{< scss-docs name="caret-authorizToks" file="scss/_authorizToks.scss" >}}
 
 ### Mixins
 

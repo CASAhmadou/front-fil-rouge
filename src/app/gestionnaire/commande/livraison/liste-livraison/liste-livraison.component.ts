@@ -12,13 +12,13 @@ export class ListeLivraisonComponent implements OnInit {
 
   livraisons:any[] = []
   constructor(
-    private comServ:CommandeService,
+    private comService:CommandeService,
     private toast: NgToastService,
     private router: Router
     ) { }
 
   ngOnInit(): void {
-    this.comServ.allLivraisons().subscribe(data=>{
+    this.comService.livraisonAll().subscribe(data=>{
       // console.log(data)
       this.livraisons = data
       // .filter((livraison:any)=>livraison.etat=="en cours")
@@ -27,7 +27,7 @@ export class ListeLivraisonComponent implements OnInit {
 
    /* fonction changer etat commande */
    CommandetoEdit(id:any,etat:string){
-    this.comServ.validerLivraison(id,etat) .subscribe(
+    this.comService.validerLivraison(id,etat) .subscribe(
       data=>{
         console.log(data);
         location.reload()

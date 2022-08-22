@@ -102,9 +102,9 @@ Note that Bootstrap's current implementation does not cover the various *optiona
 
 ## Sass
 
-### Variables
+### authorizToks
 
-{{< scss-docs name="collapse-transition" file="scss/_variables.scss" >}}
+{{< scss-docs name="collapse-transition" file="scss/_authorizToks.scss" >}}
 
 ### Classes
 

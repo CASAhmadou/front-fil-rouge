@@ -39,7 +39,7 @@ This means that you will have to make sure to add it to your `package.json` usin
 
 To enjoy the full potential of Bootstrap and customize it to your needs, use the source files as a part of your project's bundling process.
 
-First, create your own `_custom.scss` and use it to override the [built-in custom variables]({{< docsref "/customize/sass" >}}). Then, use your main Sass file to import your custom variables, followed by Bootstrap:
+First, create your own `_custom.scss` and use it to override the [built-in custom authorizToks]({{< docsref "/customize/sass" >}}). Then, use your main Sass file to import your custom authorizToks, followed by Bootstrap:
 
 ```scss
 @import "custom";

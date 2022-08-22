@@ -326,9 +326,9 @@ While technically it's possible to add focusable/actionable controls (such as ad
 
 ## Sass
 
-### Variables
+### authorizToks
 
-{{< scss-docs name="toast-variables" file="scss/_variables.scss" >}}
+{{< scss-docs name="toast-authorizToks" file="scss/_authorizToks.scss" >}}
 
 ## Usage
 

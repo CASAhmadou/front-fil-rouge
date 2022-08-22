@@ -103,6 +103,6 @@ When working with the Bootstrap grid system, be sure to place form elements with
 
 ## Sass
 
-### Variables
+### authorizToks
 
-{{< scss-docs name="form-floating-variables" file="scss/_variables.scss" >}}
+{{< scss-docs name="form-floating-authorizToks" file="scss/_authorizToks.scss" >}}

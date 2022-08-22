@@ -13,7 +13,7 @@ export class ListeLivreurComponent implements OnInit {
   constructor(private com:CommandeService, private router:Router) { }
 
   ngOnInit(): void {
-    this.com.allLivreur().subscribe((data:any)=>{
+    this.com.livreurAll().subscribe((data:any)=>{
       this.livreurs = data
     })
   }

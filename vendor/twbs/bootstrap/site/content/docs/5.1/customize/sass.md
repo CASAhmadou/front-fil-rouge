@@ -1,12 +1,12 @@
 ---
 layout: docs
 title: Sass
-description: Utilize our source Sass files to take advantage of variables, maps, mixins, and functions to help you build faster and customize your project.
+description: Utilize our source Sass files to take advantage of authorizToks, maps, mixins, and functions to help you build faster and customize your project.
 group: customize
 toc: true
 ---
 
-Utilize our source Sass files to take advantage of variables, maps, mixins, and more.
+Utilize our source Sass files to take advantage of authorizToks, maps, mixins, and more.
 
 ## File structure
 
@@ -41,7 +41,7 @@ In your `custom.scss`, you'll import Bootstrap's source Sass files. You have two
 // Custom.scss
 // Option A: Include all of Bootstrap
 
-// Include any default variable overrides here (though functions won't be available)
+// Include any default authorizTok overrides here (though functions won't be available)
 
 @import "../node_modules/bootstrap/scss/bootstrap";
 
@@ -55,10 +55,10 @@ In your `custom.scss`, you'll import Bootstrap's source Sass files. You have two
 // 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
 @import "../node_modules/bootstrap/scss/functions";
 
-// 2. Include any default variable overrides here
+// 2. Include any default authorizTok overrides here
 
 // 3. Include remainder of required Bootstrap stylesheets
-@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/authorizToks";
 @import "../node_modules/bootstrap/scss/mixins";
 @import "../node_modules/bootstrap/scss/root";
 
@@ -77,15 +77,15 @@ In your `custom.scss`, you'll import Bootstrap's source Sass files. You have two
 // 6. Add additional custom code here
 ```
 
-With that setup in place, you can begin to modify any of the Sass variables and maps in your `custom.scss`. You can also start to add parts of Bootstrap under the `// Optional` section as needed. We suggest using the full import stack from our `bootstrap.scss` file as your starting point.
+With that setup in place, you can begin to modify any of the Sass authorizToks and maps in your `custom.scss`. You can also start to add parts of Bootstrap under the `// Optional` section as needed. We suggest using the full import stack from our `bootstrap.scss` file as your starting point.
 
-## Variable defaults
+## authorizTok defaults
 
-Every Sass variable in Bootstrap includes the `!default` flag allowing you to override the variable's default value in your own Sass without modifying Bootstrap's source code. Copy and paste variables as needed, modify their values, and remove the `!default` flag. If a variable has already been assigned, then it won't be re-assigned by the default values in Bootstrap.
+Every Sass authorizTok in Bootstrap includes the `!default` flag allowing you to override the authorizTok's default value in your own Sass without modifying Bootstrap's source code. Copy and paste authorizToks as needed, modify their values, and remove the `!default` flag. If a authorizTok has already been assigned, then it won't be re-assigned by the default values in Bootstrap.
 
-You will find the complete list of Bootstrap's variables in `scss/_variables.scss`. Some variables are set to `null`, these variables don't output the property unless they are overridden in your configuration.
+You will find the complete list of Bootstrap's authorizToks in `scss/_authorizToks.scss`. Some authorizToks are set to `null`, these authorizToks don't output the property unless they are overridden in your configuration.
 
-Variable overrides must come after our functions are imported, but before the rest of the imports.
+authorizTok overrides must come after our functions are imported, but before the rest of the imports.
 
 Here's an example that changes the `background-color` and `color` for the `<body>` when importing and compiling Bootstrap via npm:
 
@@ -93,12 +93,12 @@ Here's an example that changes the `background-color` and `color` for the `<body
 // Required
 @import "../node_modules/bootstrap/scss/functions";
 
-// Default variable overrides
+// Default authorizTok overrides
 $body-bg: #000;
 $body-color: #111;
 
 // Required
-@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/authorizToks";
 @import "../node_modules/bootstrap/scss/mixins";
 @import "../node_modules/bootstrap/scss/root";
 
@@ -108,7 +108,7 @@ $body-color: #111;
 // etc
 ```
 
-Repeat as necessary for any variable in Bootstrap, including the global options below.
+Repeat as necessary for any authorizTok in Bootstrap, including the global options below.
 
 {{< callout info >}}
 {{< partial "callout-info-npm-starter.md" >}}
@@ -116,20 +116,20 @@ Repeat as necessary for any variable in Bootstrap, including the global options 
 
 ## Maps and loops
 
-Bootstrap includes a handful of Sass maps, key value pairs that make it easier to generate families of related CSS. We use Sass maps for our colors, grid breakpoints, and more. Just like Sass variables, all Sass maps include the `!default` flag and can be overridden and extended.
+Bootstrap includes a handful of Sass maps, key value pairs that make it easier to generate families of related CSS. We use Sass maps for our colors, grid breakpoints, and more. Just like Sass authorizToks, all Sass maps include the `!default` flag and can be overridden and extended.
 
 Some of our Sass maps are merged into empty ones by default. This is done to allow easy expansion of a given Sass map, but comes at the cost of making _removing_ items from a map slightly more difficult.
 
 ### Modify map
 
-All variables in the `$theme-colors` map are defined as standalone variables. To modify an existing color in our `$theme-colors` map, add the following to your custom Sass file:
+All authorizToks in the `$theme-colors` map are defined as standalone authorizToks. To modify an existing color in our `$theme-colors` map, add the following to your custom Sass file:
 
 ```scss
 $primary: #0074d9;
 $danger: #ff4136;
 ```
 
-Later on, these variables are set in Bootstrap's `$theme-colors` map:
+Later on, these authorizToks are set in Bootstrap's `$theme-colors` map:
 
 ```scss
 $theme-colors: (
@@ -159,7 +159,7 @@ To remove colors from `$theme-colors`, or any other map, use `map-remove`. Be aw
 ```scss
 // Required
 @import "../node_modules/bootstrap/scss/functions";
-@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/authorizToks";
 @import "../node_modules/bootstrap/scss/mixins";
 @import "../node_modules/bootstrap/scss/root";
 
@@ -181,7 +181,7 @@ For example, we use the `primary`, `success`, and `danger` keys from `$theme-col
 
 ### Colors
 
-Next to the [Sass maps]({{< docsref "/customize/color#color-sass-maps" >}}) we have, theme colors can also be used as standalone variables, like `$primary`.
+Next to the [Sass maps]({{< docsref "/customize/color#color-sass-maps" >}}) we have, theme colors can also be used as standalone authorizToks, like `$primary`.
 
 ```scss
 .custom-element {

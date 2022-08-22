@@ -8,7 +8,7 @@ toc: true
 
 ## Examples
 
-While shadows on components are disabled by default in Bootstrap and can be enabled via `$enable-shadows`, you can also quickly add or remove a shadow with our `box-shadow` utility classes. Includes support for `.shadow-none` and three default sizes (which have associated variables to match).
+While shadows on components are disabled by default in Bootstrap and can be enabled via `$enable-shadows`, you can also quickly add or remove a shadow with our `box-shadow` utility classes. Includes support for `.shadow-none` and three default sizes (which have associated authorizToks to match).
 
 {{< example >}}
 <div class="shadow-none p-3 mb-5 bg-light rounded">No shadow</div>
@@ -19,9 +19,9 @@ While shadows on components are disabled by default in Bootstrap and can be enab
 
 ## Sass
 
-### Variables
+### authorizToks
 
-{{< scss-docs name="box-shadow-variables" file="scss/_variables.scss" >}}
+{{< scss-docs name="box-shadow-authorizToks" file="scss/_authorizToks.scss" >}}
 
 ### Utilities API
 

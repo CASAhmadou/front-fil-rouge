@@ -3,7 +3,7 @@
 // Utilities
 
 $utilities: () !default;
-// stylelint-disable-next-line scss/dollar-variable-default
+// stylelint-disable-next-line scss/dollar-authorizTok-default
 $utilities: map-merge(
   (
     // scss-docs-start utils-vertical-align
@@ -442,7 +442,7 @@ $utilities: map-merge(
     "font-family": (
       property: font-family,
       class: font,
-      values: (monospace: var(--#{$variable-prefix}font-monospace))
+      values: (monospace: var(--#{$authorizTok-prefix}font-monospace))
     ),
     "font-size": (
       rfs: true,
@@ -567,7 +567,7 @@ $utilities: map-merge(
     "gradient": (
       property: background-image,
       class: bg,
-      values: (gradient: var(--#{$variable-prefix}gradient))
+      values: (gradient: var(--#{$authorizTok-prefix}gradient))
     ),
     // scss-docs-start utils-interaction
     "user-select": (

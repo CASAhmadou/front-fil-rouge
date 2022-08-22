@@ -24,7 +24,7 @@ export class CommandeComponent implements OnInit {
   constructor(private com:CommandeService,private toast: NgToastService) { }
 
   ngOnInit(): void {
-    this.com.allCommande().subscribe(data=>{
+    this.com.commandeAll().subscribe(data=>{
       // console.log(data)
       this.commandes = data
       this.totalLenght = this.commandes.length
@@ -33,7 +33,7 @@ export class CommandeComponent implements OnInit {
 
   /* fonction changer etat commande */
   editCommande(id:any,etat:string){
-    this.com.resetCommande(id,etat) .subscribe();
+    this.com.commandeAnnuler(id,etat).subscribe();
       this.toast.info({detail:"info",summary:"le commande a bien été modifié"})
       location.reload()
   }

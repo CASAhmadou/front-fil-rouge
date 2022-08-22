@@ -98,9 +98,9 @@ With an SVG:
 
 ## Sass
 
-### Variables
+### authorizToks
 
-{{< scss-docs name="tooltip-variables" file="scss/_variables.scss" >}}
+{{< scss-docs name="tooltip-authorizToks" file="scss/_authorizToks.scss" >}}
 
 ## Usage
 

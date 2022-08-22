@@ -131,9 +131,9 @@ The striped gradient can also be animated. Add `.progress-bar-animated` to `.pro
 
 ## Sass
 
-### Variables
+### authorizToks
 
-{{< scss-docs name="progress-variables" file="scss/_variables.scss" >}}
+{{< scss-docs name="progress-authorizToks" file="scss/_authorizToks.scss" >}}
 
 ### Keyframes
 

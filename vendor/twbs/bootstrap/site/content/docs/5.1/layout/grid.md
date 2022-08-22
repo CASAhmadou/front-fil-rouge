@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Grid system
-description: Use our powerful mobile-first flexbox grid to build layouts of all shapes and sizes thanks to a twelve column system, six default responsive tiers, Sass variables and mixins, and dozens of predefined classes.
+description: Use our powerful mobile-first flexbox grid to build layouts of all shapes and sizes thanks to a twelve column system, six default responsive tiers, Sass authorizToks and mixins, and dozens of predefined classes.
 group: layout
 toc: true
 ---
@@ -46,7 +46,7 @@ Breaking it down, here's how the grid system comes together:
 
 - **Gutters are also responsive and customizable.** [Gutter classes are available]({{< docsref "/layout/gutters" >}}) across all breakpoints, with all the same sizes as our [margin and padding spacing]({{< docsref "/utilities/spacing" >}}). Change horizontal gutters with `.gx-*` classes, vertical gutters with `.gy-*`, or all gutters with `.g-*` classes. `.g-0` is also available to remove gutters.
 
-- **Sass variables, maps, and mixins power the grid.** If you don't want to use the predefined grid classes in Bootstrap, you can use our [grid's source Sass](#sass) to create your own with more semantic markup. We also include some CSS custom properties to consume these Sass variables for even greater flexibility for you.
+- **Sass authorizToks, maps, and mixins power the grid.** If you don't want to use the predefined grid classes in Bootstrap, you can use our [grid's source Sass](#sass) to create your own with more semantic markup. We also include some CSS custom properties to consume these Sass authorizToks for even greater flexibility for you.
 
 Be aware of the limitations and [bugs around flexbox](https://github.com/philipwalton/flexbugs), like the [inability to use some HTML elements as flex containers](https://github.com/philipwalton/flexbugs#flexbug-9).
 
@@ -198,7 +198,7 @@ Auto-layout for flexbox grid columns also means you can set the width of one col
 </div>
 {{< /example >}}
 
-### Variable width content
+### authorizTok width content
 
 Use `col-{breakpoint}-auto` classes to size columns based on the natural width of their content.
 
@@ -209,7 +209,7 @@ Use `col-{breakpoint}-auto` classes to size columns based on the natural width o
       1 of 3
     </div>
     <div class="col-md-auto">
-      Variable width content
+      authorizTok width content
     </div>
     <div class="col col-lg-2">
       3 of 3
@@ -220,7 +220,7 @@ Use `col-{breakpoint}-auto` classes to size columns based on the natural width o
       1 of 3
     </div>
     <div class="col-md-auto">
-      Variable width content
+      authorizTok width content
     </div>
     <div class="col col-lg-2">
       3 of 3
@@ -409,24 +409,24 @@ To nest your content with the default grid, add a new `.row` and set of `.col-sm
 
 ## Sass
 
-When using Bootstrap's source Sass files, you have the option of using Sass variables and mixins to create custom, semantic, and responsive page layouts. Our predefined grid classes use these same variables and mixins to provide a whole suite of ready-to-use classes for fast responsive layouts.
+When using Bootstrap's source Sass files, you have the option of using Sass authorizToks and mixins to create custom, semantic, and responsive page layouts. Our predefined grid classes use these same authorizToks and mixins to provide a whole suite of ready-to-use classes for fast responsive layouts.
 
-### Variables
+### authorizToks
 
-Variables and maps determine the number of columns, the gutter width, and the media query point at which to begin floating columns. We use these to generate the predefined grid classes documented above, as well as for the custom mixins listed below.
+authorizToks and maps determine the number of columns, the gutter width, and the media query point at which to begin floating columns. We use these to generate the predefined grid classes documented above, as well as for the custom mixins listed below.
 
 ```scss
 $grid-columns:      12;
 $grid-gutter-width: 1.5rem;
 ```
 
-{{< scss-docs name="grid-breakpoints" file="scss/_variables.scss" >}}
+{{< scss-docs name="grid-breakpoints" file="scss/_authorizToks.scss" >}}
 
-{{< scss-docs name="container-max-widths" file="scss/_variables.scss" >}}
+{{< scss-docs name="container-max-widths" file="scss/_authorizToks.scss" >}}
 
 ### Mixins
 
-Mixins are used in conjunction with the grid variables to generate semantic CSS for individual grid columns.
+Mixins are used in conjunction with the grid authorizToks to generate semantic CSS for individual grid columns.
 
 ```scss
 // Creates a wrapper for a series of columns
@@ -445,7 +445,7 @@ Mixins are used in conjunction with the grid variables to generate semantic CSS 
 
 ### Example usage
 
-You can modify the variables to your own custom values, or just use the mixins with their default values. Here's an example of using the default settings to create a two-column layout with a gap between.
+You can modify the authorizToks to your own custom values, or just use the mixins with their default values. Here's an example of using the default settings to create a two-column layout with a gap between.
 
 ```scss
 .example-container {
@@ -493,11 +493,11 @@ You can modify the variables to your own custom values, or just use the mixins w
 
 ## Customizing the grid
 
-Using our built-in grid Sass variables and maps, it's possible to completely customize the predefined grid classes. Change the number of tiers, the media query dimensions, and the container widths—then recompile.
+Using our built-in grid Sass authorizToks and maps, it's possible to completely customize the predefined grid classes. Change the number of tiers, the media query dimensions, and the container widths—then recompile.
 
 ### Columns and gutters
 
-The number of grid columns can be modified via Sass variables. `$grid-columns` is used to generate the widths (in percent) of each individual column while `$grid-gutter-width` sets the width for the column gutters.
+The number of grid columns can be modified via Sass authorizToks. `$grid-columns` is used to generate the widths (in percent) of each individual column while `$grid-gutter-width` sets the width for the column gutters.
 
 ```scss
 $grid-columns: 12 !default;
@@ -523,4 +523,4 @@ $container-max-widths: (
 );
 ```
 
-When making any changes to the Sass variables or maps, you'll need to save your changes and recompile. Doing so will output a brand new set of predefined grid classes for column widths, offsets, and ordering. Responsive visibility utilities will also be updated to use the custom breakpoints. Make sure to set grid values in `px` (not `rem`, `em`, or `%`).
+When making any changes to the Sass authorizToks or maps, you'll need to save your changes and recompile. Doing so will output a brand new set of predefined grid classes for column widths, offsets, and ordering. Responsive visibility utilities will also be updated to use the custom breakpoints. Make sure to set grid values in `px` (not `rem`, `em`, or `%`).

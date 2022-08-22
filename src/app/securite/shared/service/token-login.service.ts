@@ -29,6 +29,7 @@ export class TokenLoginService {
     }
   }
 
+  //vues du gestionnaie
   viewGestionnaire():boolean{
     const gest = this.haveAccess()
     return gest

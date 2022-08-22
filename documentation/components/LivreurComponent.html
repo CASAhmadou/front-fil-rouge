@@ -201,7 +201,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(fb: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, comServ: <a href="../injectables/CommandeService.html" target="_self">CommandeService</a>, toast: NgToastService)</code>
+<code>constructor(fb: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, comService: <a href="../injectables/CommandeService.html" target="_self">CommandeService</a>, toast: NgToastService)</code>
                     </td>
                 </tr>
                         <tr>
@@ -225,39 +225,39 @@
                                         <tbody>
                                                 <tr>
                                                         <td>fb</td>
-                                                  
+
                                                         <td>
                                                                         <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
                                                         </td>
-                                                  
+
                                                     <td>
                                                             No
                                                     </td>
-                                                    
+
                                                 </tr>
                                                 <tr>
-                                                        <td>comServ</td>
-                                                  
+                                                        <td>comService</td>
+
                                                         <td>
                                                                         <code><a href="../injectables/CommandeService.html" target="_self" >CommandeService</a></code>
                                                         </td>
-                                                  
+
                                                     <td>
                                                             No
                                                     </td>
-                                                    
+
                                                 </tr>
                                                 <tr>
                                                         <td>toast</td>
-                                                  
+
                                                         <td>
                                                                     <code>NgToastService</code>
                                                         </td>
-                                                  
+
                                                     <td>
                                                             No
                                                     </td>
-                                                    
+
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -273,7 +273,7 @@
 
 
     <section>
-    
+
     <h3 id="methods">
         Methods
     </h3>
@@ -353,7 +353,7 @@
     </table>
 </section>
     <section>
-    
+
     <h3 id="inputs">
         Properties
     </h3>
@@ -541,7 +541,7 @@ export class LivreurComponent implements OnInit {
   registerForm:any
   constructor(
     private fb:FormBuilder,
-    private comServ:CommandeService,
+    private comService:CommandeService,
     private toast: NgToastService,
   ) { }
 
@@ -580,7 +580,7 @@ export class LivreurComponent implements OnInit {
 
   submitData(){
       console.log(this.registerForm.value)
-    this.comServ.addLivreur(this.registerForm.value).subscribe(
+    this.comService.ajoutLivreur(this.registerForm.value).subscribe(
       err&#x3D;&gt;console.log(&quot;Error: &quot; + err),
     )
     this.toast.success({detail:&quot;success&quot;,summary:&quot;le livreur a bien été enregistré&quot;})
@@ -728,7 +728,7 @@ span{
         </div>
     </div>
 
-    
+
 </div>
 
 <script src="../js/libs/vis.min.js"></script>

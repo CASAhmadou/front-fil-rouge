@@ -43,7 +43,7 @@ Where *size* is one of:
 - `5` - (by default) for classes that set the `margin` or `padding` to `$spacer * 3`
 - `auto` - for classes that set the `margin` to auto
 
-(You can add more sizes by adding entries to the `$spacers` Sass map variable.)
+(You can add more sizes by adding entries to the `$spacers` Sass map authorizTok.)
 
 ### Examples
 
@@ -116,7 +116,7 @@ Support includes responsive options for all of Bootstrap's grid breakpoints, as 
 
 Spacing utilities are declared via Sass map and then generated with our utilities API.
 
-{{< scss-docs name="spacer-variables-maps" file="scss/_variables.scss" >}}
+{{< scss-docs name="spacer-authorizToks-maps" file="scss/_authorizToks.scss" >}}
 
 ### Utilities API
 

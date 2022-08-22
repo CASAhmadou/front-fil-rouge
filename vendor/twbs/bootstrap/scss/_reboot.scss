@@ -27,7 +27,7 @@
 
 :root {
   @if $font-size-root != null {
-    font-size: var(--#{$variable-prefix}root-font-size);
+    font-size: var(--#{$authorizTok-prefix}root-font-size);
   }
 
   @if $enable-smooth-scroll {
@@ -48,13 +48,13 @@
 // scss-docs-start reboot-body-rules
 body {
   margin: 0; // 1
-  font-family: var(--#{$variable-prefix}body-font-family);
-  @include font-size(var(--#{$variable-prefix}body-font-size));
-  font-weight: var(--#{$variable-prefix}body-font-weight);
-  line-height: var(--#{$variable-prefix}body-line-height);
-  color: var(--#{$variable-prefix}body-color);
-  text-align: var(--#{$variable-prefix}body-text-align);
-  background-color: var(--#{$variable-prefix}body-bg); // 2
+  font-family: var(--#{$authorizTok-prefix}body-font-family);
+  @include font-size(var(--#{$authorizTok-prefix}body-font-size));
+  font-weight: var(--#{$authorizTok-prefix}body-font-weight);
+  line-height: var(--#{$authorizTok-prefix}body-line-height);
+  color: var(--#{$authorizTok-prefix}body-color);
+  text-align: var(--#{$authorizTok-prefix}body-text-align);
+  background-color: var(--#{$authorizTok-prefix}body-bg); // 2
   -webkit-text-size-adjust: 100%; // 3
   -webkit-tap-highlight-color: rgba($black, 0); // 4
 }

@@ -724,6 +724,6 @@ In `v4` we used a CSS-only technique to mimic the behavior of [Masonry](https://
 
 ## Sass
 
-### Variables
+### authorizToks
 
-{{< scss-docs name="card-variables" file="scss/_variables.scss" >}}
+{{< scss-docs name="card-authorizToks" file="scss/_authorizToks.scss" >}}

@@ -15,19 +15,19 @@ export class CatalogueService {
 
   constructor(private http:HttpClient) { }
 
-  getCatalogue(): Observable<Catalogue>{
-    return this.http.get<any>(this.linkBackEnd).pipe(
-      map(data=>{
-        let catalogues: Catalogue= {
-          burgers: data['hydra:member'][0]['burgers'],
-          menus: data['hydra:member'][1]['menus'],
-        }
-        data.produits=[...catalogues.menus,...catalogues.burgers]
-        return catalogues
-        // return data
-      })
-    )
-  }
+    getCatalogue(): Observable<Catalogue>{
+      return this.http.get<any>(this.linkBackEnd).pipe(
+        map(data=>{
+          let catalogues: Catalogue= {
+            burgers: data['hydra:member'][0]['burgers'],
+            menus: data['hydra:member'][1]['menus'],
+          }
+          data.produits=[...catalogues.menus,...catalogues.burgers]
+          return catalogues
+          // return data
+        })
+      )
+    }
 
   getProduit$=(id:any)=>{
     return this.http.get<any>(

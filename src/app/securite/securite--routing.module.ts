@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { SecuriteComponent } from './securite.component';
 import { ConnexionComponent } from './connexion/connexion.component';
 
 const routes: Routes = [

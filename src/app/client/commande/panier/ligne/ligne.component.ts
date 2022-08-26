@@ -12,8 +12,8 @@ import { Produit } from 'src/app/client/shared/models/produit';
 export class LigneComponent implements OnInit {
 
   @Input() isPanier = true;
-  @Input('item') item : BurgerCommande | null=null;
-  @Input('itemMenu') itemMenu : MenuCommande | null=null;
+  @Input('bur') bur : BurgerCommande | null=null;
+  @Input('men') men : MenuCommande | null=null;
 
   @Output() index: EventEmitter<any> = new EventEmitter();
   @Output() MontantTotal: EventEmitter<any> = new EventEmitter();

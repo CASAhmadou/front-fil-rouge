@@ -16,10 +16,6 @@ export class CardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // detailOuvert(): void{
-  //   this.
-  // }
-
   detailOuvert(): void{
     this.router.navigateByUrl(`produits/details/${this.produit?.type}/${this.produit?.id}`)
   }

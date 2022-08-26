@@ -25,4 +25,10 @@ comLivraisons:any[]=[]
       // console.log(this.lenghTotal)
     })
   }
+
+  CommandetoEdit(id:any,etat:string){
+    this.comService.commandeAnnuler(id,etat) .subscribe();
+      this.toast.info({detail:"info",summary:"etat commande modifié"})
+      location.reload()
+  }
 }

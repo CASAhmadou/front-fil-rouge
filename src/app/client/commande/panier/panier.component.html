@@ -27,7 +27,7 @@
                   <h5 class="mb-0">CONTENUE DU PANIER</h5>
                 </div>
                 <div class="card-body form-group" *ngFor="let item of items; let i=index">
-                    <cas-ligne (index)="DeleteIn($event)" [item]="item" [itemMenu]="item"></cas-ligne>
+                    <cas-ligne (index)="DeleteIn($event)" [bur]="item" [men]="item"></cas-ligne>
                 </div>
               </div>
             </div>

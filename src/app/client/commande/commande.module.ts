@@ -42,4 +42,4 @@ import { DateFilter, FiltreEtat } from '../shared/service/filtre.pipe';
     ListeComponent
   ]
 })
-export class CommandeModule { }
+export class CommandeModule { } 

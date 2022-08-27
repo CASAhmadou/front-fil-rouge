@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Router } from '@angular/router';
+import { NgToastService } from 'ng-angular-popup';
+
 import jwt_decode from "jwt-decode"
 
 @Injectable({
@@ -7,7 +9,7 @@ import jwt_decode from "jwt-decode"
 })
 export class TokenLoginService {
 
-  constructor(private router : Router) { }
+  constructor(private router : Router, private toast: NgToastService) { }
 
   //garde token
   valueToken(token:string):void{
@@ -15,8 +17,12 @@ export class TokenLoginService {
     // console.log(tokInfo)
       if (tokInfo.roles[0] == ["ROLE_CLIENT"]) {
         this.router.navigate(['commande/panier'])
+        this.toast.success({detail:"success",summary:"connexion reussie"})
+
       }else{
         this.router.navigate(['gestionnaire'])
+        this.toast.error({detail:"ERROR",summary:"login ou mot de passe incorrect"})
+
       }
     localStorage.setItem('token', token)
   }

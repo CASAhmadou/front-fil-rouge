@@ -8,6 +8,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommandeCLientFilter, CommandeDateFilter, CommandeFilterPipe, CommandeZoneFilter } from './shared/services/commande-filter.pipe';
+import { MenuComponent } from './produit/menu/menu.component';
+import { AjoutMenuComponent } from './produit/menu/ajout-menu/ajout-menu.component';
+import { ComplementComponent } from './produit/complement/complement.component';
+import { BurgerComponent } from './produit/burger/burger.component';
+import { AjoutBurgerComponent } from './produit/burger/ajout-burger/ajout-burger.component';
 
 
 @NgModule({
@@ -16,7 +21,12 @@ import { CommandeCLientFilter, CommandeDateFilter, CommandeFilterPipe, CommandeZ
     CommandeFilterPipe,
     CommandeDateFilter,
     CommandeCLientFilter,
-    CommandeZoneFilter
+    CommandeZoneFilter,
+    MenuComponent,
+    AjoutMenuComponent,
+    ComplementComponent,
+    BurgerComponent,
+    AjoutBurgerComponent
 
   ],
   imports: [

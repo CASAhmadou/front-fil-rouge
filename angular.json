@@ -1,12 +1,12 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
-    "analytics": "04025f46-a359-4efa-bfed-29fe6ef0c94b"
+    "analytics": "e806b3b6-222c-443e-90c0-a89a5500b7ab"
   },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "front-fil-rouge": {
+    "projet-fil-front": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -15,12 +15,12 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "cas",
+      "prefix": "ss",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/front-fil-rouge",
+            "outputPath": "dist/projet-fil-front",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -30,8 +30,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "src/styles.css"
             ],
             "scripts": []
           },
@@ -72,10 +71,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "front-fil-rouge:build:production"
+              "browserTarget": "projet-fil-front:build:production"
             },
             "development": {
-              "browserTarget": "front-fil-rouge:build:development"
+              "browserTarget": "projet-fil-front:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +82,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "front-fil-rouge:build"
+            "browserTarget": "projet-fil-front:build"
           }
         },
         "test": {
@@ -98,6 +97,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -106,5 +106,5 @@
       }
     }
   },
-  "defaultProject": "front-fil-rouge"
+  "defaultProject": "projet-fil-front"
 }

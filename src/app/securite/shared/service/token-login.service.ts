@@ -15,7 +15,8 @@ export class TokenLoginService {
   valueToken(token:string):void{
     let tokInfo = this.getDecodedAccessToken(token)
     // console.log(tokInfo)
-      if (tokInfo.roles[0] == ["ROLE_CLIENT"]) {
+      // if (tokInfo.roles[0] == ["ROLE_CLIENT"]) {
+        if (tokInfo.roles[0]) {
         this.router.navigate(['commande/panier'])
         this.toast.success({detail:"success",summary:"connexion reussie"})
 
